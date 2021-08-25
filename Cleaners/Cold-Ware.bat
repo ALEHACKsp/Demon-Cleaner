@@ -1,3 +1,4 @@
+TITLE "Cold Ware Cleaner"
 rmdir /s /q Call Of Duty Black Ops Cold War\Data\data\shmem
 rmdir /s /q %localappdata%\Battle.net
 rmdir /s /q %localappdata%\Blizzard Entertainment
