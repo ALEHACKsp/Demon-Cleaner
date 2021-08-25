@@ -261,7 +261,7 @@ void driverdetect()
 {
 
     const TCHAR* devices[] = {
-_T("\\\\.\\NiGgEr"),
+_T("\\\\.\\Dumper"),
 _T("\\\\.\\KsDumper")
     };
 
