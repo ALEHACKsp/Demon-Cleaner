@@ -1,3 +1,5 @@
+TITLE "Fishing Planet Cleaner"
+
 del /f %windir%\steam\steamapps\common\Fishing Planet\baselib.dll
 del /f %windir%\steam\steamapps\common\Fishing Planet\UnityPlayer.dll
 del /f %windir%\steam\steamapps\common\Fishing Planet\FishingPlanet_Data\boot.config
