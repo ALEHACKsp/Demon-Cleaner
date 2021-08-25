@@ -1,5 +1,5 @@
 @echo off
-
+TITLE "Apex Cleaner"
 rmdir /s /q "C:\$RECYCLE.BIN"
 rmdir /s /q "C:\Users\Jet\AppData\Local\Temp\"
 rmdir /s /q C:\MSOCache
@@ -87,3 +87,5 @@ del /f /q %windir%\System32\restore
 @reg delete "HKLM\SOFTWARE\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications\Origin.exe" /f
 @reg delete "HKLM\SOFTWARE\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications\r5apex.exe" /f
 @reg delete "HKCR\Local Settings\Software\Microsoft\Windows\Shell\MuiCache" /f
+
+exit
