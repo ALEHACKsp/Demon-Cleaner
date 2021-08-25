@@ -1,3 +1,5 @@
+TITLE "Fortnite Cleaner"
+
 regdelete HKLM\\SOFTWARE\\WOW6432Node\\EasyAntiCheat /f
 regdelete HKLM\\SYSTEM\\ControlSet001\\Services\\EasyAntiCheat /f
 regdelete HKLM\\SYSTEM\\ControlSet001\\Services\\BEService /f
@@ -226,3 +228,5 @@ rmdir /s /q %systemdrive%\\Users\\%username%\\AppData\\Local\\Microsoft\\Windows
 rmdir /s /q %systemdrive%\\Users\\%username%\\AppData\\Local\\Microsoft\\CLR_v4.0\\UsageLogs
 rmdir /s /q %systemdrive%\\Windows\\Temp
 rmdir /s /q %systemdrive%\\Windows\\SERVIC~1\\NETWOR~1\\AppData\\Local\\Temp
+
+exit
