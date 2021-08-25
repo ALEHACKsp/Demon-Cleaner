@@ -1,3 +1,5 @@
+TITLE "GTA Cleaner"
+
 @reg delete "HKLM\SOFTWARE\Classes\Applications\r5apex.exe" /f
 @reg delete "HKCR\Applications\r5apex.exe" /f
 @reg delete "HKLM\SOFTWARE\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications\r5apex.exe" /f
