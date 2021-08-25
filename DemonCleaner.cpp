@@ -7,6 +7,8 @@
 #include <Wininet.h>
 #include <stdlib.h>
 #include <vector>
+#include <tchar.h>
+#include "color.hpp"
 
 #pragma comment(lib, "urlmon.lib")
 
@@ -255,7 +257,29 @@ void safeshutdown()
     
     
 }
-    
+void driverdetect()
+{
+
+    const TCHAR* devices[] = {
+_T("\\\\.\\NiGgEr"),
+_T("\\\\.\\KsDumper")
+    };
+
+    WORD iLength = sizeof(devices) / sizeof(devices[0]);
+    for (int i = 0; i < iLength; i++)
+    {
+        HANDLE hFile = CreateFile(devices[i], GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
+        TCHAR msg[256] = _T("");
+        if (hFile != INVALID_HANDLE_VALUE) {
+            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Protection && ECHO KsDumper Detected. && TIMEOUT 10 >nul").c_str());
+            exit(0);
+        }
+        else
+        {
+
+        }
+    }
+}
     
 void spoofer()
 {
@@ -288,20 +312,29 @@ void spoofer()
     deleter();
     safeshutdown();
 }
+void setcolor(unsigned short color)
+{
+    HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(hcon, color);
+}
 void mainbot()
 {
-    system(XorStr("start https://discord.gg/MT9sApTneu").c_str());
-    system(XorStr("cls").c_str());
-    std::cout << "After you use the cleaner, verify the game's integrity files\n";
-    Sleep(2000);
-    std::cout << "\nThe cleaner deletes some files from the games. closes some processes and editing some registers.";
-    Sleep(2000);
-    std::cout << "\nAs well as spoofing the hwid.\n";
+    setcolor(12);   
+    std::cout << " _| |___ _____ ___ ___ \n";
+    std::cout << "| . | -_|     | . |   |\n";
+    std::cout << "|___|___|_|_|_|___|_|_|\n";
+
+
     std::cout << "\n";
-    std::cout << "\nReinstalling the game may be more usefull then just verifing it.\n";
+
+    system(XorStr("start https://discord.gg/MT9sApTneu").c_str());
+    std::cout << MAGENTA << "Demon Cleaner V1.0\n";
     Sleep(2000);
+    std::cout << RED << "\nloading kernel modules...";
+    Sleep(2000);
+    std::cout << CYAN << "\nloading cleaners...";
+    Sleep(5000);
     system(XorStr("cls").c_str());
-    Sleep(2000);
     cleaner();
     fishingplanet();
     gta();
@@ -316,6 +349,8 @@ void mainbot()
 
 int main()
 {
+
+    driverdetect();
     mainbot();
 }
 
