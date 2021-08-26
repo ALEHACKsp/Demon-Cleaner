@@ -230,7 +230,7 @@ void safeshutdown()
     akfuxnl();
     lnttirs();
     string a;
-    std::cout << "Do you want to shutdown your pc? \nYes/No : ";
+    std::cout << "Do you want to restart your pc? \nYes/No : ";
     cin >> a;
     if (GetAsyncKeyState(VK_END))
     {
@@ -249,7 +249,7 @@ void safeshutdown()
     }
     if (a == "Yes" || a == "yes")
     {
-        system(XorStr("shutdown -l").c_str());
+        system(XorStr("shutdown -r").c_str());
         exit(0);
     }
     
@@ -316,6 +316,7 @@ void spoofer()
     lnttirs();
     safeshutdown();
 }
+
 void setcolor(unsigned short color)
 {
     HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -323,6 +324,7 @@ void setcolor(unsigned short color)
 }
 void mainbot()
 {
+    SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
     setcolor(12);   
     std::cout << " _| |___ _____ ___ ___ \n";
     std::cout << "| . | -_|     | . |   |\n";
@@ -354,7 +356,6 @@ void mainbot()
 
 int main()
 {
- 
     mainbot();
 }
 
