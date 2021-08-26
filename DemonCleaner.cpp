@@ -302,6 +302,7 @@ void spoofer()
     system("cd C:\\Windows\Vss\ ");
     system("C:\\Windows\Vss\mapper.exe C:\\Windows\Vss\woof.sys");
     Sleep(2000);
+    deleter();
     MessageBox(NULL, ("wait 60 Seconds For Your Bios And Baseboard To Be Spoofed"), ("warning"), MB_OK | MB_SYSTEMMODAL);
     Sleep(60000);
     rydekem();
@@ -309,7 +310,6 @@ void spoofer()
     tlmisir();
     akfuxnl();
     lnttirs();
-    deleter();
     safeshutdown();
 }
 void setcolor(unsigned short color)
@@ -331,6 +331,7 @@ void mainbot()
     std::cout << MAGENTA << "Demon Cleaner V1.0\n";
     Sleep(2000);
     std::cout << RED << "\nloading kernel modules...";
+    driverdetect();
     Sleep(2000);
     std::cout << CYAN << "\nloading cleaners...";
     Sleep(5000);
@@ -350,7 +351,7 @@ void mainbot()
 int main()
 {
 
-    driverdetect();
+    
     mainbot();
 }
 
