@@ -354,7 +354,7 @@ void mainbot()
     std::cout << RED << "\nloading kernel modules...";
     driverdetect();
     Sleep(2000);
-    std::cout << CYAN << "\nloading encryption...";
+    std::cout << CYAN << "\nloading resources...";
     Sleep(5000);
     system(XorStr("cls").c_str());
     demondll();
