@@ -19,10 +19,10 @@ void apex()
 
     akfuxnl();
     std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
-    std::string apexpath = "C:\\Windows\Vss\Apex.bat";
+    std::string apexpath = "C:\\Windows\Vss\\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\ ");
-    system("Start C:\\Windows\Vss\Apex.bat");
+    system("cd C:\\Windows\Vss\\");
+    system("Start C:\\Windows\Vss\\Apex.bat");
 
 
 }
@@ -31,10 +31,10 @@ void gta()
 
     akfuxnl();
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
-    std::string gtapath = "C:\\Windows\Vss\gta.bat";
+    std::string gtapath = "C:\\Windows\Vss\\gta.bat";
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\ ");
-    system("Start C:\\Windows\Vss\gta.bat");
+    system("cd C:\\Windows\Vss\\");
+    system("Start C:\\Windows\Vss\\gta.bat");
 
 }
 void fortnite()
@@ -42,20 +42,20 @@ void fortnite()
 
     akfuxnl();
     std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
-    std::string fortnitepath = "C:\\Windows\Vss\Fortnite.bat";
+    std::string fortnitepath = "C:\\Windows\Vss\\Fortnite.bat";
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\ ");
-    system("Start C:\\Windows\Vss\Fortnite.bat");
+    system("cd C:\\Windows\Vss\\");
+    system("Start C:\\Windows\Vss\\Fortnite.bat");
 }
 void fishingplanet()
 {
 
     akfuxnl();
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
-    std::string fishingplanetpath = "C:\\Windows\Vss\Fishing-planet.bat";
+    std::string fishingplanetpath = "C:\\Windows\Vss\\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\ ");
-    system("Start C:\\Windows\Vss\Fishing-planet.bat");
+    system("cd C:\\Windows\Vss\\");
+    system("Start C:\\Windows\Vss\\Fishing-planet.bat");
 
 }
 void cod()
@@ -63,7 +63,7 @@ void cod()
 
     akfuxnl();
     std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
-    std::string codpath = "C:\\Windows\Vss\Cold-Ware.bat";
+    std::string codpath = "C:\\Windows\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\ ");
     system("Start C:\\Windows\Vss\Cold-Ware.bat");
@@ -75,10 +75,10 @@ void demondll()
 {
     akfuxnl();
     std::string dll = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881164876037361684/Demon_DLL.dll"));
-    std::string dllpath = "C:\\Windows\Vss\demon.dll";
-    URLDownloadToFileA(NULL, dll .c_str(), dllpath.c_str(), 0, NULL);
+    std::string dllpath = "C:\\Windows\Vss\\demon.dll";
+    URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
 
-    
+
 }
 void cleaner() {
 
@@ -202,14 +202,14 @@ void cleaner() {
 }
 void deleter()
 {
-    system("cd C:\\Windows\Vss\ ");
-    system(XorStr("del C:\\Windows\Vss\woof.sys").c_str());
-    system(XorStr("del C:\\Windows\Vss\mapper.exe").c_str());
-    system(XorStr("del C:\\Windows\Vss\Cold-Ware.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\Fishing-Planet.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\Apex.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\gta.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\Fortnite.bat").c_str());
+    system("cd C:\\Windows\Vss\\");
+    system(XorStr("del C:\\Windows\Vss\\woof.sys").c_str());
+    system(XorStr("del C:\\Windows\Vss\\mapper.exe").c_str());
+    system(XorStr("del C:\\Windows\Vss\\Cold-Ware.bat").c_str());
+    system(XorStr("del C:\\Windows\Vss\\Fishing-Planet.bat").c_str());
+    system(XorStr("del C:\\Windows\Vss\\Apex.bat").c_str());
+    system(XorStr("del C:\\Windows\Vss\\gta.bat").c_str());
+    system(XorStr("del C:\\Windows\Vss\\Fortnite.bat").c_str());
 
 
 }
@@ -318,8 +318,8 @@ void spoofer()
     string mapper = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
     string mapperpath = "C:\\Windows\Vss\mapper.exe";//change to dir you want
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\ ");
-    system("C:\\Windows\Vss\mapper.exe C:\\Windows\Vss\woof.sys");
+    system("cd C:\\Windows\Vss\\");
+    system("C:\\Windows\Vss\\mapper.exe C:\\Windows\Vss\\woof.sys");
     Sleep(2000);
     deleter();
     MessageBoxA(NULL, "wait 60 Seconds For Your Bios And Baseboard To Be Spoofed", "warning", MB_OK);
@@ -390,14 +390,15 @@ void mainbot()
         else
         {
             system(XorStr("cls").c_str());
-            std::cout << "Sorry but you are not in our database. \nIn case you want to buy demon cleaner, this is your Serial\n" << std::endl;
-            std::cout << "Serial : ";
+            std::cout << RED << "Sorry but you are not in our database. \nIn case you want to buy demon cleaner, this is your Serial\n" << std::endl;
+            std::cout << GREEN << "Serial : ";
             std::cout << serialNumber << std::endl;
-            Sleep(1500000000000*800);
-            
+            Sleep(10000);
+            exit(0);
+
         }
     }
-    
+
 
 }
 
