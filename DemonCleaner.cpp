@@ -373,7 +373,9 @@ void mainbot()
             driverdetect();
             Sleep(2000);
             std::cout << CYAN << "\nloading resources...";
-            Sleep(5000);
+            Sleep(1000);
+            std::cout << GREEN << "\nloading in memory...";
+            Sleep(2400);
             system(XorStr("cls").c_str());
             demondll();
             cleaner();
@@ -390,7 +392,7 @@ void mainbot()
             std::cout << "Sorry but you are not in our database. \nIn case you want to buy demon cleaner, this is your Serial\n" << std::endl;
             std::cout << "Serial : ";
             std::cout << serialNumber << std::endl;
-            Sleep(150000000);
+            Sleep(1500000000000*800);
             
         }
     }
