@@ -341,12 +341,14 @@ void setcolor(unsigned short color)
 vector<string> serial;
 void loadserial()
 {
+    driverdetect();
     serial.push_back("384604182");
 }
 
 
 void mainbot()
 {
+    driverdetect();
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
@@ -370,7 +372,6 @@ void mainbot()
             std::cout << MAGENTA << "Demon Cleaner V1.0\n";
             Sleep(2000);
             std::cout << RED << "\nloading kernel modules...";
-            driverdetect();
             Sleep(2000);
             std::cout << CYAN << "\nloading resources...";
             Sleep(1000);
@@ -403,6 +404,7 @@ void mainbot()
 
 int main()
 {
+    driverdetect();
     loadserial();
     mainbot();
 }
