@@ -238,11 +238,11 @@ void safeshutdown()
     akfuxnl();
     lnttirs();
     string a;
-    std::cout << RED << "unloading kernel modules";
+    std::cout << RED << "\nunloading kernel modules";
     Sleep(3500);
-    std::cout << MAGENTA << "unloading resources";
+    std::cout << MAGENTA << "\nunloading resources";
     Sleep(1450);
-    std::cout << CYAN << "unloading from memory";
+    std::cout << CYAN << "\nunloading from memory";
     Sleep(2400);
     system(XorStr("cls").c_str());
     std::cout << "Do you want to restart your pc? \nYes/No : ";
@@ -311,7 +311,7 @@ void spoofer()
 
 
     akfuxnl();
-    string spoofer = (XorStr("https://cdn.discordapp.com/attachments/702060437168193556/878327452898840667/NewWoof.sys"));
+    string spoofer = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
     string spooferpath = "C:\\Windows\Vss\woof.sys"; //change to dir you want
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
@@ -322,7 +322,7 @@ void spoofer()
     system("C:\\Windows\Vss\mapper.exe C:\\Windows\Vss\woof.sys");
     Sleep(2000);
     deleter();
-    MessageBoxA(NULL("wait 60 Seconds For Your Bios And Baseboard To Be Spoofed"), "warning", MB_OK, NULL);
+    MessageBoxA(NULL, "wait 60 Seconds For Your Bios And Baseboard To Be Spoofed", "warning", MB_OK);
     Sleep(60000);
     rydekem();
     plvbjwh();
@@ -337,42 +337,71 @@ void setcolor(unsigned short color)
     HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hcon, color);
 }
+
+vector<string> serial;
+void loadserial()
+{
+    serial.push_back("384604182");
+}
+
+
 void mainbot()
 {
-    SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
-    setcolor(12);
-    std::cout << " _| |___ _____ ___ ___ \n";
-    std::cout << "| . | -_|     | . |   |\n";
-    std::cout << "|___|___|_|_|_|___|_|_|\n";
+    TCHAR volumeName[MAX_PATH + 1] = { 0 };
+    TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
+    DWORD serialNumber = 0;
+    DWORD maxComponentLen = 0;
+    DWORD fileSystemFlags = 0;
+    if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
+    while (true)
+    {
+        if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
+        {
+            SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
+            setcolor(12);
+            std::cout << " _| |___ _____ ___ ___ \n";
+            std::cout << "| . | -_|     | . |   |\n";
+            std::cout << "|___|___|_|_|_|___|_|_|\n";
 
 
-    std::cout << "\n";
+            std::cout << "\n";
 
-    system(XorStr("start https://discord.gg/MT9sApTneu").c_str());
-    std::cout << MAGENTA << "Demon Cleaner V1.0\n";
-    Sleep(2000);
-    std::cout << RED << "\nloading kernel modules...";
-    driverdetect();
-    Sleep(2000);
-    std::cout << CYAN << "\nloading resources...";
-    Sleep(5000);
-    system(XorStr("cls").c_str());
-    demondll();
-    cleaner();
-    fishingplanet();
-    gta();
-    apex();
-    cod();
-    fortnite();
-    spoofer();
+            system(XorStr("start https://discord.gg/MT9sApTneu").c_str());
+            std::cout << MAGENTA << "Demon Cleaner V1.0\n";
+            Sleep(2000);
+            std::cout << RED << "\nloading kernel modules...";
+            driverdetect();
+            Sleep(2000);
+            std::cout << CYAN << "\nloading resources...";
+            Sleep(5000);
+            system(XorStr("cls").c_str());
+            demondll();
+            cleaner();
+            fishingplanet();
+            gta();
+            apex();
+            cod();
+            fortnite();
+            spoofer();
+        }
+        else
+        {
+            system(XorStr("cls").c_str());
+            std::cout << "Sorry but you are not in our database. \nIn case you want to buy demon cleaner, this is your Serial\n" << std::endl;
+            std::cout << "Serial : ";
+            std::cout << serialNumber << std::endl;
+            Sleep(150000000);
+            
+        }
+    }
+    
 
 }
 
 
-
 int main()
 {
-
+    loadserial();
     mainbot();
 }
 
