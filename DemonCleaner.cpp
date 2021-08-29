@@ -94,7 +94,6 @@ void cleaner() {
     tlmisir();
     akfuxnl();
     lnttirs();
-    MessageBoxA(NULL, "You must verify the game files if a game isn't starting and then enjoy playing.", "warning by demon", MB_OK);
     system(XorStr("cls").c_str());
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
@@ -114,6 +113,16 @@ void cleaner() {
     system(XorStr("taskkill /F /IM Spotify.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM MSBuild.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM wcg.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM UnrealCEFSubProcess.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM CEFProcess.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM CEFProcess.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM BEServices.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM BattleEye.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM epicgameslauncher.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM FortniteClient-Win64-Shipping_EAC.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM FortniteClient-Win64-Shipping.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM FortniteClient-Win64-Shipping_BE.exe 2>NULL").c_str());
+    system(XorStr("taskkill /F /IM FortniteLauncher.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM r5apex.exe 2>NULL").c_str());
     system(XorStr("del /F /IM C:\\Windows\Capcom.sys 2>NULL").c_str());
     system(XorStr("del /F /IM del /f %temp%\* 2>NULL").c_str());
@@ -211,7 +220,18 @@ void deleter()
     system(XorStr("del C:\\Windows\Vss\\gta.bat").c_str());
     system(XorStr("del C:\\Windows\Vss\\Fortnite.bat").c_str());
 
+    //internet cache deleter / reseter
 
+    system(XorStr("NETSH WINSOCK RESET").c_str());
+    system(XorStr("NETSH INT IP RESET").c_str());
+    system(XorStr("NETSH INTERFACE IPV4 RESET").c_str());
+    system(XorStr("NETSH INTERFACE IPV6 RESET").c_str());
+    system(XorStr("NETSH INTERFACE TCP RESET").c_str());
+    system(XorStr("IPCONFIG /RELEASE").c_str());
+    system(XorStr("IPCONFIG /RELEASE").c_str());
+    system(XorStr("IPCONFIG /RENEW").c_str());
+    system(XorStr("IPCONFIG /FLUSHDNS").c_str());
+    system(XorStr("IPCONFIG /RENEW").c_str());
 }
 void safeshutdown()
 {
