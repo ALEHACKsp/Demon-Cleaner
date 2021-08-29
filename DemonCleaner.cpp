@@ -211,6 +211,7 @@ void cleaner() {
 }
 void deleter()
 {
+    //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
     system(XorStr("del C:\\Windows\Vss\\woof.sys").c_str());
     system(XorStr("del C:\\Windows\Vss\\mapper.exe").c_str());
@@ -220,6 +221,10 @@ void deleter()
     system(XorStr("del C:\\Windows\Vss\\gta.bat").c_str());
     system(XorStr("del C:\\Windows\Vss\\Fortnite.bat").c_str());
 
+    
+}
+void internet()
+{
     //internet cache deleter / reseter
 
     system(XorStr("NETSH WINSOCK RESET").c_str());
@@ -398,6 +403,7 @@ void mainbot()
             std::cout << GREEN << "\nloading in memory...";
             Sleep(2400);
             system(XorStr("cls").c_str());
+            internet();
             demondll();
             cleaner();
             fishingplanet();
@@ -425,6 +431,7 @@ void mainbot()
 
 int main()
 {
+    
     driverdetect();
     loadserial();
     mainbot();
