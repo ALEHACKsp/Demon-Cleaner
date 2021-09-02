@@ -70,7 +70,7 @@ void cod()
     std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
-    system("Start C:\\Windows\\Vss\Cold-Ware.bat");
+    system("Start C:\\Windows\\Vss\\Cold-Ware.bat");
 
 
 }
@@ -224,13 +224,13 @@ void deleter()
 {
     //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
-    system(XorStr("del C:\\Windows\Vss\\woof.sys").c_str());
-    system(XorStr("del C:\\Windows\Vss\\mapper.exe").c_str());
-    system(XorStr("del C:\\Windows\Vss\\Cold-Ware.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\\Fishing-Planet.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\\Apex.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\\gta.bat").c_str());
-    system(XorStr("del C:\\Windows\Vss\\Fortnite.bat").c_str());
+    system(XorStr("del C:\\Windows\\Vss\\woof.sys").c_str());
+    system(XorStr("del C:\\Windows\\Vss\\mapper.exe").c_str());
+    system(XorStr("del C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
+    system(XorStr("del C:\\Windows\\Vss\\Fishing-Planet.bat").c_str());
+    system(XorStr("del C:\\Windows\\Vss\\Apex.bat").c_str());
+    system(XorStr("del C:\\Windows\\Vss\\gta.bat").c_str());
+    system(XorStr("del C:\\Windows\\Vss\\Fortnite.bat").c_str());
 
     
 }
@@ -406,13 +406,29 @@ string DownloadString(string URL) {
     string p = replaceAll(rtn, "|n", "\r\n");
     return p;
 }
+
 vector<string> serial;
+
 void loadserial()
 {
     driverdetect();
-    serial.push_back(XorStr("384604182").c_str());
-}
 
+    serial.push_back(XorStr("2953439145").c_str());
+}
+void checkbanned()
+{
+    TCHAR volumeName[MAX_PATH + 1] = { 0 };
+    TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
+    DWORD serialNumber = 0;
+    DWORD maxComponentLen = 0;
+    DWORD fileSystemFlags = 0;
+    if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
+    GetLastError();
+    if (IsDebuggerPresent)
+    {
+        serial.clear();
+    }
+}
 void mainbot()
 {
  
@@ -421,9 +437,9 @@ void mainbot()
     DWORD serialNumber = 0;
     DWORD maxComponentLen = 0;
     DWORD fileSystemFlags = 0;
-    string lol = DownloadString("https://pastebin.com/raw/HzjsUxNu");
-    driverdetect();
 
+    driverdetect();
+    
 
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
@@ -439,12 +455,12 @@ void mainbot()
 
             std::cout << "\n";
 
-            system(XorStr("start https://discord.gg/MT9sApTneu").c_str());
+            system(XorStr("start http://demoncleaner.gq").c_str());
             std::cout << MAGENTA << "Demon Cleaner V1.0\n";
             Sleep(2000);
-            std::cout << RED << "\nloading kernel modules...";
+            std::cout << RED << "\nloading kernel modules...\n";
             Sleep(2000);
-            std::cout << CYAN << "\nloading resources...";
+            std::cout << CYAN << "\nloading resources...\n";
             Sleep(1000);
             std::cout << GREEN << "\nloading in memory...";
             Sleep(2400);
@@ -463,18 +479,18 @@ void mainbot()
         else
         {
             system(XorStr("cls").c_str());
-            std::cout << RED << "Sorry but you are not in our database. \nIn case you want to buy demon cleaner, this is your Serial\n" << std::endl;
-            std::cout << GREEN << "Serial : ";
+            std::cout << CYAN << "Sorry but you are not in our database or you are banned. " << std::endl;
+            std::cout << GREEN << "serial : ";
             std::cout << serialNumber << std::endl;
-            Sleep(10000);
+            Sleep(3000);
             exit(0);
 
         }
+        
     }
-
-
+    
+    
 }
-
 
 int main()
 {
@@ -484,12 +500,14 @@ int main()
     if (FindWindow(NULL, windowName))
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        serial.clear();
         exit(0);
 
     }
     if (FindWindow(NULL, vmname))
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
+        serial.clear();
         exit(0);
 
     }
@@ -516,12 +534,19 @@ int main()
     if (IsDebuggerPresent())
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        serial.clear();
         exit(0);
     }
+    
     else
     {
-        
+        if (GetLastError)
+        {
+            system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
+            exit(0);
+        }
         driverdetect();
+        checkbanned();
         loadserial();
         mainbot();
     }
