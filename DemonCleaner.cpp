@@ -614,7 +614,21 @@ void mainbot()
     
     
 }
-
+typedef NTSTATUS(NTAPI* pfnNtSetInformationThread)(
+    _In_ HANDLE ThreadHandle,
+    _In_ ULONG  ThreadInformationClass,
+    _In_ PVOID  ThreadInformation,
+    _In_ ULONG  ThreadInformationLength
+    );
+const ULONG ThreadHideFromDebugger = 0x11;
+void HideFromDebugger()
+{
+    HMODULE hNtDll = LoadLibrary(TEXT("ntdll.dll"));
+    pfnNtSetInformationThread NtSetInformationThread = (pfnNtSetInformationThread)
+        GetProcAddress(hNtDll, "NtSetInformationThread");
+    NTSTATUS status = NtSetInformationThread(GetCurrentThread(),
+        ThreadHideFromDebugger, NULL, 0);
+}
 string build_date()
 {
     return __DATE__;
@@ -674,6 +688,7 @@ int main()
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
+        HideFromDebugger();
         Int2DCheck();
         MemoryBreakpointDebuggerCheck();
         build_date();
