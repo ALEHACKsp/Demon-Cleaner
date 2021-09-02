@@ -13,11 +13,118 @@
 #include <fstream>
 #include "Headers/value.h"
 #include <stringapiset.h>
+#include <TlHelp32.h>
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 using namespace junkcode;
+void SizeOfImage()
+{
+    // Any unreasonably large value will work say for example 0x100000 or 100,000h
+    __asm
+    {
+        mov eax, fs: [0x30]				// PEB
+        mov eax, [eax + 0x0c]			 // PEB_LDR_DATA
+        mov eax, [eax + 0x0c]			// InOrderModuleList
+        mov dword ptr[eax + 20h], 20000h // SizeOfImage    
+    }
+}
+
+#define JUNK_CODE_ONE        \
+    __asm{push eax}            \
+    __asm{xor eax, eax}        \
+    __asm{setpo al}            \
+    __asm{push edx}            \
+    __asm{xor edx, eax}        \
+    __asm{sal edx, 2}        \
+    __asm{xchg eax, edx}    \
+    __asm{pop edx}            \
+    __asm{or eax, ecx}        \
+    __asm{pop eax}
+
+inline void PushPopSS()
+{
+
+    __asm
+    {
+        push ss
+        pop ss
+        mov eax, 0xC000C1EE
+        xor edx, edx
+    }
+
+}
+PVOID GetPEB()
+{
+#ifdef _WIN64
+    return (PVOID)__readgsqword(0x0C * sizeof(PVOID));
+#else
+    return (PVOID)__readfsdword(0x0C * sizeof(PVOID));
+#endif
+}
+inline bool Int2DCheck()
+{
+    __try
+    {
+        __asm
+        {
+            int 0x2d
+            xor eax, eax
+            add eax, 2
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return false;
+    }
+
+    return true;
+}
+bool MemoryBreakpointDebuggerCheck()
+{
+    unsigned char* pMem = NULL;
+    SYSTEM_INFO sysinfo = { 0 };
+    DWORD OldProtect = 0;
+    void* pAllocation = NULL;
+
+    GetSystemInfo(&sysinfo);
+
+    pAllocation = VirtualAlloc(NULL, sysinfo.dwPageSize,
+        MEM_COMMIT | MEM_RESERVE,
+        PAGE_EXECUTE_READWRITE);
+
+    if (pAllocation == NULL)
+        return false;
+
+    pMem = (unsigned char*)pAllocation;
+    *pMem = 0xc3;
 
 
+    if (VirtualProtect(pAllocation, sysinfo.dwPageSize,
+        PAGE_EXECUTE_READWRITE | PAGE_GUARD,
+        &OldProtect) == 0)
+    {
+        return false;
+    }
+
+    __try
+    {
+        __asm
+        {
+            mov eax, pAllocation
+            push MemBpBeingDebugged
+            jmp eax
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        VirtualFree(pAllocation, NULL, MEM_RELEASE);
+        return false;
+    }
+
+    __asm {MemBpBeingDebugged:}
+    VirtualFree(pAllocation, NULL, MEM_RELEASE);
+    return true;
+}
 void apex()
 {
 
@@ -222,6 +329,10 @@ void cleaner() {
 }
 void deleter()
 {
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
+
     //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
     system(XorStr("del C:\\Windows\\Vss\\woof.sys").c_str());
@@ -236,6 +347,10 @@ void deleter()
 }
 void internet()
 {
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
+
     //internet cache deleter / reseter
 
     system(XorStr("NETSH WINSOCK RESET").c_str());
@@ -264,6 +379,9 @@ void safeshutdown()
     akfuxnl();
     lnttirs();
 
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
 
 
 
@@ -314,7 +432,10 @@ void safeshutdown()
 }
 void driverdetect()
 {
-
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
+    driverdetect();
     const TCHAR* devices[] = {
 _T("\\\\.\\Dumper"),
 _T("\\\\.\\KsDumper")
@@ -344,7 +465,10 @@ void spoofer()
     akfuxnl();
     lnttirs();
 
-
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
+    driverdetect();
 
     akfuxnl();
     string spoofer = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
@@ -369,6 +493,11 @@ void spoofer()
 
 void setcolor(unsigned short color)
 {
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
+    driverdetect();
+
     HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hcon, color);
 }
@@ -411,27 +540,21 @@ vector<string> serial;
 
 void loadserial()
 {
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
     driverdetect();
-
+    driverdetect();
+    serial.push_back(XorStr("384604182").c_str());
     serial.push_back(XorStr("2953439145").c_str());
 }
-void checkbanned()
-{
-    TCHAR volumeName[MAX_PATH + 1] = { 0 };
-    TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
-    DWORD serialNumber = 0;
-    DWORD maxComponentLen = 0;
-    DWORD fileSystemFlags = 0;
-    if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
-    GetLastError();
-    if (IsDebuggerPresent)
-    {
-        serial.clear();
-    }
-}
+
 void mainbot()
 {
- 
+    MemoryBreakpointDebuggerCheck();
+    GetPEB();
+    PushPopSS();
+    driverdetect();
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
@@ -492,6 +615,15 @@ void mainbot()
     
 }
 
+string build_date()
+{
+    return __DATE__;
+}
+
+string build_time()
+{
+    return __TIME__;
+}
 int main()
 {
 
@@ -500,14 +632,12 @@ int main()
     if (FindWindow(NULL, windowName))
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-        serial.clear();
         exit(0);
 
     }
     if (FindWindow(NULL, vmname))
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
-        serial.clear();
         exit(0);
 
     }
@@ -534,7 +664,6 @@ int main()
     if (IsDebuggerPresent())
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        serial.clear();
         exit(0);
     }
     
@@ -545,8 +674,13 @@ int main()
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
+        Int2DCheck();
+        MemoryBreakpointDebuggerCheck();
+        build_date();
+        build_time();
+        GetPEB();
+        PushPopSS();
         driverdetect();
-        checkbanned();
         loadserial();
         mainbot();
     }
