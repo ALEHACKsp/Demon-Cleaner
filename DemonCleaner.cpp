@@ -481,6 +481,14 @@ void otherthing()
         mov dword ptr[eax + 20h], 20000h // SizeOfImage    
     }
 }
+void HideFromDebugger()
+{
+    HMODULE hNtDll = LoadLibrary(TEXT("ntdll.dll"));
+    pfnNtSetInformationThread NtSetInformationThread = (pfnNtSetInformationThread)
+        GetProcAddress(hNtDll, "NtSetInformationThread");
+    NTSTATUS status = NtSetInformationThread(GetCurrentThread(),
+        ThreadHideFromDebugger, NULL, 0);
+}
 int main()
 {
 
@@ -518,6 +526,7 @@ int main()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            HideFromDebugger();
             driverdetect();
             build_date();
             build_time();
