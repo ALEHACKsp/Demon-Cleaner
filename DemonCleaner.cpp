@@ -376,7 +376,6 @@ vector<string> serial;
 
 void loadserial()
 {
-    
 
     serial.push_back(XorStr("384604182").c_str());
     serial.push_back(XorStr("2953439145").c_str());
@@ -532,7 +531,10 @@ int main()
             build_time();
             loadserial();
             mainbot();
+
         }
+        
+            
         
     }
  
