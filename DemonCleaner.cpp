@@ -400,6 +400,10 @@ void mainbot()
         JUNK_CODE_ONE
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
             JUNK_CODE_ONE
             SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
             setcolor(12);
@@ -483,6 +487,10 @@ void otherthing()
 }
 void HideFromDebugger()
 {
+    OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
     HMODULE hNtDll = LoadLibrary(TEXT("ntdll.dll"));
     pfnNtSetInformationThread NtSetInformationThread = (pfnNtSetInformationThread)
         GetProcAddress(hNtDll, "NtSetInformationThread");
@@ -496,6 +504,10 @@ int main()
     LPCWSTR vmname = L"VMware Workstation";
     if (FindWindow(NULL, windowName))
     {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -503,6 +515,10 @@ int main()
     }
     if (FindWindow(NULL, vmname))
     {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -510,6 +526,10 @@ int main()
     }
     if (IsDebuggerPresent())
     {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -520,6 +540,10 @@ int main()
     {
         if (GetLastError != 0) 
         {
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
