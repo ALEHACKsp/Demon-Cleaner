@@ -433,6 +433,11 @@ void mainbot()
         
         else
         {
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
             system(XorStr("cls").c_str());
             std::cout << CYAN << "Sorry but you are not in our database or you are banned. " << std::endl;
             std::cout << GREEN << "serial : ";
@@ -487,6 +492,11 @@ void otherthing()
 }
 void HideFromDebugger()
 {
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
     OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -499,11 +509,20 @@ void HideFromDebugger()
 }
 int main()
 {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
     LPCWSTR windowName = L"x32dbg"; 
     LPCWSTR vmname = L"VMware Workstation";
     if (FindWindow(NULL, windowName))
     {
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -515,6 +534,11 @@ int main()
     }
     if (FindWindow(NULL, vmname))
     {
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -526,6 +550,11 @@ int main()
     }
     if (IsDebuggerPresent())
     {
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -540,6 +569,11 @@ int main()
     {
         if (GetLastError != 0) 
         {
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -549,6 +583,11 @@ int main()
         }
         else if (GetLastError == 0)
         {
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
