@@ -304,6 +304,7 @@ _T("\\\\.\\KsDumper")
         TCHAR msg[256] = _T("");
         if (hFile != INVALID_HANDLE_VALUE) {
             system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO KsDumper Detected. && TIMEOUT 10 >nul").c_str());
+            SetLastError(1);
             exit(0);
         }
         else
@@ -496,30 +497,33 @@ int main()
     if (FindWindow(NULL, windowName))
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
         exit(0);
 
     }
     if (FindWindow(NULL, vmname))
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
         exit(0);
 
     }
     if (IsDebuggerPresent())
     {
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
         exit(0);
     }
     
 
     else
     {
-        if (GetLastError)
+        if (GetLastError != 0) 
         {
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
-        else
+        else if (GetLastError == 0)
         {
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
