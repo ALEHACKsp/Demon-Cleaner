@@ -514,10 +514,14 @@ void HideFromDebugger()
 }
 
 
-
-int main()
+void startup();
+int _start()
 {
-    
+    startup();
+    exit(0);
+}
+void startup()
+{
     rydekem();
     plvbjwh();
     tlmisir();
@@ -581,6 +585,7 @@ int main()
 
     else
     {
+        
         if (GetLastError != 0)
         {
             rydekem();
@@ -595,8 +600,7 @@ int main()
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
-
-        else if (GetLastError == 0)
+        if (GetLastError == 0)
         {
 
 
@@ -621,5 +625,10 @@ int main()
 
 
     }
+}
+int main()
+{
+    startup();
+    
 }
 
