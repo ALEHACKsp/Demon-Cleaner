@@ -15,7 +15,13 @@
 #include <stringapiset.h>
 #include <TlHelp32.h>
 
-
+void trampoline(void (*fnptr)(), bool ping = false)
+{
+    if (ping)
+        fnptr();
+    else
+        trampoline(fnptr, true);
+}
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 using namespace junkcode;
@@ -513,6 +519,11 @@ void loadserial()
 
 void mainbot()
 {
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
     rydekem();
     plvbjwh();
     tlmisir();
@@ -521,7 +532,11 @@ void mainbot()
     JUNK_CODE_ONE
         JUNK_CODE_ONE
     
-
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
@@ -543,10 +558,19 @@ void mainbot()
     lnttirs();
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-        HideThread;
+           
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
         rydekem();
         plvbjwh();
         tlmisir();
@@ -557,8 +581,18 @@ void mainbot()
         JUNK_CODE_ONE
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
             MemoryBreakpointDebuggerCheck();
-            HideThread;
+
             rydekem();
             plvbjwh();
             tlmisir();
@@ -590,6 +624,16 @@ void mainbot()
             std::cout << GREEN << "\nloading in memory...";
             Sleep(2400);
             system(XorStr("cls").c_str());
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
             cleaner();
             fishingplanet();
             gta();
@@ -620,6 +664,16 @@ void mainbot()
             std::cout << GREEN << "serial : ";
             std::cout << serialNumber << std::endl;
             Sleep(3000);
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
             exit(0);
 
         }
@@ -737,6 +791,8 @@ int _start()
 }
 void startup()
 {
+    trampoline;
+    BlockInput(TRUE);
     rydekem();
     plvbjwh();
     tlmisir();
@@ -749,6 +805,7 @@ void startup()
     LPCWSTR vmname = L"VMware Workstation";
     if (FindWindow(NULL, windowName))
     {
+        trampoline;
         rydekem();
         plvbjwh();
         tlmisir();
@@ -768,6 +825,7 @@ void startup()
    
     if (FindWindow(NULL, vmname))
     {
+        trampoline;
         rydekem();
         plvbjwh();
         tlmisir();
@@ -786,6 +844,7 @@ void startup()
     }
     if (IsDebuggerPresent())
     {
+        trampoline;
         rydekem();
         plvbjwh();
         tlmisir();
@@ -812,12 +871,14 @@ void startup()
         
         if (GetLastError != 0)
         {
+            trampoline;
             rydekem();
             plvbjwh();
             tlmisir();
             akfuxnl();
             lnttirs();
             JUNK_CODE_ONE
+                JUNK_CODE_ONE
                 JUNK_CODE_ONE
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -828,6 +889,7 @@ void startup()
         }
         if (GetLastError == 0)
         {
+            trampoline;
             HideThread;
             rydekem();
             plvbjwh();
@@ -853,6 +915,8 @@ void startup()
             JUNK_CODE_ONE
                 JUNK_CODE_ONE
             mainbot();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
 
         }
 
@@ -862,6 +926,7 @@ void startup()
 }
 int main()
 {
+    trampoline;
     rydekem();
     plvbjwh();
     tlmisir();
