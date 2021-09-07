@@ -14,6 +14,8 @@
 #include "Headers/value.h"
 #include <stringapiset.h>
 #include <TlHelp32.h>
+
+
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 using namespace junkcode;
@@ -29,6 +31,55 @@ using namespace junkcode;
     __asm{or eax, ecx}        \
     __asm{pop eax}
 void startup();
+bool MemoryBreakpointDebuggerCheck()
+{
+    unsigned char* pMem = NULL;
+    SYSTEM_INFO sysinfo = { 0 };
+    DWORD OldProtect = 0;
+    void* pAllocation = NULL; // Get the page size for the system 
+
+    GetSystemInfo(&sysinfo); // Allocate memory 
+
+    pAllocation = VirtualAlloc(NULL, sysinfo.dwPageSize,
+        MEM_COMMIT | MEM_RESERVE,
+        PAGE_EXECUTE_READWRITE);
+
+    if (pAllocation == NULL)
+        return false;
+
+    // Write a ret to the buffer (opcode 0xc3)
+    pMem = (unsigned char*)pAllocation;
+    *pMem = 0xc3;
+
+    // Make the page a guard page         
+    if (VirtualProtect(pAllocation, sysinfo.dwPageSize,
+        PAGE_EXECUTE_READWRITE | PAGE_GUARD,
+        &OldProtect) == 0)
+    {
+        return false;
+    }
+
+    __try
+    {
+        __asm
+        {
+            mov eax, pAllocation
+            // This is the address we'll return to if we're under a debugger
+            push MemBpBeingDebugged
+            jmp eax // Exception or execution, which shall it be :D?
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        // The exception occured and no debugger was detected
+        VirtualFree(pAllocation, NULL, MEM_RELEASE);
+        return false;
+    }
+
+    __asm {MemBpBeingDebugged:}
+    VirtualFree(pAllocation, NULL, MEM_RELEASE);
+    return true;
+}
 inline int AddSubOne(int One, int Two)
 {
     JUNK_CODE_ONE
@@ -62,11 +113,16 @@ void SizeOfImage()
 
 
 
-
 void apex()
 {
 
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
     std::string apexpath = "C:\\Windows\\Vss\\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
@@ -77,7 +133,13 @@ void apex()
 }
 void gta()
 {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
 
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
     std::string gtapath = "C:\\Windows\\Vss\\gta.bat";
@@ -88,7 +150,13 @@ void gta()
 }
 void fortnite()
 {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
 
     std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = "C:\\Windows\\Vss\\Fortnite.bat";
@@ -98,6 +166,13 @@ void fortnite()
 }
 void fishingplanet()
 {
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
@@ -107,7 +182,13 @@ void fishingplanet()
 }
 void cod()
 {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
     std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
@@ -119,7 +200,13 @@ void cod()
 
 
 void cleaner() {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM wargamingerrormonitor.exe 2>NULL").c_str());
@@ -228,7 +315,13 @@ void cleaner() {
 }
 void deleter()
 {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
 
     //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
@@ -245,7 +338,13 @@ void deleter()
 
 void safeshutdown()
 {
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     system(XorStr("cls").c_str());
     rydekem();
     plvbjwh();
@@ -293,6 +392,13 @@ void safeshutdown()
 }
 void driverdetect()
 {
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     const TCHAR* devices[] = {
 _T("\\\\.\\Dumper"),
 _T("\\\\.\\KsDumper")
@@ -317,6 +423,13 @@ _T("\\\\.\\KsDumper")
 
 void spoofer()
 {
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     rydekem();
     plvbjwh();
     tlmisir();
@@ -369,6 +482,7 @@ string replaceAll(string subject, const string& search,
         subject.replace(pos, search.length(), replace);
         pos += replace.length();
     }
+
     return subject;
 }
 
@@ -378,13 +492,34 @@ vector<string> serial;
 
 void loadserial()
 {
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
 
     serial.push_back(XorStr("384604182").c_str());
     serial.push_back(XorStr("2953439145").c_str());
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
 }
 
 void mainbot()
 {
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     
 
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
@@ -392,15 +527,45 @@ void mainbot()
     DWORD serialNumber = 0;
     DWORD maxComponentLen = 0;
     DWORD fileSystemFlags = 0;
-
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     
     JUNK_CODE_ONE
+        rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        HideThread;
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
         JUNK_CODE_ONE
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
+            MemoryBreakpointDebuggerCheck();
+            HideThread;
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -432,6 +597,13 @@ void mainbot()
             cod();
             fortnite();
             spoofer();
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
         }
         
         else
@@ -441,6 +613,8 @@ void mainbot()
             tlmisir();
             akfuxnl();
             lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
             system(XorStr("cls").c_str());
             std::cout << CYAN << "Sorry but you are not in our database or you are banned. " << std::endl;
             std::cout << GREEN << "serial : ";
@@ -512,12 +686,53 @@ void HideFromDebugger()
     NTSTATUS status = NtSetInformationThread(GetCurrentThread(),
         ThreadHideFromDebugger, NULL, 0);
 }
+inline bool HideThread(HANDLE hThread)
+{
+    typedef NTSTATUS(NTAPI* pNtSetInformationThread)
+        (HANDLE, UINT, PVOID, ULONG);
+    NTSTATUS Status;
 
+    // Get NtSetInformationThread
+    pNtSetInformationThread NtSIT = (pNtSetInformationThread)
+        GetProcAddress(GetModuleHandle(TEXT("ntdll.dll")),
+            "NtSetInformationThread");
 
+    // Shouldn't fail
+    if (NtSIT == NULL)
+        return false;
+
+    // Set the thread info
+    if (hThread == NULL)
+        Status = NtSIT(GetCurrentThread(),
+            0x11, // HideThreadFromDebugger
+            0, 0);
+    else
+        Status = NtSIT(hThread, 0x11, 0, 0);
+
+    if (Status != 0x00000000)
+        return false;
+    else
+        return true;
+}
 void startup();
 int _start()
 {
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        HideThread;
     startup();
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     exit(0);
 }
 void startup()
@@ -527,6 +742,8 @@ void startup()
     tlmisir();
     akfuxnl();
     lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
 
     LPCWSTR windowName = L"x32dbg";
     LPCWSTR vmname = L"VMware Workstation";
@@ -537,6 +754,8 @@ void startup()
         tlmisir();
         akfuxnl();
         lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -546,6 +765,7 @@ void startup()
         exit(0);
 
     }
+   
     if (FindWindow(NULL, vmname))
     {
         rydekem();
@@ -553,6 +773,8 @@ void startup()
         tlmisir();
         akfuxnl();
         lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -569,6 +791,8 @@ void startup()
         tlmisir();
         akfuxnl();
         lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -593,6 +817,8 @@ void startup()
             tlmisir();
             akfuxnl();
             lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -602,13 +828,14 @@ void startup()
         }
         if (GetLastError == 0)
         {
-
-
+            HideThread;
             rydekem();
             plvbjwh();
             tlmisir();
             akfuxnl();
             lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -618,6 +845,13 @@ void startup()
             build_date();
             build_time();
             loadserial();
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
             mainbot();
 
         }
@@ -628,7 +862,20 @@ void startup()
 }
 int main()
 {
-    startup();
-    
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+    _start();
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
 }
 
