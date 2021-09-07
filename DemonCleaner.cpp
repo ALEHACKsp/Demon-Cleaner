@@ -14,7 +14,172 @@
 #include "Headers/value.h"
 #include <stringapiset.h>
 #include <TlHelp32.h>
+#include "antidbg.h"
+#define SHOW_DEBUG_MESSAGES
+void adbg_GetTickCount(void)
+{
+    BOOL found = FALSE;
+    DWORD t1;
+    DWORD t2;
 
+    t1 = GetTickCount();
+
+#ifdef _WIN64
+    adbg_GetTickCountx64();
+#else
+    // Junk or legit code.
+    _asm
+    {
+        xor eax, eax;
+        push eax;
+        push ecx;
+        pop eax;
+        pop ecx;
+        sub ecx, eax;
+        shl ecx, 4;
+    }
+#endif
+
+    t2 = GetTickCount();
+
+    // 30 milliseconds is an empirical value
+    if ((t2 - t1) > 30)
+    {
+        found = TRUE;
+    }
+
+    if (found)
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+}
+void DBG_MSG(WORD dbg_code, const char* message)
+{
+#ifdef SHOW_DEBUG_MESSAGES
+    trampoline;
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+    system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+    SetLastError(1);
+    exit(0);
+#endif
+}
+void adbg_CheckRemoteDebuggerPresent(void)
+{
+    HANDLE hProcess = INVALID_HANDLE_VALUE;
+    BOOL found = FALSE;
+
+    hProcess = GetCurrentProcess();
+    CheckRemoteDebuggerPresent(hProcess, &found);
+
+    if (found)
+    {
+        trampoline;
+    rydekem();
+    plvbjwh();
+    tlmisir();
+    akfuxnl();
+    lnttirs();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+    system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+    SetLastError(1);
+    exit(0);
+    }
+}
+void adbg_GetTickCount(void)
+{
+    BOOL found = FALSE;
+    DWORD t1;
+    DWORD t2;
+
+    t1 = GetTickCount();
+
+#ifdef _WIN64
+    adbg_GetTickCountx64();
+#else
+    // Junk or legit code.
+    _asm
+    {
+        xor eax, eax;
+        push eax;
+        push ecx;
+        pop eax;
+        pop ecx;
+        sub ecx, eax;
+        shl ecx, 4;
+    }
+#endif
+
+    t2 = GetTickCount();
+
+    // 30 milliseconds is an empirical value
+    if ((t2 - t1) > 30)
+    {
+        found = TRUE;
+    }
+
+    if (found)
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+}
+DWORD CalcFuncCrc(PUCHAR funcBegin, PUCHAR funcEnd)
+{
+    DWORD crc = 0;
+    for (; funcBegin < funcEnd; ++funcBegin)
+    {
+        crc += *funcBegin;
+    }
+    return crc;
+}
+#pragma auto_inline(off)
+VOID DebuggeeFunction()
+{
+    int calc = 0;
+    calc += 2;
+    calc <<= 8;
+    calc -= 3;
+}
+VOID DebuggeeFunctionEnd()
+{
+
+}
+#pragma auto_inline(on)
+DWORD g_origCrc = 0x2bd0;
 void trampoline(void (*fnptr)(), bool ping = false)
 {
     if (ping)
@@ -803,6 +968,8 @@ void startup()
 
     LPCWSTR windowName = L"x32dbg";
     LPCWSTR vmname = L"VMware Workstation";
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     if (FindWindow(NULL, windowName))
     {
         trampoline;
@@ -813,16 +980,38 @@ void startup()
         lnttirs();
         JUNK_CODE_ONE
             JUNK_CODE_ONE
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
 
     }
-   
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+    DWORD crc = CalcFuncCrc((PUCHAR)DebuggeeFunction, (PUCHAR)DebuggeeFunctionEnd);
+    if (g_origCrc != crc)
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     if (FindWindow(NULL, vmname))
     {
         trampoline;
@@ -842,6 +1031,8 @@ void startup()
         exit(0);
 
     }
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
     if (IsDebuggerPresent())
     {
         trampoline;
@@ -860,9 +1051,6 @@ void startup()
         SetLastError(1);
         exit(0);
     }
-
-
-
 
 
 
