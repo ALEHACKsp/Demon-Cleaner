@@ -213,17 +213,7 @@ using namespace junkcode;
 void startup();
 bool MemoryBreakpointDebuggerCheck()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
+
     unsigned char* pMem = NULL;
     SYSTEM_INFO sysinfo = { 0 };
     DWORD OldProtect = 0;
