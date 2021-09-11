@@ -1,3 +1,4 @@
+
 #include <iostream>
 #include "Headers/xorstr.hpp"
 #include <string>
@@ -16,10 +17,10 @@
 #include <TlHelp32.h>
 #include "Headers/antidbg.h"
 #include <cstdio>
-
-using namespace junkcode
+using namespace junkcode;
 
 #define SHOW_DEBUG_MESSAGES
+
 int CheckTEB()
 {
     int isBeingDebugged = 0;
@@ -138,7 +139,7 @@ void adbg_CheckRemoteDebuggerPresent(void)
         exit(0);
     }
 }
-using namespace junkcode
+
 DWORD CalcFuncCrc(PUCHAR funcBegin, PUCHAR funcEnd)
 {
     DWORD crc = 0;
