@@ -15,7 +15,24 @@
 #include <stringapiset.h>
 #include <TlHelp32.h>
 #include "antidbg.h"
+#include <cstdio>
 #define SHOW_DEBUG_MESSAGES
+bool IsProcessRunning(const wchar_t* processName)
+{
+    bool exists = false;
+    PROCESSENTRY32 entry;
+    entry.dwSize = sizeof(PROCESSENTRY32);
+
+    HANDLE snapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, NULL);
+
+    if (Process32First(snapshot, &entry))
+        while (Process32Next(snapshot, &entry))
+            if (!_wcsicmp(entry.szExeFile, processName))
+                exists = true;
+
+    CloseHandle(snapshot);
+    return exists;
+}
 void adbg_GetTickCount(void)
 {
     BOOL found = FALSE;
@@ -912,7 +929,7 @@ void startup()
     
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-    DWORD crc = CalcFuncCrc((PUCHAR)DebuggeeFunction, (PUCHAR)DebuggeeFunctionEnd);
+
     
     JUNK_CODE_ONE
         JUNK_CODE_ONE
@@ -935,6 +952,7 @@ void startup()
             SetLastError(1);
             exit(0);
         }
+    
         if (FindWindow(NULL, windowName))
         {
             trampoline;
@@ -954,6 +972,7 @@ void startup()
             exit(0);
 
         }
+     
     if (FindWindow(NULL, vmname))
     {
         trampoline;
@@ -979,24 +998,7 @@ void startup()
        
 
 
-        if (GetLastError != 0)
-        {
-            trampoline;
-            rydekem();
-            plvbjwh();
-            tlmisir();
-            akfuxnl();
-            lnttirs();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
-            exit(0);
-        }
+        
 
         if (GetLastError == 0)
         {
@@ -1041,8 +1043,193 @@ void startup()
 
 int main()
 {
-
-    _start();
+    if (IsProcessRunning(L"ida.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"ida64.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"x32dbg.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"x64dbg.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"idaq.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"idaq64.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (GetLastError != 0)
+    {
+        
+            trampoline;
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
+            exit(0);
+        
+    }
+    if (GetLastError == 0)
+    {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+        _start();
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+    }
+    else
+    {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Error && ECHO An error has ocured. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+    }
+    
         
     
 }
