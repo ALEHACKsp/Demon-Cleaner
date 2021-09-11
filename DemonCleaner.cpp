@@ -1062,6 +1062,139 @@ int main()
         SetLastError(1);
         exit(0);
     }
+    if (IsProcessRunning(L"ProcessHacker.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"Fiddler.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"Fiddler.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"Wireshark.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"PETools.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"procexp.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"ImmunityDebugger.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
     if (IsProcessRunning(L"ida64.exe"))
     {
         trampoline;
@@ -1081,6 +1214,44 @@ int main()
         SetLastError(1);
         exit(0);
     }
+    if (IsProcessRunning(L"windbg.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"httpdebugger.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
     if (IsProcessRunning(L"x32dbg.exe"))
     {
         trampoline;
@@ -1096,7 +1267,7 @@ int main()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO IDA x32dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1115,7 +1286,7 @@ int main()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1154,6 +1325,25 @@ int main()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(L"ollydbg.exe"))
+    {
+        trampoline;
+        rydekem();
+        plvbjwh();
+        tlmisir();
+        akfuxnl();
+        lnttirs();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
