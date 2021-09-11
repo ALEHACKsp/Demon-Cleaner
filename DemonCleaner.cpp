@@ -892,12 +892,11 @@ int _start()
     lnttirs();
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-    exit(0);
+
 }
 void startup()
 {
-    trampoline;
-    BlockInput(TRUE);
+    
     rydekem();
     plvbjwh();
     tlmisir();
@@ -917,6 +916,25 @@ void startup()
     
     JUNK_CODE_ONE
         JUNK_CODE_ONE
+
+        if (IsDebuggerPresent())
+        {
+            trampoline;
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+            SetLastError(1);
+            exit(0);
+        }
         if (FindWindow(NULL, windowName))
         {
             trampoline;
@@ -957,29 +975,9 @@ void startup()
     }
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-    if (IsDebuggerPresent())
-    {
-        trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
 
+       
 
-
-    else
-    {
 
         if (GetLastError != 0)
         {
@@ -999,15 +997,14 @@ void startup()
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
+
         if (GetLastError == 0)
         {
-            trampoline;
-            HideThread;
+
+
             rydekem();
             plvbjwh();
             tlmisir();
-            akfuxnl();
-            lnttirs();
             JUNK_CODE_ONE
                 JUNK_CODE_ONE
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
@@ -1020,40 +1017,32 @@ void startup()
             build_time();
             loadserial();
             rydekem();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+
+            rydekem();
             plvbjwh();
             tlmisir();
             akfuxnl();
             lnttirs();
             JUNK_CODE_ONE
                 JUNK_CODE_ONE
-            mainbot();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
+                mainbot();
+            rydekem();
+            plvbjwh();
+            
+
                 
         }
 
         
 
     }
-}
+
 int main()
 {
-    trampoline;
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
+
     _start();
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
         
     
 }
