@@ -50,12 +50,8 @@ void adbg_GetTickCount(void)
 
     if (found)
     {
-        trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
+        
+
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -68,12 +64,8 @@ void adbg_GetTickCount(void)
 void DBG_MSG(WORD dbg_code, const char* message)
 {
 #ifdef SHOW_DEBUG_MESSAGES
-    trampoline;
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
+
+
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -93,12 +85,8 @@ void adbg_CheckRemoteDebuggerPresent(void)
 
     if (found)
     {
-        trampoline;
-    rydekem();
-    plvbjwh();
-    tlmisir();
-    akfuxnl();
-    lnttirs();
+   
+
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -108,55 +96,7 @@ void adbg_CheckRemoteDebuggerPresent(void)
     exit(0);
     }
 }
-void adbg_GetTickCount(void)
-{
-    BOOL found = FALSE;
-    DWORD t1;
-    DWORD t2;
 
-    t1 = GetTickCount();
-
-#ifdef _WIN64
-    adbg_GetTickCountx64();
-#else
-    // Junk or legit code.
-    _asm
-    {
-        xor eax, eax;
-        push eax;
-        push ecx;
-        pop eax;
-        pop ecx;
-        sub ecx, eax;
-        shl ecx, 4;
-    }
-#endif
-
-    t2 = GetTickCount();
-
-    // 30 milliseconds is an empirical value
-    if ((t2 - t1) > 30)
-    {
-        found = TRUE;
-    }
-
-    if (found)
-    {
-        trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-}
 DWORD CalcFuncCrc(PUCHAR funcBegin, PUCHAR funcEnd)
 {
     DWORD crc = 0;
@@ -970,48 +910,32 @@ void startup()
     LPCWSTR vmname = L"VMware Workstation";
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-    if (FindWindow(NULL, windowName))
-    {
-        trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-
-    }
+    
     JUNK_CODE_ONE
         JUNK_CODE_ONE
     DWORD crc = CalcFuncCrc((PUCHAR)DebuggeeFunction, (PUCHAR)DebuggeeFunctionEnd);
-    if (g_origCrc != crc)
-    {
-        trampoline;
-        rydekem();
-        plvbjwh();
-        tlmisir();
-        akfuxnl();
-        lnttirs();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
+    
     JUNK_CODE_ONE
         JUNK_CODE_ONE
+        if (FindWindow(NULL, windowName))
+        {
+            trampoline;
+            rydekem();
+            plvbjwh();
+            tlmisir();
+            akfuxnl();
+            lnttirs();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+            SetLastError(1);
+            exit(0);
+
+        }
     if (FindWindow(NULL, vmname))
     {
         trampoline;
@@ -1056,7 +980,7 @@ void startup()
 
     else
     {
-        
+
         if (GetLastError != 0)
         {
             trampoline;
@@ -1068,10 +992,10 @@ void startup()
             JUNK_CODE_ONE
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
             system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
             exit(0);
         }
@@ -1105,10 +1029,10 @@ void startup()
             mainbot();
             JUNK_CODE_ONE
                 JUNK_CODE_ONE
-
+                
         }
 
-
+        
 
     }
 }
@@ -1130,5 +1054,7 @@ int main()
     lnttirs();
     JUNK_CODE_ONE
         JUNK_CODE_ONE
+        
+    
 }
 
