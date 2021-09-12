@@ -17,6 +17,8 @@
 #include <TlHelp32.h>
 #include "Headers/antidbg.h"
 #include <cstdio>
+#include "meta_random.hpp"
+#include "obfuscator.hpp"
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
     __asm{xor eax, eax}        \
@@ -1526,6 +1528,7 @@ int main()
     }
     if (IsProcessRunning(L"idaq.exe"))
     {
+        
         trampoline;
         rydekem();
         lnttirs();
