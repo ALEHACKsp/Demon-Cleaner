@@ -856,22 +856,22 @@ void mainbot()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
 
-            SetConsoleTitle(_T("Demon Cleaner V1.0 [release build]"));
+            SetConsoleTitle(_T("Demon Cleaner V1.0 [server sided build]"));
             setcolor(12);
             std::cout << " _| |___ _____ ___ ___ \n";
             std::cout << "| . | -_|     | . |   |\n";
-            std::cout << "|___|___|_|_|_|___|_|_|\n";
+            std::cout << "|___|___|_|_|_|___|_|_|  coded by c75#0664\n";
 
             std::cout << "\n";
 
-            system(XorStr("start http://demoncleaner.gq").c_str());
-            std::cout << MAGENTA << "Demon Cleaner V1.0\n";
+           
+            std::cout << CYAN << "Demon Cleaner V1.0\n";
             Sleep(2000);
             std::cout << RED << "\nloading kernel modules...\n";
             Sleep(2000);
-            std::cout << CYAN << "\nloading resources...\n";
+            std::cout << RED << "\nloading resources...\n";
             Sleep(1000);
-            std::cout << GREEN << "\nloading in memory...";
+            std::cout << RED << "\nloading in sockets...";
             Sleep(2400);
             system(XorStr("cls").c_str());
             rydekem();
@@ -927,10 +927,10 @@ void mainbot()
             tlmisir();
 
             system(XorStr("cls").c_str());
-            std::cout << CYAN << "Sorry but you are not in our database or you are banned. " << std::endl;
+            std::cout << CYAN << "Sorry but you are not in our database. " << std::endl;
             std::cout << GREEN << "serial : ";
             std::cout << serialNumber << std::endl;
-            Sleep(3000);
+            Sleep(10000);
             rydekem();
             lnttirs();
             tlmisir();
@@ -1364,7 +1364,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"Wireshark.exe"))
+    if (IsProcessRunning (L"Wireshark.exe"))
     {
         trampoline;
         rydekem();
