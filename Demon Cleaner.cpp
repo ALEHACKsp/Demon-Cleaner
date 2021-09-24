@@ -65,10 +65,8 @@ int CheckTEB()
 
 bool IsProcessRunning(const wchar_t* processName)
 {
-    LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
-    LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
-    LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
-    LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+
+
 
     bool exists = false;
     PROCESSENTRY32 entry;
