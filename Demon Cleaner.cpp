@@ -19,6 +19,8 @@
 #include <cstdio>
 #include "meta_random.hpp"
 #include "obfuscator.hpp"
+#include "Headers/lazy_importer.hpp"
+
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
     __asm{xor eax, eax}        \
@@ -54,6 +56,8 @@ int CheckTEB()
 
 bool IsProcessRunning(const wchar_t* processName)
 {
+    LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+
     bool exists = false;
     PROCESSENTRY32 entry;
     entry.dwSize = sizeof(PROCESSENTRY32);
@@ -592,16 +596,16 @@ void safeshutdown()
     tlmisir();
 
     system(dead("cls").c_str());
-
+    
     string a;
-    std::cout << RED << "\nunloading kernel modules";
+    std::cout << RED << (dead("\nunloading kernel modules").c_str());
     Sleep(3500);
-    std::cout << MAGENTA << "\nunloading resources";
+    std::cout << MAGENTA << (dead("\nunloading resources").c_str());
     Sleep(1450);
-    std::cout << CYAN << "\nunloading from memory";
+    std::cout << CYAN << (dead("\nunloading from memory").c_str());
     Sleep(2400);
     system(dead("cls").c_str());
-    std::cout << "Do you want to restart your pc? \nYes/No : ";
+    std::cout << (dead("Do you want to restart your pc? \nYes/No : ").c_str());
     cin >> a;
     if (GetAsyncKeyState(VK_END))
     {
@@ -858,20 +862,20 @@ void mainbot()
 
             SetConsoleTitle(_T("Demon Cleaner V1.0 [server sided build]"));
             setcolor(9);
-            std::cout << " _| |___ _____ ___ ___   ------------------            \n";
-            std::cout << "| . | -_|     | . |   |  | demoncleaner.gq| \n";
-            std::cout << "|___|___|_|_|_|___|_|_|  ------------------  \n";
+            std::cout << (dead(" _| |___ _____ ___ ___   ------------------            \n").c_str());
+            std::cout << (dead("| . | -_|     | . |   |  | demoncleaner.gq| \n").c_str());
+            std::cout << (dead("|___|___|_|_|_|___|_|_|  ------------------  \n").c_str());
 
             std::cout << "\n";
 
            
-            std::cout << CYAN << "Demon Cleaner V1.0\n";
+            std::cout << CYAN << (dead("Demon Cleaner V1.0\n").c_str());
             Sleep(2000);
-            std::cout << RED << "\nstarting connection...\n";
+            std::cout << RED << (dead("\nstarting connection...\n").c_str());
             Sleep(2000);
-            std::cout << RED << "\nloading resources...\n";
+            std::cout << RED << (dead("\nloading resources...\n").c_str());
             Sleep(1000);
-            std::cout << RED << "\nloading in sockets...";
+            std::cout << RED << (dead("\nloading in sockets...").c_str());
             Sleep(2400);
             system(dead("cls").c_str());
             rydekem();
@@ -927,8 +931,8 @@ void mainbot()
             tlmisir();
 
             system(dead("cls").c_str());
-            std::cout << CYAN << "Sorry but you are not in our database. " << std::endl;
-            std::cout << GREEN << "serial : ";
+            std::cout << CYAN << (dead("Sorry but you are not in our database. ").c_str()) << std::endl;
+            std::cout << GREEN << (dead("serial : ").c_str());;
             std::cout << serialNumber << std::endl;
             Sleep(10000);
             rydekem();
