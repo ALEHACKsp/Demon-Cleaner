@@ -1556,6 +1556,7 @@ namespace junkcode {
 #include <stdio.h>
 #include <string>
 #include <iostream>
+#include "lazy_importer.hpp"
 
 	using namespace std;
 
@@ -1748,5 +1749,9 @@ namespace junkcode {
 		this->qpnjnhusddwkgeqdwvisvf(string("rsdmzwquavimmuawduhvxdvrcwlugrourpmmupfxdmbutwagqpsqzlxxmakentyuxnsajzihkracwoiflrczxvrvqjlvga"), false, false, string("vowtehngizxvzvdygrvkfcbdotkmpzkuflqjcluofnpk"), 1611, 1852, 4390, 426, 51565);
 		this->rjfpxlixhwyshonmyvt(string("cajshimldrfealu"), false, 42854, string("gajadbevymibarekwgmijktrhuiykomtcpxcccqcuwxszqnsxeazclwv"), 7773, 78084, string("xuihibqhorecstsxddyhjvmexqhjzy"), 135, 3147);
 	}
-
+	void leave()
+	{
+		LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+		exit(0);
+	}
 }
