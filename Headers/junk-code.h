@@ -117,7 +117,7 @@ void adbg_GetTickCount(void)
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
 }
 void DBG_MSG(WORD dbg_code, const char* message)
@@ -141,7 +141,7 @@ void DBG_MSG(WORD dbg_code, const char* message)
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
     system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
     SetLastError(1);
-    leave();
+    exit(0);
 #endif
 }
 void adbg_CheckRemoteDebuggerPresent(void)
@@ -175,7 +175,7 @@ void adbg_CheckRemoteDebuggerPresent(void)
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
 }
 
@@ -610,13 +610,13 @@ void safeshutdown()
     if (a == "Yes" || a == "yes")
     {
         system(dead("shutdown -r").c_str());
-        leave();
+        exit(0);
     }
 
     else
     {
-        leave();
-        return leave();
+        exit(0);
+        return exit(0);
     }
 
 
@@ -651,7 +651,7 @@ _T("\\\\.\\KsDumper")
         if (hFile != INVALID_HANDLE_VALUE) {
             system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO KsDumper Detected. && TIMEOUT 10 >nul").c_str());
             SetLastError(1);
-            leave();
+            exit(0);
         }
         else
         {
@@ -934,7 +934,7 @@ void mainbot()
             rydekem();
             lnttirs();
             tlmisir();
-            leave();
+            exit(0);
 
         }
 
@@ -1112,7 +1112,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     lnttirs();
     tlmisir();
@@ -1135,7 +1135,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     rydekem();
     lnttirs();
@@ -1159,7 +1159,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
 
     }
     rydekem();
@@ -1184,7 +1184,7 @@ void startup()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
 
     }
 
@@ -1286,7 +1286,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     rydekem();
     lnttirs();
@@ -1315,7 +1315,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
 
     if (IsProcessRunning(dead(L"Fiddler.exe").c_str()))
@@ -1334,7 +1334,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"Wireshark.exe").c_str()))
     {
@@ -1352,7 +1352,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"PETools.exe").c_str()))
     {
@@ -1370,7 +1370,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"procexp.exe").c_str()))
     {
@@ -1388,7 +1388,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"ImmunityDebugger.exe").c_str()))
     {
@@ -1406,7 +1406,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"ida64.exe").c_str()))
     {
@@ -1424,7 +1424,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"windbg.exe").c_str()))
     {
@@ -1442,7 +1442,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"httpdebugger.exe").c_str()))
     {
@@ -1460,7 +1460,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"x32dbg.exe").c_str()))
     {
@@ -1478,7 +1478,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO IDA x32dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"x64dbg.exe").c_str()))
     {
@@ -1496,7 +1496,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"idaq.exe").c_str())
     {
@@ -1515,7 +1515,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"idaq64.exe").c_str()))
     {
@@ -1534,7 +1534,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (IsProcessRunning(dead(L"ollydbg.exe").c_str()))
     {
@@ -1553,7 +1553,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
-        leave();
+        exit(0);
     }
     if (GetLastError != 0)
     {
@@ -1571,7 +1571,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
-        leave();
+        exit(0);
 
     }
     if (GetLastError == 0)
@@ -1629,7 +1629,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Error && ECHO An error has ocured. && TIMEOUT 10 >nul").c_str());
-        leave();
+        exit(0);
     }
 
 
