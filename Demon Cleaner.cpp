@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include "Headers/xorstr.hpp"
+#include "Headers/dead.hpp"
 #include <string>
 #include <windows.h>
 #include <Urlmon.h>
