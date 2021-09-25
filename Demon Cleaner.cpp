@@ -1,11 +1,10 @@
-
 #include <iostream>
 #include "Headers/dead.hpp"
 #include <string>
 #include <windows.h>
 #include <Urlmon.h>
 #include "Headers/junk-code.h"
-#include <Wininet.h>
+#include <WinInet.h>
 #include <stdlib.h>
 #include <vector>
 #include <tchar.h>
@@ -61,6 +60,19 @@ int CheckTEB()
         pop ecx
     }
     return isBeingDebugged;
+    if (isBeingDebugged)
+    {
+        trampoline;
+
+
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
 }
 
 bool IsProcessRunning(const wchar_t* processName)
@@ -1138,6 +1150,7 @@ void startup()
         SetLastError(1);
         exit(0);
     }
+    CheckTEB();
     adbg_CheckRemoteDebuggerPresent();
     
     rydekem();
