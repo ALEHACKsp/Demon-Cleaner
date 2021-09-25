@@ -917,7 +917,7 @@ void mainbot()
 
             system(dead("cls").c_str());
             std::cout << CYAN << (dead("Sorry but you are not in our database. ").c_str()) << std::endl;
-            std::cout << GREEN << (dead("serial : ").c_str());;
+            std::cout << GREEN << (dead("Hwid : ").c_str());;
             std::cout << serialNumber << std::endl;
             Sleep(10000);
             rydekem();
