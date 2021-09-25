@@ -22,6 +22,7 @@
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
 int main()
 {
+    SetConsoleTitle("Demon Cleaner V1.0");
     if (IsDebuggerPresent())
     {
 
