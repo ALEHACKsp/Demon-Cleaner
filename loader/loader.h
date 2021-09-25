@@ -89,6 +89,7 @@ void loadserial()
     tlmisir();
 
     bool checkconnection = InternetCheckConnection("https://google.com/", FLAG_ICC_FORCE_CONNECTION, 0);
+    
     if (!checkconnection)
     {
         cout << dead("You are not connected to internet...");
@@ -112,6 +113,7 @@ void loadserial()
 
 
     serial.push_back(dead("384604182").c_str());
+    JUNK_CODE_ONE
     serial.push_back(dead("2953439145").c_str());
     rydekem();
     lnttirs();
@@ -161,6 +163,11 @@ void mainbot()
 
 
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
     while (true)
     {
         rydekem();
@@ -218,6 +225,11 @@ void mainbot()
                     _emit 0xFD
                     Label5:
             }
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
             string filename = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
             ifstream ifile(filename);
             if (ifile)
