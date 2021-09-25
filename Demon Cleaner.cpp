@@ -1480,7 +1480,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO IDA x32dbg detected. && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO x32dbg detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
     }
