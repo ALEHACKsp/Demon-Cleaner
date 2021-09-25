@@ -1,4 +1,4 @@
-#include "../Demon Cleaner/Headers/xorstr.hpp"
+#include "../Demon Cleaner/Headers/dead.hpp"
 #include <string>
 #include <windows.h>
 #include <Urlmon.h>
