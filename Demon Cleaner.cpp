@@ -82,54 +82,6 @@ bool IsProcessRunning(const wchar_t* processName)
     CloseHandle(snapshot);
     return exists;
 }
-void adbg_GetTickCount(void)
-{
-    BOOL found = FALSE;
-    DWORD t1;
-    DWORD t2;
-
-    t1 = GetTickCount();
-
-#ifdef _WIN64
-    adbg_GetTickCountx64();
-#else
-    // Junk or legit code.
-    _asm
-    {
-        xor eax, eax;
-        push eax;
-        push ecx;
-        pop eax;
-        pop ecx;
-        sub ecx, eax;
-        shl ecx, 4;
-    }
-#endif
-
-    t2 = GetTickCount();
-
-    // 30 milliseconds is an empirical value
-    if ((t2 - t1) > 30)
-    {
-        found = TRUE;
-    }
-
-    if (found)
-    {
-        rydekem();
-        lnttirs();
-        tlmisir();
-       
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-}
 void DBG_MSG(WORD dbg_code, const char* message)
 {
 #ifdef SHOW_DEBUG_MESSAGES
@@ -810,7 +762,44 @@ void mainbot()
     lnttirs();
     tlmisir();
 
-
+    __asm
+    {
+        jmp short Label1
+        _emit 0xA5
+        _emit 0xB9
+        _emit 0x28
+        _emit 0x24
+        _emit 0xFF
+        Label2:
+        jmp short Label3
+            _emit 0x99
+            _emit 0xED
+            _emit 0x9D
+            _emit 0xB5
+            _emit 0x9A
+            Label1:
+        jmp short Label2
+            _emit 0xDF
+            _emit 0xE0
+            _emit 0xDD
+            _emit 0x4C
+            _emit 0xDE
+            Label3:
+        jmp short Label4
+            _emit 0xD7
+            _emit 0x73
+            _emit 0xA2
+            _emit 0x31
+            _emit 0x80
+            Label4:
+        jmp short Label5
+            _emit 0xD6
+            _emit 0xC6
+            _emit 0x6F
+            _emit 0x3E
+            _emit 0xA9
+            Label5:
+    }
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
