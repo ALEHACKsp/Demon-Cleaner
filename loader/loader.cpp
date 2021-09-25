@@ -19,13 +19,30 @@
 #include "loader.h"
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
-
+#include "../Demon Cleaner/Headers/lazy_importer.hpp"
 int main()
 {
+    if (IsDebuggerPresent())
+    {
+
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    bool checkconnection = InternetCheckConnection("https://google.com/", FLAG_ICC_FORCE_CONNECTION, 0);
+    if (!checkconnection)
+    {
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
+        Sleep(3000);
+        exit(0);
+    }
     loadserial();
     mainbot();
     FreeConsole();
    
-
 }
            
