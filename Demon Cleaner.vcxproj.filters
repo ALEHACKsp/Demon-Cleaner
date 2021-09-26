@@ -20,60 +20,62 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\antidbg.h">
+    <ClInclude Include="Headers\allocator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\allocator.h">
+    <ClInclude Include="Headers\antidbg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\assertions.h">
+    <ClInclude Include="Headers\assertions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\color.hpp">
+    <ClInclude Include="Headers\color.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\config.h">
+    <ClInclude Include="Headers\config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\forwards.h">
+    <ClInclude Include="Headers\forwards.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\json.h">
+    <ClInclude Include="Headers\json.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\json.hpp">
+    <ClInclude Include="Headers\json.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\json_features.h">
+    <ClInclude Include="Headers\json_features.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\junk-code.h">
+    <ClInclude Include="Headers\junk-code.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\reader.h">
+    <ClInclude Include="Headers\reader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\value.h">
+    <ClInclude Include="Headers\value.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\version.h">
+    <ClInclude Include="Headers\version.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\writer.h">
+    <ClInclude Include="Headers\writer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\xorstr.hpp">
+    <ClInclude Include="Headers\dead.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="meta_random.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="obfuscator.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Headers\lazy_importer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\cleaner\DemonCleaner\resource.aps">
-      <Filter>Resource Files</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="..\..\cleaner\DemonCleaner\resource.rc">
-      <Filter>Resource Files</Filter>
-    </ResourceCompile>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>
