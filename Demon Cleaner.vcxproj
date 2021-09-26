@@ -76,6 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>.\bin</OutDir>
+    <TargetName>demon</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -97,7 +98,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>Level3</WarningLevel>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
@@ -144,27 +145,27 @@
     <ClCompile Include="Demon Cleaner.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\cleaner\DemonCleaner\antidbg.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\allocator.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\assertions.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\color.hpp" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\config.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\forwards.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\json.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\json.hpp" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\json_features.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\junk-code.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\reader.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\value.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\version.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\writer.h" />
-    <ClInclude Include="..\..\cleaner\DemonCleaner\Headers\xorstr.hpp" />
+    <ClInclude Include="Headers\allocator.h" />
+    <ClInclude Include="Headers\antidbg.h" />
+    <ClInclude Include="Headers\assertions.h" />
+    <ClInclude Include="Headers\color.hpp" />
+    <ClInclude Include="Headers\config.h" />
+    <ClInclude Include="Headers\forwards.h" />
+    <ClInclude Include="Headers\json.h" />
+    <ClInclude Include="Headers\json.hpp" />
+    <ClInclude Include="Headers\json_features.h" />
+    <ClInclude Include="Headers\junk-code.h" />
+    <ClInclude Include="Headers\lazy_importer.hpp" />
+    <ClInclude Include="Headers\reader.h" />
+    <ClInclude Include="Headers\value.h" />
+    <ClInclude Include="Headers\version.h" />
+    <ClInclude Include="Headers\writer.h" />
+    <ClInclude Include="Headers\dead.hpp" />
+    <ClInclude Include="meta_random.hpp" />
+    <ClInclude Include="obfuscator.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\cleaner\DemonCleaner\resource.aps" />
-  </ItemGroup>
-  <ItemGroup>
-    <ResourceCompile Include="..\..\cleaner\DemonCleaner\resource.rc" />
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
