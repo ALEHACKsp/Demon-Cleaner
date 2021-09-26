@@ -1,21 +1,20 @@
-#include <iostream>
-#include <string>
-#include <windows.h>
-#include <Urlmon.h>
-#include <Wininet.h>
-#include <stdlib.h>
-#include <vector>
-#include <tchar.h>
-#include <iostream>
+#include <Windows.h>
 
-#pragma comment(lib, "urlmon.lib")
-
-
-int main()
+BOOL WINAPI Main(HMODULE hmodule)
 {
-	int a = 20;
-	while (a = 20)
+	MessageBoxA(0, "server.dll was attached", "OK", MB_OK);
+	return;
+}
+
+BOOL APIENTRY DllMain(HMODULE module, DWORD Attach, LPVOID lpReserved)
+{
+	switch (Attach)
 	{
-		a * 2;
+	case DLL_PROCESS_ATTACH:
+		DisableThreadLibraryCalls(module);
+		CreateThread(0, 0, (LPTHREAD_START_ROUTINE)Main, 0, 0, 0);
+	case DLL_PROCESS_DETACH:
+		break;
 	}
+	return TRUE;
 }
