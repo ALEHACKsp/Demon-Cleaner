@@ -20,9 +20,63 @@
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
+BOOL IsSandboxie()
+{
+    if (GetModuleHandle("SbieDll.dll") != NULL)
+        exit(0);
+
+
+    return FALSE;
+}
+auto RandomTitle = [](int iterations) {
+    std::string Title;
+    for (int i = 0; i < iterations; i++)
+        Title += rand() % 255 + 1;
+    return Title;
+};
+BOOL IsVMware()
+{
+    BOOL bDetected = FALSE;
+
+    __try
+    {
+        __asm
+        {
+            mov    ecx, 0Ah
+            mov    eax, 'VMXh'
+            mov    dx, 'VX'
+            in    eax, dx
+            cmp    ebx, 'VMXh'
+            sete    al
+            movzx   eax, al
+            mov    bDetected, eax
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return FALSE;
+    }
+
+    return bDetected;
+    if (bDetected)
+    {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE VM Detected && ECHO You got detected using VM Workstation . && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+    }
+}
 int main()
 {
-    SetConsoleTitle("Demon Cleaner V1.0");
+    
+    SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
+
     if (IsDebuggerPresent())
     {
 
@@ -39,6 +93,8 @@ int main()
     }
     if (GetLastError == 0)
     {
+        IsSandboxie();
+        IsVMware();
         bool checkconnection = InternetCheckConnection("https://google.com/", FLAG_ICC_FORCE_CONNECTION, 0);
         if (!checkconnection)
         {
@@ -49,25 +105,28 @@ int main()
             LI_FN(VirtualProtect).in(LI_MODULE("ntdll").cached());
             LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
         }
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        loadserial();
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        mainbot();
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        FreeConsole();
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            loadserial();
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            mainbot();
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+            FreeConsole();
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
+        
 
     }
     else
