@@ -74,10 +74,8 @@ BOOL IsVMware()
 int main()
 {
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
-
-
     injector();
-    Sleep(1000);
+
 
     
 
