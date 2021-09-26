@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <vector>
 #include <tchar.h>
+#include <time.h>
 #include "Headers/color.hpp"
 #include "Headers/json.hpp"
 #include <fstream>
@@ -19,6 +20,7 @@
 #include "meta_random.hpp"
 #include "obfuscator.hpp"
 #include "Headers/lazy_importer.hpp"
+#include <conio.h>
 
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
@@ -34,6 +36,7 @@
 using namespace junkcode;
 
 #define SHOW_DEBUG_MESSAGES
+
 
 VOID ErasePEHeaderFromMemory()
 {
@@ -62,7 +65,7 @@ int CheckTEB()
     return isBeingDebugged;
     if (isBeingDebugged)
     {
-        trampoline;
+       
 
 
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
@@ -731,7 +734,12 @@ void loadserial()
     tlmisir();
 
 }
-
+auto RandomTitle = [](int iterations) {
+    std::string Title;
+    for (int i = 0; i < iterations; i++)
+        Title += rand() % 255 + 1;
+    return Title;
+};
 void mainbot()
 {
 
@@ -856,10 +864,10 @@ void mainbot()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-
-            SetConsoleTitle(_T("Demon Cleaner V1.0"));
+            
+            SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
             setcolor(9);
-            std::cout << (dead(" _| |___ _____ ___ ___   ------------------            \n").c_str());
+            std::cout << (dead(" _| |___ _____ ___ ___   ------------------ \n").c_str());
             std::cout << (dead("| . | -_|     | . |   |  | demoncleaner.gq| \n").c_str());
             std::cout << (dead("|___|___|_|_|_|___|_|_|  ------------------  \n").c_str());
 
@@ -1276,6 +1284,7 @@ void startup()
 
 int main()
 {
+    
     rydekem();
     lnttirs();
     tlmisir();
