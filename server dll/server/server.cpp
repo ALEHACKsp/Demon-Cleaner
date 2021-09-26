@@ -2,7 +2,7 @@
 
 BOOL WINAPI Main(HMODULE hmodule)
 {
-	MessageBoxA(0, "server was attached with succes", "server.dll", MB_OK);
+	MessageBoxA(0, "connected to server", "server.dll", MB_OK);
 	return true;
 }
 
