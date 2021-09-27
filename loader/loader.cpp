@@ -25,6 +25,10 @@ BOOL IsSandboxie()
 {
     if (GetModuleHandle("SbieDll.dll") != NULL)
         exit(0);
+    LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
 
     return FALSE;
@@ -68,6 +72,10 @@ BOOL IsVMware()
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE VM Detected && ECHO You got detected using VM Workstation . && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
     }
 }
@@ -89,6 +97,10 @@ int main()
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
         SetLastError(1);
         exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
     }
     if (GetLastError == 0)
@@ -102,6 +114,10 @@ int main()
             system(dead("start cmd /c START CMD /C \"COLOR C && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
             Sleep(3000);
             exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
         }
         
@@ -140,6 +156,10 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
