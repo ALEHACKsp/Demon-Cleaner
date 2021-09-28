@@ -84,10 +84,6 @@ int main()
 {
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
 
-
-
-    
-
     if (IsDebuggerPresent())
     {
 
@@ -111,6 +107,7 @@ int main()
         IsVMware();
 
         bool checkconnection = InternetCheckConnection("https://google.com", FLAG_ICC_FORCE_CONNECTION, 0);
+        bool checkwebsite = InternetCheckConnection("http://demoncleaner.gq", FLAG_ICC_FORCE_CONNECTION, 0);
         if (!checkconnection)
         {
             system(dead("start cmd /c START CMD /C \"COLOR C && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
@@ -121,6 +118,16 @@ int main()
             LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
             LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
+        }
+        if (!checkwebsite)
+        {
+            system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Closed && ECHO Sorry but our website is down, this project might be closed or our servers are down.\n\nPlease come back later . && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
+            exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
         }
         
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
