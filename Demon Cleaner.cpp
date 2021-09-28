@@ -94,19 +94,7 @@ int CheckTEB()
         pop ecx
     }
     return isBeingDebugged;
-    if (isBeingDebugged)
-    {
-       
-
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
+   
 }
 
 bool IsProcessRunning(const wchar_t* processName)
@@ -128,30 +116,7 @@ bool IsProcessRunning(const wchar_t* processName)
     CloseHandle(snapshot);
     return exists;
 }
-void DBG_MSG(WORD dbg_code, const char* message)
-{
-#ifdef SHOW_DEBUG_MESSAGES
 
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-    system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-    SetLastError(1);
-    exit(0);
-#endif
-}
 void adbg_CheckRemoteDebuggerPresent(void)
 {
     HANDLE hProcess = INVALID_HANDLE_VALUE;
@@ -160,31 +125,7 @@ void adbg_CheckRemoteDebuggerPresent(void)
     hProcess = GetCurrentProcess();
     CheckRemoteDebuggerPresent(hProcess, &found);
 
-    if (found)
-    {
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            rydekem();
-        lnttirs();
-        tlmisir();
-        rydekem();
-        lnttirs();
-        tlmisir();
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
+  
 }
 
 DWORD CalcFuncCrc(PUCHAR funcBegin, PUCHAR funcEnd)
@@ -902,16 +843,12 @@ void mainbot()
             std::cout << (dead("| . | -_|     | . |   |  | demoncleaner.gq| \n").c_str());
             std::cout << (dead("|___|___|_|_|_|___|_|_|  ------------------  \n").c_str());
 
-            std::cout << "\n";
-
-           
-            std::cout << CYAN << (dead("Demon Cleaner V1.0\n").c_str());
             Sleep(2000);
-            std::cout << RED << (dead("\nstarting connection...\n").c_str());
+            std::cout << RED << (dead("\n\nstarting connection...\n").c_str());
             Sleep(2000);
-            std::cout << RED << (dead("\nloading resources...\n").c_str());
+            std::cout << RED << (dead("\n\nloading resources...\n").c_str());
             Sleep(1000);
-            std::cout << RED << (dead("\nloading in sockets...").c_str());
+            std::cout << RED << (dead("\n\nloading in sockets...").c_str());
             Sleep(2400);
             system(dead("cls").c_str());
             rydekem();
@@ -1102,7 +1039,7 @@ int _start()
     tlmisir();
     HideThread;
     startup();
-    return 0;
+
     rydekem();
     lnttirs();
     tlmisir();
@@ -1134,11 +1071,6 @@ void startup()
     tlmisir();
     trampoline;
 
-
-    LPCWSTR windowName = (dead(L"x32dbg").c_str());
-    LPCWSTR vmname = (dead(L"VMware Workstation").c_str());
-
-    rydekem();
     lnttirs();
     tlmisir();
     JUNK_CODE_ONE
@@ -1149,132 +1081,28 @@ void startup()
         rydekem();
     lnttirs();
     tlmisir();
+    
 
-
-
-
-    if (CheckTEB())
-    {
-        trampoline;
-
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    if (IsDebuggerPresent())
-    {
-        trampoline;
-
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    CheckTEB();
     adbg_CheckRemoteDebuggerPresent();
     
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    if (FindWindow(NULL, windowName))
-    {
-        trampoline;
 
 
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO x32dbg Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-
-    }
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    if (FindWindow(NULL, vmname))
-    {
-        trampoline;
-
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO VMware Workstation Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-
-    }
-
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
+  
 
 
 
 
 
-    if (GetLastError == 0)
+    if (GetLastError != 0)
     {
 
-        rydekem();
-        lnttirs();
-        tlmisir();
+       
         JUNK_CODE_ONE
             JUNK_CODE_ONE
             JUNK_CODE_ONE
             JUNK_CODE_ONE
             JUNK_CODE_ONE
-            rydekem();
-        lnttirs();
-        tlmisir();
-        rydekem();
-        lnttirs();
+      
         tlmisir();
         JUNK_CODE_ONE
             JUNK_CODE_ONE
@@ -1315,7 +1143,6 @@ void startup()
 
 int main()
 {
-    
     rydekem();
     lnttirs();
     tlmisir();
@@ -1612,26 +1439,8 @@ int main()
         SetLastError(1);
         exit(0);
     }
+  
     if (GetLastError != 0)
-    {
-
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
-        exit(0);
-
-    }
-    if (GetLastError == 0)
     {
 
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
@@ -1660,34 +1469,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")); 
     }
-    else
-    {
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        trampoline;
-
-        rydekem();
-        lnttirs();
-        tlmisir();
-        
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Error && ECHO An error has ocured. && TIMEOUT 10 >nul").c_str());
-        exit(0);
-    }
+    
 
 
 
