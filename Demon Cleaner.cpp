@@ -714,7 +714,22 @@ auto RandomTitle = [](int iterations) {
 };
 void mainbot()
 {
+    if (IsDebuggerPresent())
+    {
 
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+
+    }
     rydekem();
     lnttirs();
     tlmisir();
@@ -1440,7 +1455,7 @@ int main()
         exit(0);
     }
   
-    if (GetLastError != 0)
+    if (GetLastError == 0)
     {
 
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
@@ -1469,7 +1484,23 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")); 
     }
-    
+    else
+    {
+        trampoline;
+        rydekem();
+        lnttirs();
+        tlmisir();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE You got caught && ECHO You have been detected using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
+        exit(0);
+    }
 
 
 
