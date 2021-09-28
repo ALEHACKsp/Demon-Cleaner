@@ -82,24 +82,10 @@ BOOL IsVMware()
 }
 int main()
 {
+
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
 
-    if (IsDebuggerPresent())
-    {
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
-
-    }
+    
     if (GetLastError == 0)
     {
 
@@ -110,7 +96,7 @@ int main()
         bool checkwebsite = InternetCheckConnection("http://demoncleaner.gq", FLAG_ICC_FORCE_CONNECTION, 0);
         if (!checkconnection)
         {
-            system(dead("start cmd /c START CMD /C \"COLOR C && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
+            system(dead("start cmd /c START CMD /C \"COLOR 5 && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
             Sleep(3000);
             exit(0);
             LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
@@ -121,7 +107,7 @@ int main()
         }
         if (!checkwebsite)
         {
-            system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Closed && ECHO Sorry but our website is down, this project might be closed or our servers are down.\n\nPlease come back later . && TIMEOUT 10 >nul").c_str());
+            system(dead("start cmd /c START CMD /C \"COLOR B && TITLE Closed && ECHO Sorry but our website is down, this project might be closed or our servers are down.\n\nPlease come back later . && TIMEOUT 10 >nul").c_str());
             Sleep(3000);
             exit(0);
             LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
@@ -154,13 +140,13 @@ int main()
         
 
     }
-    else
+    if (GetLastError != 0)
     {
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software . && TIMEOUT 10 >nul").c_str());
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software . && TIMEOUT 10 >nul").c_str());
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
