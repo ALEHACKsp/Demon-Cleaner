@@ -61,6 +61,7 @@ BOOL IsVMware()
     __except (EXCEPTION_EXECUTE_HANDLER)
     {
         return FALSE;
+        
     }
 
     return bDetected;
