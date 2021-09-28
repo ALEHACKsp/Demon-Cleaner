@@ -79,23 +79,7 @@ VOID ErasePEHeaderFromMemory()
 
     SecureZeroMemory(pBaseAddr, 4096);
 }
-int CheckTEB()
-{
-    int isBeingDebugged = 0;
-    __asm
-    {
-        ; Grab the PEB at offset 30 of the fs register
-        mov eax, fs: [30h]
-        ; push it to the stack
-        push ecx
-        ; Grab the IsBeingDebugged flag out of the PED
-        mov ecx, [eax + 2]
-        mov isBeingDebugged, ecx
-        pop ecx
-    }
-    return isBeingDebugged;
-   
-}
+
 
 bool IsProcessRunning(const wchar_t* processName)
 {
@@ -117,16 +101,7 @@ bool IsProcessRunning(const wchar_t* processName)
     return exists;
 }
 
-void adbg_CheckRemoteDebuggerPresent(void)
-{
-    HANDLE hProcess = INVALID_HANDLE_VALUE;
-    BOOL found = FALSE;
 
-    hProcess = GetCurrentProcess();
-    CheckRemoteDebuggerPresent(hProcess, &found);
-
-  
-}
 
 DWORD CalcFuncCrc(PUCHAR funcBegin, PUCHAR funcEnd)
 {
@@ -166,56 +141,7 @@ void trampoline(void (*fnptr)(), bool ping = false)
 using namespace junkcode;
 
 void startup();
-bool MemoryBreakpointDebuggerCheck()
-{
 
-    unsigned char* pMem = NULL;
-    SYSTEM_INFO sysinfo = { 0 };
-    DWORD OldProtect = 0;
-    void* pAllocation = NULL; // Get the page size for the system 
-
-    GetSystemInfo(&sysinfo); // Allocate memory 
-
-    pAllocation = VirtualAlloc(NULL, sysinfo.dwPageSize,
-        MEM_COMMIT | MEM_RESERVE,
-        PAGE_EXECUTE_READWRITE);
-
-    if (pAllocation == NULL)
-        return false;
-
-    // Write a ret to the buffer (opcode 0xc3)
-    pMem = (unsigned char*)pAllocation; 
-    *pMem = 0xc3;
-
-    // Make the page a guard page         
-    if (VirtualProtect(pAllocation, sysinfo.dwPageSize,
-        PAGE_EXECUTE_READWRITE | PAGE_GUARD,
-        &OldProtect) == 0)
-    {
-        return false;
-    }
-
-    __try
-    {
-        __asm
-        {
-            mov eax, pAllocation
-            // This is the address we'll return to if we're under a debugger
-            push MemBpBeingDebugged
-            jmp eax // Exception or execution, which shall it be :D?
-        }
-    }
-    __except (EXCEPTION_EXECUTE_HANDLER)
-    {
-        // The exception occured and no debugger was detected
-        VirtualFree(pAllocation, NULL, MEM_RELEASE);
-        return false;
-    }
-
-    __asm {MemBpBeingDebugged:}
-    VirtualFree(pAllocation, NULL, MEM_RELEASE);
-    return true;
-}
 inline int AddSubOne(int One, int Two)
 {
     JUNK_CODE_ONE
@@ -831,7 +757,6 @@ void mainbot()
             lnttirs();
             tlmisir();
 
-            MemoryBreakpointDebuggerCheck();
             rydekem();
             lnttirs();
             tlmisir();
@@ -1098,7 +1023,7 @@ void startup()
     tlmisir();
     
 
-    adbg_CheckRemoteDebuggerPresent();
+
     
 
 
