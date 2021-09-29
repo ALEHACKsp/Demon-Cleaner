@@ -422,10 +422,7 @@ int main()
     }
     if (GetLastError != 0)
     {
-        HMODULE hModule = LoadLibrary(_T("ntdll.dll"));
         HMODULE hModule = LoadLibrary(_T("urlmon.dll"));
-        HMODULE hModule = LoadLibrary(_T("user32.dll"));
-        HMODULE hModule = LoadLibrary(_T("kernel32.dll"));
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
