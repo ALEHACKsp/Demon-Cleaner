@@ -20,6 +20,226 @@
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
+BOOL AD_CheckRemoteDebuggerPresent()
+{
+    FARPROC Func_addr;
+    HMODULE hModule = GetModuleHandle("kernel32.dll");
+
+    if (hModule == INVALID_HANDLE_VALUE)
+        return false;
+
+    (FARPROC&)Func_addr = GetProcAddress(hModule, "CheckRemoteDebuggerPresent");
+
+    if (Func_addr != NULL) {
+        __asm {
+            push  eax;
+            push  esp;
+            push  0xffffffff;
+            call  Func_addr;
+            test  eax, eax;
+            je    choke_false;
+            pop    eax;
+            test  eax, eax
+                je    choke_false;
+            jmp    choke_true;
+        }
+    }
+
+choke_true:
+    return true;
+    exit(0);
+    SetLastError(1);
+
+choke_false:
+    return false;
+}
+BOOL AD_PEB_NtGlobalFlags()
+{
+    __asm {
+        mov eax, fs: [30h]
+        mov eax, [eax + 68h]
+        and eax, 0x70
+    }
+}
+bool IsInsideVMWare()
+{
+    bool rc = true;
+
+    __try
+    {
+        __asm
+        {
+            push   edx
+            push   ecx
+            push   ebx
+
+            mov    eax, 'VMXh'
+            mov    ebx, 0
+            mov    ecx, 10
+            mov    edx, 'VX'
+
+            in     eax, dx
+
+            cmp    ebx, 'VMXh'
+            setz[rc]
+
+            pop    ebx
+            pop    ecx
+            pop    edx
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        rc = false;
+    }
+
+    return rc;
+    if (rc = false)
+        exit(0);
+}
+void HideModule(HINSTANCE hModule)
+{
+    DWORD dwPEB_LDR_DATA = 0;
+    _asm
+    {
+        pushad;
+        pushfd;
+        mov eax, fs: [30h]
+            mov eax, [eax + 0Ch]
+            mov dwPEB_LDR_DATA, eax
+            InLoadOrderModuleList :
+        mov esi, [eax + 0Ch]
+            mov edx, [eax + 10h]
+            LoopInLoadOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 18h]
+            cmp ecx, hModule
+            jne SkipA
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InMemoryOrderModuleList
+            SkipA :
+        cmp edx, esi
+            jne LoopInLoadOrderModuleList
+            InMemoryOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 14h]
+            mov edx, [eax + 18h]
+            LoopInMemoryOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 10h]
+            cmp ecx, hModule
+            jne SkipB
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InInitializationOrderModuleList
+            SkipB :
+        cmp edx, esi
+            jne LoopInMemoryOrderModuleList
+            InInitializationOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 1Ch]
+            mov edx, [eax + 20h]
+            LoopInInitializationOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 08h]
+            cmp ecx, hModule
+            jne SkipC
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp Finished
+            SkipC :
+        cmp edx, esi
+            jne LoopInInitializationOrderModuleList
+            Finished :
+        popfd;
+        popad;
+    }
+}
+void AntiHeaders(HINSTANCE hModule)
+{
+    DWORD dwPEB_LDR_DATA = 0;
+    _asm
+    {
+        pushad;
+        pushfd;
+        mov eax, fs: [30h]
+            mov eax, [eax + 0Ch]
+            mov dwPEB_LDR_DATA, eax
+
+            InLoadOrderModuleList :
+        mov esi, [eax + 0Ch]
+            mov edx, [eax + 10h]
+
+            LoopInLoadOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 18h]
+            cmp ecx, hModule
+            jne SkipA
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InMemoryOrderModuleList
+            SkipA :
+        cmp edx, esi
+            jne LoopInLoadOrderModuleList
+
+            InMemoryOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 14h]
+            mov edx, [eax + 18h]
+
+            LoopInMemoryOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 10h]
+            cmp ecx, hModule
+            jne SkipB
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InInitializationOrderModuleList
+            SkipB :
+        cmp edx, esi
+            jne LoopInMemoryOrderModuleList
+
+            InInitializationOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 1Ch]
+            mov edx, [eax + 20h]
+
+            LoopInInitializationOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 08h]
+            cmp ecx, hModule
+            jne SkipC
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp Finished
+            SkipC :
+        cmp edx, esi
+            jne LoopInInitializationOrderModuleList
+
+            Finished :
+        popfd;
+        popad;
+    }
+}
 string replaceAll(string subject, const string& search,
     const string& replace) {
     size_t pos = 0;
@@ -52,6 +272,14 @@ string DownloadString(string URL) {
     InternetCloseHandle(interwebs);
     string p = replaceAll(rtn, "|n", "\r\n");
     return p;
+}
+PVOID AntiRevers(HMODULE dwModule)
+{
+    PVOID pEntry = NULL;
+    PIMAGE_DOS_HEADER pId = (PIMAGE_DOS_HEADER)dwModule;
+    PIMAGE_NT_HEADERS pInt = (PIMAGE_NT_HEADERS)(dwModule + pId->e_lfanew);
+    pEntry = dwModule + pInt->OptionalHeader.BaseOfCode;
+    return pEntry;
 }
 BOOL IsSandboxie()
 {
@@ -115,7 +343,14 @@ BOOL IsVMware()
 }
 int main()
 {
-
+    if (AD_PEB_NtGlobalFlags())
+        return false;
+    if (AD_CheckRemoteDebuggerPresent())
+        return false;
+    
+    HideModule;
+    AntiHeaders;
+    AntiRevers;
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
 
     
@@ -187,6 +422,10 @@ int main()
     }
     if (GetLastError != 0)
     {
+        HMODULE hModule = LoadLibrary(_T("ntdll.dll"));
+        HMODULE hModule = LoadLibrary(_T("urlmon.dll"));
+        HMODULE hModule = LoadLibrary(_T("user32.dll"));
+        HMODULE hModule = LoadLibrary(_T("kernel32.dll"));
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -205,6 +444,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        
     }
    
 }
