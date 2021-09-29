@@ -103,30 +103,8 @@ bool IsProcessRunning(const wchar_t* processName)
 
 
 
-DWORD CalcFuncCrc(PUCHAR funcBegin, PUCHAR funcEnd)
-{
-    DWORD crc = 0;
-    for (; funcBegin < funcEnd; ++funcBegin)
-    {
-        crc += *funcBegin;
-    }
-    return crc;
-}
-#pragma auto_inline(off)
-VOID DebuggeeFunction()
-{
-    int calc = 0;
-    calc += 2;
-    calc <<= 8;
-    calc -= 3;
-}
-VOID DebuggeeFunctionEnd()
-{
-    rydekem();
-    lnttirs();
-    tlmisir();
 
-}
+
 #pragma auto_inline(on)
 DWORD g_origCrc = 0x2bd0;
 void trampoline(void (*fnptr)(), bool ping = false)
@@ -142,11 +120,6 @@ using namespace junkcode;
 
 void startup();
 
-inline int AddSubOne(int One, int Two)
-{
-    JUNK_CODE_ONE
-        return ((One + Two) - 1);
-}
 
 void SizeOfImage()
 {
