@@ -405,7 +405,7 @@ void deleter()
 
 
     //delete the files we downloaded
-    system(dead("cd CC:\\Windows\\System32\\de-DE\\").c_str());
+    system(dead("cd C:\\Windows\\System32\\de-DE\\").c_str());
 
     system(dead("del C:\\Windows\\System32\\de-DE\\woof.sys").c_str());
 
