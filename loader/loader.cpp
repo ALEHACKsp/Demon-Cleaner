@@ -15,7 +15,24 @@
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
+BOOL IsDbgPresentPrefixCheck()
+{
 
+
+
+    __try
+    {
+        __asm __emit 0xF3 
+        __asm __emit 0x64
+        __asm __emit 0xF1 
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return FALSE;
+    }
+
+    return TRUE;
+}
 inline void PushPopSS()
 {
 
@@ -418,6 +435,8 @@ int main()
 
     PushPopSS();
     ErasePEHeaderFromMemory();
+    if (IsDbgPresentPrefixCheck())
+        exit(0);
     if (IsDebuggerPresent())
             exit(0);
     if (AD_PEB_NtGlobalFlags())
