@@ -11,6 +11,7 @@
 #include <cstdio>
 #include <iostream>
 #include "loader.h"
+#include <stdio.h>
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
@@ -26,6 +27,8 @@ __asm
     xor edx, edx // This is where the debugger will step to
 }
 }
+
+
 inline void ErasePEHeaderFromMemory()
 {
     DWORD OldProtect = 0;
@@ -412,7 +415,7 @@ int main()
         JUNK_CODE_ONE
         JUNK_CODE_ONE
         JUNK_CODE_ONE
-    
+
     PushPopSS();
     ErasePEHeaderFromMemory();
     if (IsDebuggerPresent())
