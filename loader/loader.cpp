@@ -436,45 +436,46 @@ int main()
         JUNK_CODE_ONE
         JUNK_CODE_ONE
 
-    PushPopSS();
-    ErasePEHeaderFromMemory();
-    if (IsDbgPresentPrefixCheck())
-
-        exit(0);
-    if (IsDebuggerPresent())
-
-        exit(0);
-    if (AD_PEB_NtGlobalFlags())
-
-        exit(0);
-    if (AD_CheckRemoteDebuggerPresent())
-
-        exit(0);
-    if (AD_PEB_IsDebugged())
-
-        exit(0);
-    if (Int2DCheck())
-
-        exit(0);
-
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        HideModule;
-    AntiHeaders;
-    AntiRevers;
-    SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
+   
 
     
     
     if (GetLastError == 0)
     {
+        PushPopSS();
+        ErasePEHeaderFromMemory();
+        if (IsDbgPresentPrefixCheck())
+
+            exit(0);
+        if (IsDebuggerPresent())
+
+            exit(0);
+        if (AD_PEB_NtGlobalFlags())
+
+            exit(0);
+        if (AD_CheckRemoteDebuggerPresent())
+
+            exit(0);
+        if (AD_PEB_IsDebugged())
+
+            exit(0);
+        if (Int2DCheck())
+
+            exit(0);
+
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            HideModule;
+        AntiHeaders;
+        AntiRevers;
+        SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
         JUNK_CODE_ONE
             JUNK_CODE_ONE
             JUNK_CODE_ONE
@@ -485,7 +486,7 @@ int main()
             JUNK_CODE_ONE
             JUNK_CODE_ONE
 
-            IsSandboxie();
+        IsSandboxie();
         IsVMware();
 
         bool checkconnection = InternetCheckConnection("https://google.com", FLAG_ICC_FORCE_CONNECTION, 0);
@@ -585,6 +586,7 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("del C:\\Windows\\SysWOW64\\audio.dll").c_str());
+
         system(dead("del C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
         exit(0);
         LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
