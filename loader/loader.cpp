@@ -15,6 +15,8 @@
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
+
+
 BOOL IsDbgPresentPrefixCheck()
 {
 
@@ -115,7 +117,7 @@ BOOL AD_CheckRemoteDebuggerPresent()
     if (hModule == INVALID_HANDLE_VALUE)
         return false;
 
-    (FARPROC&)Func_addr = GetProcAddress(hModule, "CheckRemoteDebuggerPresent");
+    (FARPROC&)Func_addr = GetProcAddress(hModule, (dead("CheckRemoteDebuggerPresent").c_str()));
 
     if (Func_addr != NULL) {
         __asm {
