@@ -421,6 +421,7 @@ BOOL IsVMware()
 
     }
 }
+
 int main()
 {
     JUNK_CODE_ONE
@@ -445,13 +446,13 @@ int main()
 
         exit(0);
     if (AD_CheckRemoteDebuggerPresent())
-        
+
         exit(0);
     if (AD_PEB_IsDebugged())
-        
+
         exit(0);
     if (Int2DCheck())
-        
+
         exit(0);
 
     JUNK_CODE_ONE
@@ -468,7 +469,8 @@ int main()
     AntiRevers;
     SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
 
-
+    
+    
     if (GetLastError == 0)
     {
         JUNK_CODE_ONE
