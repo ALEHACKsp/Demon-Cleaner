@@ -4,22 +4,17 @@
 #include <Urlmon.h>
 #include "../Demon Cleaner/Headers/junk-code.h"
 #include <Wininet.h>
-#include <stdlib.h>
 #include <vector>
 #include <tchar.h>
 #include "../Demon Cleaner/Headers/color.hpp"
-#include "../Demon Cleaner/Headers/json.hpp"
-#include <fstream>
-#include "../Demon Cleaner/Headers/value.h"
-#include <stringapiset.h>
 #include <TlHelp32.h>
-#include "../Demon Cleaner/Headers/antidbg.h"
 #include <cstdio>
 #include <iostream>
-#pragma comment(lib, "urlmon.lib")
-#pragma comment(lib,"Wininet.lib") 
 #include "loader.h"
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
+#pragma comment(lib, "urlmon.lib")
+#pragma comment(lib,"Wininet.lib") 
+
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
     __asm{xor eax, eax}        \
