@@ -572,7 +572,7 @@ int main()
     if (GetLastError != 0)
     {
         Sleep(100);
-        HMODULE hModule = LoadLibrary(_T("urlmon.dll"));
+
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
