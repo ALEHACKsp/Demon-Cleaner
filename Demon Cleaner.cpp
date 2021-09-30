@@ -5,20 +5,11 @@
 #include <Urlmon.h>
 #include "Headers/junk-code.h"
 #include <WinInet.h>
-#include <stdlib.h>
 #include <vector>
 #include <tchar.h>
-#include <time.h>
 #include "Headers/color.hpp"
-#include "Headers/json.hpp"
-#include <fstream>
-#include "Headers/value.h"
-#include <stringapiset.h>
 #include <TlHelp32.h>
-#include "Headers/antidbg.h"
 #include <cstdio>
-#include "meta_random.hpp"
-#include "obfuscator.hpp"
 #include "Headers/lazy_importer.hpp"
 #include <conio.h>
 
