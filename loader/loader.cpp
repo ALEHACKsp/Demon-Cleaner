@@ -12,9 +12,10 @@
 #include <iostream>
 #include "loader.h"
 #include <stdio.h>
-#include "../Demon Cleaner/Headers/lazy_importer.hpp"
+
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
+
 void adbg_CloseHandleException(void)
 {
     HANDLE hInvalid = (HANDLE)0xBEEF; // an invalid handle
