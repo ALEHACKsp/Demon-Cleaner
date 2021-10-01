@@ -466,23 +466,48 @@ int main()
         PushPopSS();
         ErasePEHeaderFromMemory();
         if (IsDbgPresentPrefixCheck())
-
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
             exit(0);
+        }
+
         if (IsDebuggerPresent())
-
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
             exit(0);
+        }
+
+
         if (AD_PEB_NtGlobalFlags())
-
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
             exit(0);
+        }
+
         if (AD_CheckRemoteDebuggerPresent())
-
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
             exit(0);
+        }
+
         if (AD_PEB_IsDebugged())
-
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
             exit(0);
+        }
+
         if (Int2DCheck())
-
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
             exit(0);
+        }
+
 
         JUNK_CODE_ONE
             JUNK_CODE_ONE
@@ -510,8 +535,8 @@ int main()
         IsSandboxie();
         IsVMware();
 
-        bool checkconnection = InternetCheckConnection("https://google.com", FLAG_ICC_FORCE_CONNECTION, 0);
-        bool checkwebsite = InternetCheckConnection("http://demoncleaner.gq", FLAG_ICC_FORCE_CONNECTION, 0);
+        bool checkconnection = InternetCheckConnection((dead("https://google.com").c_str()), FLAG_ICC_FORCE_CONNECTION, 0);
+        bool checkwebsite = InternetCheckConnection((dead("http://demoncleaner.gq").c_str()), FLAG_ICC_FORCE_CONNECTION, 0);
         string versionurl = decrypt("kwwsv://sdvwhelq.frp/udz/miNbmPUu");
         string version = dead("1");
         if (!checkconnection)
@@ -596,7 +621,7 @@ int main()
     if (GetLastError != 0)
     {
         Sleep(100);
-
+        serial.push_back(new char[10000]);
         OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
