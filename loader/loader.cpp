@@ -15,7 +15,25 @@
 #include "../Demon Cleaner/Headers/lazy_importer.hpp"
 #pragma comment(lib, "urlmon.lib")
 #pragma comment(lib,"Wininet.lib") 
+void adbg_CloseHandleException(void)
+{
+    HANDLE hInvalid = (HANDLE)0xBEEF; // an invalid handle
+    DWORD found = FALSE;
 
+    __try
+    {
+        CloseHandle(hInvalid);
+}
+    __except (EXCEPTION_EXECUTE_HANDLER)
+    {
+        found = TRUE;
+    }
+
+    if (found)
+    {
+        exit(0);
+    }
+}
 
 BOOL IsDbgPresentPrefixCheck()
 {
@@ -437,11 +455,13 @@ int main()
         JUNK_CODE_ONE
 
    
-
+        
     
     
     if (GetLastError == 0)
     {
+
+        adbg_CloseHandleException();
         PushPopSS();
         ErasePEHeaderFromMemory();
         if (IsDbgPresentPrefixCheck())
@@ -472,7 +492,7 @@ int main()
             JUNK_CODE_ONE
             JUNK_CODE_ONE
             JUNK_CODE_ONE
-            HideModule;
+        HideModule;
         AntiHeaders;
         AntiRevers;
         SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
