@@ -622,10 +622,6 @@ void otherthing()
 void HideFromDebugger()
 {
 
-    OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-        TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
     HMODULE hNtDll = LoadLibrary(TEXT("ntdll.dll"));
     pfnNtSetInformationThread NtSetInformationThread = (pfnNtSetInformationThread)
         GetProcAddress(hNtDll, "NtSetInformationThread");
@@ -663,7 +659,6 @@ inline bool HideThread(HANDLE hThread)
 void startup();
 int _start()
 {
-    trampoline;
     HideThread;
     startup();
     trampoline;
@@ -672,158 +667,22 @@ int _start()
 void startup()
 {
     ErasePEHeaderFromMemory();
-    trampoline;
-    trampoline;
 
-    if (GetLastError != 0)
+    while (true)
     {
 
-        HideFromDebugger();
-        driverdetect();
-        build_date();
-        build_time();
-        loadserial();
         mainbot();
     }
-
-
 
 }
 
 int main()
 {
-    if (IsProcessRunning(dead(L"ida.exe").c_str()))
-    {
-        trampoline;
-        rydekem();
-        lnttirs();
-        tlmisir();
-        JUNK_CODE_ONE
-            JUNK_CODE_ONE
-            JUNK_CODE_ONE
-
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"ProcessHacker.exe").c_str()))
-    {
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Hacker detected && ECHO Process Hacker detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-
-    if (IsProcessRunning(dead(L"Fiddler.exe").c_str()))
-    {
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Fiddler detected && ECHO Fiddler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"Wireshark.exe").c_str()))
-    {
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Wireshark detected && ECHO Wireshark detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"PETools.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE PE Tools detected && ECHO PE Tools detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"procexp.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Process Explorer detected && ECHO Process Explorer detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"ImmunityDebugger.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Immunity Debugger detected && ECHO Immunity Debugger detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"ida64.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"windbg.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE WINDBG detected && ECHO WINDBG detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"httpdebugger.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE HTTP DEBUGGER detected && ECHO HTTP DEBUGGER detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"x32dbg.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x32dbg detected && ECHO x32dbg detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"x64dbg.exe").c_str()))
-    {
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE x64dbg detected && ECHO x64dbg detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"idaq.exe").c_str()))
-    {
-
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"idaq64.exe").c_str()))
-    {
-
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE IDA detected && ECHO IDA Decompiler detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-    if (IsProcessRunning(dead(L"ollydbg.exe").c_str()))
-    {
-
-        trampoline;
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE OllyDBG detected && ECHO OllyDBG detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-    }
-
-    if (GetLastError == 0)
-    {
-
-        trampoline;
-        _start();
-        trampoline;
-    }
-    if (GetLastError != 0)
-    {
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE You got caught && ECHO You have been detected using reverse engineering tools against our software. && TIMEOUT 10 >nul").c_str());
-        exit(0);
-    }
-
-
-
+    HideFromDebugger();
+    driverdetect();
+    build_date();
+    build_time();
+    loadserial();
+    startup();
 }
 
