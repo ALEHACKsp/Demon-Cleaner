@@ -632,8 +632,10 @@ int main()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("del C:\\Windows\\SysWOW64\\audio.dll").c_str());
+        system(dead("cls").c_str());
 
         system(dead("del C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
+        system(dead("cls").c_str());
         exit(0);
         LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
         LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
