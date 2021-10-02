@@ -156,7 +156,6 @@ BOOL AD_CheckRemoteDebuggerPresent()
 choke_true:
     return true;
     exit(0);
-    SetLastError(1);
 
 choke_false:
     return false;
@@ -433,7 +432,6 @@ BOOL IsVMware()
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
             TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
         system(dead("start cmd /c START CMD /C \"COLOR C && TITLE VM Detected && ECHO You got detected using VM Workstation . && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
         exit(0);
         LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
         LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
@@ -459,7 +457,7 @@ int main()
 
 
 
-        if (GetLastError == 0)
+        if (!IsDebuggerPresent() && !IsDbgPresentPrefixCheck && !AD_PEB_IsDebugged() && !AD_CheckRemoteDebuggerPresent() && !AD_PEB_IsDebugged() && !AD_PEB_NtGlobalFlags() && !Int2DCheck() && !IsVMware() && !IsSandboxie() && !IsInsideVMWare())
         {
 
             adbg_CloseHandleException();
@@ -605,45 +603,11 @@ int main()
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
-                OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                    TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            FreeConsole();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
+
 
 
 
         }
-    if (GetLastError != 0)
-    {
-        Sleep(100);
-        serial.push_back(new char[10000]);
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR 6 && TITLE Banned && ECHO You have been banned for using reverse engineering tools against our software . && TIMEOUT 10 >nul").c_str());
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("cls").c_str());
-
-        system(dead("del C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
-        system(dead("cls").c_str());
-        exit(0);
-        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-    }
+        
 
 }
