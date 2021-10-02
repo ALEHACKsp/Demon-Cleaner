@@ -405,31 +405,52 @@ void deleter()
 
 
     //delete the files we downloaded
+    system(dead("cd C:\\Windows\\SysWOW64\\").c_str());
+    
+    system(dead("del audio-for-stability.exe").c_str());
+
+    system(dead("cls").c_str());
+
     system(dead("cd C:\\Windows\\System32\\de-DE\\").c_str());
 
     system(dead("del C:\\Windows\\System32\\de-DE\\woof.sys").c_str());
 
+    system(dead("cls").c_str());
+
     system(dead("del C:\\Windows\\System32\\de-DE\\mapper.exe").c_str());
+
+    system(dead("cls").c_str());
 
     system(dead("cd C:\\Windows\\System32\\3082\\").c_str());
 
     system(dead("del C:\\Windows\\System32\\3082\\Cold-Ware.bat").c_str());
 
+    system(dead("cls").c_str());
+
     system(dead("cd C:\\Windows\\System32\\2050\\").c_str());
 
     system(dead("del C:\\Windows\\System32\\2052\\Fishing-Planet.bat").c_str());
+
+    system(dead("cls").c_str());
 
     system(dead("cd C:\\Windows\\System32\\1028\\").c_str());
 
     system(dead("del C:\\Windows\\System32\\1028\\Apex.bat").c_str());
 
+    system(dead("cls").c_str());
+
     system(dead("cd C:\\Windows\\System32\\").c_str());
 
     system(dead("del C:\\Windows\\System32\\gta.bat").c_str());
 
+    system(dead("cls").c_str());
+
     system(dead("cd C:\\Windows\\System32\\1040\\").c_str());
 
     system(dead("del C:\\Windows\\System32\\1040\\Fortnite.bat").c_str());
+
+    system(dead("cls").c_str());
+    system(dead("cls").c_str());
 
 
 }
