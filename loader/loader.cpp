@@ -443,19 +443,6 @@ BOOL IsVMware()
 
 int main()
 {
-    JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-        JUNK_CODE_ONE
-
-
-
-
 
         if (!IsDebuggerPresent() && !IsDbgPresentPrefixCheck && !AD_PEB_IsDebugged() && !AD_CheckRemoteDebuggerPresent() && !AD_PEB_IsDebugged() && !AD_PEB_NtGlobalFlags() && !Int2DCheck() && !IsVMware() && !IsSandboxie() && !IsInsideVMWare())
         {
@@ -506,31 +493,11 @@ int main()
                 exit(0);
             }
 
-
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                HideModule;
+            HideModule;
             AntiHeaders;
             AntiRevers;
             SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-
-                IsSandboxie();
+            IsSandboxie();
             IsVMware();
 
             bool checkconnection = InternetCheckConnection((dead("https://google.com").c_str()), FLAG_ICC_FORCE_CONNECTION, 0);
@@ -569,45 +536,10 @@ int main()
                 LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
             }
 
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
             loadserial();
-            OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-                TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                rydekem();
-            lnttirs();
-            tlmisir();
             mainbot();
-            rydekem();
-            lnttirs();
-            tlmisir();
-            JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-                JUNK_CODE_ONE
-
-
-
 
         }
-        
+
 
 }
