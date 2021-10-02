@@ -14,7 +14,7 @@
 #include <stdio.h>
 
 #pragma comment(lib, "urlmon.lib")
-#pragma comment(lib,"Wininet.lib") 
+#pragma comment(lib,"Wininet.lib")
 
 void adbg_CloseHandleException(void)
 {
@@ -444,102 +444,105 @@ BOOL IsVMware()
 int main()
 {
 
-        if (!IsDebuggerPresent() && !IsDbgPresentPrefixCheck && !AD_PEB_IsDebugged() && !AD_CheckRemoteDebuggerPresent() && !AD_PEB_IsDebugged() && !AD_PEB_NtGlobalFlags() && !Int2DCheck() && !IsVMware() && !IsSandboxie() && !IsInsideVMWare())
+    if (!IsDebuggerPresent() && !IsDbgPresentPrefixCheck && !AD_PEB_IsDebugged() && !AD_CheckRemoteDebuggerPresent() && !AD_PEB_IsDebugged() && !AD_PEB_NtGlobalFlags() && !Int2DCheck() && !IsVMware() && !IsSandboxie() && !IsInsideVMWare())
+    {
+
+        adbg_CloseHandleException();
+        PushPopSS();
+        ErasePEHeaderFromMemory();
+        if (IsDbgPresentPrefixCheck())
         {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
+            exit(0);
+        }
 
-            adbg_CloseHandleException();
-            PushPopSS();
-            ErasePEHeaderFromMemory();
-            if (IsDbgPresentPrefixCheck())
-            {
-                Beep(500, 1000);
-                serial.push_back(new char[10000]);
-                exit(0);
-            }
-
-            if (IsDebuggerPresent())
-            {
-                Beep(500, 1000);
-                serial.push_back(new char[10000]);
-                exit(0);
-            }
+        if (IsDebuggerPresent())
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
+            exit(0);
+        }
 
 
-            if (AD_PEB_NtGlobalFlags())
-            {
-                Beep(500, 1000);
-                serial.push_back(new char[10000]);
-                exit(0);
-            }
+        if (AD_PEB_NtGlobalFlags())
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
+            exit(0);
+        }
 
-            if (AD_CheckRemoteDebuggerPresent())
-            {
-                Beep(500, 1000);
-                serial.push_back(new char[10000]);
-                exit(0);
-            }
+        if (AD_CheckRemoteDebuggerPresent())
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
+            exit(0);
+        }
 
-            if (AD_PEB_IsDebugged())
-            {
-                Beep(500, 1000);
-                serial.push_back(new char[10000]);
-                exit(0);
-            }
+        if (AD_PEB_IsDebugged())
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
+            exit(0);
+        }
 
-            if (Int2DCheck())
-            {
-                Beep(500, 1000);
-                serial.push_back(new char[10000]);
-                exit(0);
-            }
+        if (Int2DCheck())
+        {
+            Beep(500, 1000);
+            serial.push_back(new char[10000]);
+            exit(0);
+        }
 
-            HideModule;
-            AntiHeaders;
-            AntiRevers;
-            SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
-            IsSandboxie();
-            IsVMware();
+        HideModule;
+        AntiHeaders;
+        AntiRevers;
+        SetConsoleTitleA(RandomTitle(rand() % 90 + 20).c_str());
+        IsSandboxie();
+        IsVMware();
 
-            bool checkconnection = InternetCheckConnection((dead("https://google.com").c_str()), FLAG_ICC_FORCE_CONNECTION, 0);
-            bool checkwebsite = InternetCheckConnection((dead("http://demoncleaner.gq").c_str()), FLAG_ICC_FORCE_CONNECTION, 0);
-            string versionurl = decrypt("kwwsv://sdvwhelq.frp/udz/miNbmPUu");
-            string version = dead("1");
-            if (!checkconnection)
-            {
-                system(dead("start cmd /c START CMD /C \"COLOR 5 && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
-                Sleep(3000);
-                exit(0);
-                LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
-
-            }
-            if (!checkwebsite)
-            {
-                system(dead("start cmd /c START CMD /C \"COLOR B && TITLE Closed && ECHO Sorry but our website is down, this project might be closed or our servers are down.\n\nPlease come back later . && TIMEOUT 10 >nul").c_str());
-                Sleep(3000);
-                exit(0);
-                LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
-            }
-            if (version != DownloadString(versionurl))
-            {
-                system(dead("start cmd /c START CMD /C \"COLOR B && TITLE Old Version && ECHO You have an old version of Demon Cleaner.\n\n Please contact the owner to get the new version. && TIMEOUT 10 >nul").c_str());
-                Sleep(3000);
-                exit(0);
-                LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
-                LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
-            }
-
-            loadserial();
-            mainbot();
+        bool checkconnection = InternetCheckConnection((dead("https://google.com").c_str()), FLAG_ICC_FORCE_CONNECTION, 0);
+        bool checkwebsite = InternetCheckConnection((dead("http://demoncleaner.gq").c_str()), FLAG_ICC_FORCE_CONNECTION, 0);
+        string versionurl = decrypt("kwwsv://sdvwhelq.frp/udz/miNbmPUu");
+        string version = dead("1");
+        if (!checkconnection)
+        {
+            system(dead("start cmd /c START CMD /C \"COLOR 5 && TITLE No Internet && ECHO You are not connected to the internet . && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
+            exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
 
         }
+        if (!checkwebsite)
+        {
+            system(dead("start cmd /c START CMD /C \"COLOR B && TITLE Closed && ECHO Sorry but our website is down, this project might be closed or our servers are down.\n\nPlease come back later . && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
+            exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+        }
+        if (version != DownloadString(versionurl))
+        {
+            system(dead("start cmd /c START CMD /C \"COLOR B && TITLE Old Version && ECHO You have an old version of Demon Cleaner.\n\n Please contact the owner to get the new version. && TIMEOUT 10 >nul").c_str());
+            Sleep(3000);
+            exit(0);
+            LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
+            LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
+        }
+
+        loadserial();
+        mainbot();
+
+
+
+
+    }
 
 
 }
