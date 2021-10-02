@@ -327,7 +327,7 @@ void mainbot()
 
 
 
-                return exit(0);
+                exit(0);
             }
             else
             {
@@ -368,7 +368,7 @@ void mainbot()
 
 
                 exit(0);
-                return exit(0);
+
 
 
 
