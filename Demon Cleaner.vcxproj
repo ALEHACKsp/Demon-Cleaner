@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{65608fa9-f002-46dc-8d6f-81ff0280d32d}</ProjectGuid>
-    <RootNamespace>DemonCleaner</RootNamespace>
+    <ProjectGuid>{f8e7c38e-947a-4b1d-bc92-b741963b1da7}</ProjectGuid>
+    <RootNamespace>demoncleaner</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -72,6 +72,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <OutDir>.\bin</OutDir>
+    <TargetName>demon</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -90,6 +92,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -98,19 +101,19 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <WarningLevel>Level3</WarningLevel>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <UACExecutionLevel>RequireAdministrator</UACExecutionLevel>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -142,30 +145,18 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Demon Cleaner.cpp" />
+    <ClCompile Include="demon cleaner.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\allocator.h" />
-    <ClInclude Include="Headers\antidbg.h" />
     <ClInclude Include="Headers\assertions.h" />
     <ClInclude Include="Headers\color.hpp" />
     <ClInclude Include="Headers\config.h" />
+    <ClInclude Include="Headers\dead.hpp" />
     <ClInclude Include="Headers\forwards.h" />
-    <ClInclude Include="Headers\json.h" />
-    <ClInclude Include="Headers\json.hpp" />
-    <ClInclude Include="Headers\json_features.h" />
     <ClInclude Include="Headers\junk-code.h" />
     <ClInclude Include="Headers\lazy_importer.hpp" />
     <ClInclude Include="Headers\reader.h" />
-    <ClInclude Include="Headers\value.h" />
-    <ClInclude Include="Headers\version.h" />
-    <ClInclude Include="Headers\writer.h" />
-    <ClInclude Include="Headers\dead.hpp" />
-    <ClInclude Include="meta_random.hpp" />
-    <ClInclude Include="obfuscator.hpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
