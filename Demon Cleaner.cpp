@@ -451,22 +451,7 @@ auto RandomTitle = [](int iterations) {
 };
 void mainbot()
 {
-    if (IsDebuggerPresent())
-    {
 
-        OutputDebugString(TEXT("%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s")
-            TEXT("%s%s%s%s%s%s%s%s%s%s%s%s%s"));
-        system(dead("start cmd /c START CMD /C \"COLOR C && TITLE Detected && ECHO Debugger Detected. && TIMEOUT 10 >nul").c_str());
-        SetLastError(1);
-        exit(0);
-        LI_FN(VirtualProtect).in(LI_MODULE("kernel32.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("urlmon.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("ntdll.dll").cached());
-        LI_FN(VirtualProtect).in(LI_MODULE("user32.dll").cached());
-
-    }
 
 
 
@@ -570,7 +555,7 @@ void mainbot()
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
                 JUNK_CODE_ONE
-            exit(0);
+                exit(0);
 
         }
 
@@ -662,6 +647,7 @@ int _start()
     HideThread;
     startup();
     trampoline;
+    return 0;
 }
 
 void startup()
