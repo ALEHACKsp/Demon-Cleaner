@@ -15,15 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Demon Cleaner.cpp">
+    <ClCompile Include="demon cleaner.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Headers\allocator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\antidbg.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\assertions.h">
@@ -35,47 +32,20 @@
     <ClInclude Include="Headers\config.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Headers\dead.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="Headers\forwards.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\json.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\json.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\json_features.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Headers\junk-code.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Headers\reader.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\value.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\version.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\writer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Headers\dead.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="meta_random.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="obfuscator.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Headers\lazy_importer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="cpp.hint" />
+    <ClInclude Include="Headers\reader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
